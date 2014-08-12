@@ -1,0 +1,75 @@
+<section class="wrapper">
+  <div class="back-to-top">
+    <a class="back-to-top__link" href="#top">
+      {{ "Haut de la page" | t }}
+    </a>
+  </div>
+
+  <div class="footer__address">
+      <h3 class="footer__restaurant-name">{{ restaurant.name }}</h3>
+      {% if restaurant.phone? %}
+        <div class="footer__phone-call">
+          <div class="non-semantic-protector">
+            <a  class="phone-call__link button--ribbon" href="tel:{{ restaurant.phone_uri }}">
+             <span class="ribbon-content">
+              {{ restaurant.phone }}
+             </span>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% if restaurant.email %}
+        <div class="footer__email">
+          <a class="email__link" href="mailto:#{{restaurant.email}}">
+            {{ restaurant.email }}
+          </a>
+        </div>
+      {% endif %}
+  </div>
+
+  {% if theme_settings.footer_display_newsletter %}
+    <div class="footer__subscribe">
+      {% newsletter_subscribe_form %}
+        <fieldset class="field-group">
+          <legend class="field-group__legend subscribe__title">{{ "Newsletter" | t }}</legend>
+          <div class="input subscribe__input subscribe__input--email">
+            <label class="subscribe__label" for="subscriberEmail">
+              {{ "Saisissez votre adresse email :" | t }}
+            </label>
+            <input id="subscriberEmail" name="subscriber[email]" type="text" placeholder="francois.rabelais@chinon.fr">
+          </div>
+          <div class="submit subscribe__input subscribe__input--submit">
+            <input class="button" type="submit" value="{{ "Valider" | t }}">
+          </div>
+        </fieldset>
+      {% endnewsletter_subscribe_form§ %}
+    </div>
+  {% endif %}
+
+  {% if restaurant.social_urls? %}
+    <div class="footer__social">
+      <ul class="social__items">
+        {% if restaurant.facebook_url? %}
+          <li class="social__item">
+            <a class="social__link facebook" href="{{restaurant.facebook_url}}">
+              {{ "Notre page Facebook" | t }}
+            </a>
+          </li>
+        {% endif %}
+        {% if restaurant.twitter_url? %}
+          <li class="social__item">
+            <a class="social__link twitter" href="{{restaurant.twitter_url}}">
+              {{ "Notre compte Twitter" | t }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <div class="footer__legal">
+    <a class="legal__link" href="{{ restaurant.terms_of_use_url }}">
+      {{ "Mentions légales" | t }}
+    </a>
+  </div>
+</section>

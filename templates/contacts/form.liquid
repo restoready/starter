@@ -1,0 +1,39 @@
+<section class="page-header page-header--contact">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ contact_settings.contact_title }}</h1>
+    </header>
+    <main class="section__main page-header__description">
+      {{ contact_settings.contact_content }}
+    </main>
+  </div>
+</section>
+
+<section class="contact-form">
+  <div class="wrapper">
+    {% contact_form %}
+      <fieldset class="field-group">
+        <legend class="field-group__legend">{{ "Vos coordonnées" | t }}</legend>
+        <div class="input">
+          <label for="contactFromName">{{ "Votre nom :" | t }}</label>
+          <input id="contactFromName" name="message[from_name]" type="text">
+        </div>
+        <div class="input">
+          <label for="contactFromEmail">{{ "Votre adresse email :" | t }}</label>
+          <input id="contactFromEmail" name="message[from_email]" type="text">
+        </div>
+        <div class="input">
+          <label for="contactPhone">{{ "Votre numéro de téléphone :" | t }}</label>
+          <input id="contactPhone" name="message[phone]" type="text">
+        </div>
+        <div class="textarea">
+          <label for="contactBody">{{ "Votre message :" | t }}</label>
+          <textarea id="contactBody" name="message[body]"></textarea>
+        </div>
+        <div class="submit">
+          <input class="button" type="submit" value="{{ "Envoyer" | t }}">
+        </div>
+      </fieldset>
+    {% endcontact_form %}
+  </div>
+</section>

@@ -1,0 +1,591 @@
+<div class="tabs-wrapper">
+  <input checked="checked" class="tab-head" id="tab1" name="tab" type="radio">
+  <label for="tab1">
+    Couleurs
+  </label>
+  <input class="tab-head" id="tab2" name="tab" type="radio">
+  <label for="tab2">
+    Polices
+  </label>
+  <input class="tab-head" id="tab3" name="tab" type="radio">
+  <label for="tab3">
+    Modules
+  </label>
+
+  <div class="tab-body-wrapper">
+    <div class="tab-body" id="tab-body-1">
+      <fieldset>
+        <legend>Général</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="body-background">Fond de page</label>
+            <input name="admin_theme_settings[body-background]" id="body-background" value="{{ theme_settings.body-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="body-color">Couleur par défaut du texte</label>
+            <input name="admin_theme_settings[body-color]" id="body-color" value="{{ theme_settings.body-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Entête du site</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="restaurant-name-color">Nom du restaurant</label>
+            <input name="admin_theme_settings[restaurant-name-color]" id="restaurant-name-color" value="{{ theme_settings.restaurant-name-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="slogan-color">Slogan</label>
+            <input name="admin_theme_settings[slogan-color]" id="slogan-color" value="{{ theme_settings.slogan-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Navigation principale</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="main-nav-link-color">Lien</label>
+            <input name="admin_theme_settings[main-nav-link-color]" id="main-nav-link-color" value="{{ theme_settings.main-nav-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="main-nav-link-hover-color">Lien (survol)</label>
+            <input name="admin_theme_settings[main-nav-link-hover-color]" id="main-nav-link-hover-color" value="{{ theme_settings.main-nav-link-hover-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="main-nav-link-hover-border-color">Bordure du lien (survol)</label>
+            <input name="admin_theme_settings[main-nav-link-hover-border-color]" id="main-nav-link-hover-border-color" value="{{ theme_settings.main-nav-link-hover-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Pied de page</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="footer-background">Fond</label>
+            <input name="admin_theme_settings[footer-background]" id="footer-background" value="{{ theme_settings.footer-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="footer-restaurant-name-color">Nom du restaurant</label>
+            <input name="admin_theme_settings[footer-restaurant-name-color]" id="footer-restaurant-name-color" value="{{ theme_settings.footer-restaurant-name-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="footer-restaurant-name-border-color">Bordure nom du restaurant</label>
+            <input name="admin_theme_settings[footer-restaurant-name-border-color]" id="footer-restaurant-name-border-color" value="{{ theme_settings.footer-restaurant-name-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="back-to-top-link-color">Lien haut de page</label>
+            <input name="admin_theme_settings[back-to-top-link-color]" id="back-to-top-link-color" value="{{ theme_settings.back-to-top-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="back-to-top-link-hover-color">Lien haut de page (survol)</label>
+            <input name="admin_theme_settings[back-to-top-link-hover-color]" id="back-to-top-link-hover-color" value="{{ theme_settings.back-to-top-link-hover-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="footer-email-color">Email</label>
+            <input name="admin_theme_settings[footer-email-color]" id="footer-email-color" value="{{ theme_settings.footer-email-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="footer-email-hover-color">Email (survol)</label>
+            <input name="admin_theme_settings[footer-email-hover-color]" id="footer-email-hover-color" value="{{ theme_settings.footer-email-hover-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="footer-subscribe-title-color">Newsletter (titre)</label>
+            <input name="admin_theme_settings[footer-subscribe-title-color]" id="footer-subscribe-title-color" value="{{ theme_settings.footer-subscribe-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="footer-subscribe-label-color">Newsletter (label)</label>
+            <input name="admin_theme_settings[footer-subscribe-label-color]" id="footer-subscribe-label-color" value="{{ theme_settings.footer-subscribe-label-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="social-link-color">Lien réseau social</label>
+            <input name="admin_theme_settings[social-link-color]" id="social-link-color" value="{{ theme_settings.social-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="social-link-hover-border-color">Lien réseau social (survol)</label>
+            <input name="admin_theme_settings[social-link-hover-border-color]" id="social-link-hover-border-color" value="{{ theme_settings.social-link-hover-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="legal-link-color">Lien mentions légales</label>
+            <input name="admin_theme_settings[legal-link-color]" id="legal-link-color" value="{{ theme_settings.legal-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="legal-link-hover-color">Lien mentions légales (survol)</label>
+            <input name="admin_theme_settings[legal-link-hover-color]" id="legal-link-hover-color" value="{{ theme_settings.legal-link-hover-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Entête de page</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="page-header-background">Fond</label>
+            <input name="admin_theme_settings[page-header-background]" id="page-header-background" value="{{ theme_settings.page-header-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="page-header-title-color">Titre de page</label>
+            <input name="admin_theme_settings[page-header-title-color]" id="page-header-title-color" value="{{ theme_settings.page-header-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="page-header-description-color">Texte d'introduction</label>
+            <input name="admin_theme_settings[page-header-description-color]" id="page-header-description-color" value="{{ theme_settings.page-header-description-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Menus</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="menu-title-color">Titre</label>
+            <input name="admin_theme_settings[menu-title-color]" id="menu-title-color" value="{{ theme_settings.menu-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="menu-link-color">Titre (si lien)</label>
+            <input name="admin_theme_settings[menu-link-color]" id="menu-link-color" value="{{ theme_settings.menu-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="menu-link-hover-color">Titre (survol si lien)</label>
+            <input name="admin_theme_settings[menu-link-hover-color]" id="menu-link-hover-color" value="{{ theme_settings.menu-link-hover-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="menu-title-separator-color">Souligné du titre</label>
+            <input name="admin_theme_settings[menu-title-separator-color]" id="menu-title-separator-color" value="{{ theme_settings.menu-title-separator-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="menu-description-color">Description du menu</label>
+            <input name="admin_theme_settings[menu-description-color]" id="menu-description-color" value="{{ theme_settings.menu-description-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="back-to-menu-link-color">Lien retour au menu</label>
+            <input name="admin_theme_settings[back-to-menu-link-color]" id="back-to-menu-link-color" value="{{ theme_settings.back-to-menu-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="back-to-menu-link-hover-color">Lien retour au menu (survol)</label>
+            <input name="admin_theme_settings[back-to-menu-link-hover-color]" id="back-to-menu-link-hover-color" value="{{ theme_settings.back-to-menu-link-hover-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Plats</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="food-summary-description-color">Description du plat</label>
+            <input name="admin_theme_settings[food-summary-description-color]" id="food-summary-description-color" value="{{ theme_settings.food-summary-description-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="featured-star-color">Étoile pour plat en avant</label>
+            <input name="admin_theme_settings[featured-star-color]" id="featured-star-color" value="{{ theme_settings.featured-star-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Prix</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="price-border-color">Bord</label>
+            <input name="admin_theme_settings[price-border-color]" id="price-border-color" value="{{ theme_settings.price-border-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="price-value-background">Fond</label>
+            <input name="admin_theme_settings[price-value-background]" id="price-value-background" value="{{ theme_settings.price-value-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="price-label-color">Label</label>
+            <input name="admin_theme_settings[price-label-color]" id="price-label-color" value="{{ theme_settings.price-label-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="price-value-color">Valeur</label>
+            <input name="admin_theme_settings[price-value-color]" id="price-value-color" value="{{ theme_settings.price-value-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Étiquettes</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="label-vegetarian-background">Végétarien (fond)</label>
+            <input name="admin_theme_settings[label-vegetarian-background]" id="label-vegetarian-background" value="{{ theme_settings.label-vegetarian-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="label-vegetarian-color">Végétarien (texte)</label>
+            <input name="admin_theme_settings[label-vegetarian-color]" id="label-vegetarian-color" value="{{ theme_settings.label-vegetarian-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="label-new-background">Nouveau (fond)</label>
+            <input name="admin_theme_settings[label-new-background]" id="label-new-background" value="{{ theme_settings.label-new-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="label-new-color">Nouveau (texte)</label>
+            <input name="admin_theme_settings[label-new-color]" id="label-new-color" value="{{ theme_settings.label-new-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Page d'accueil</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="featured-menus-background">Menus en accueil (fond)</label>
+            <input name="admin_theme_settings[featured-menus-background]" id="featured-menus-background" value="{{ theme_settings.featured-menus-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-menus-title-color">Menus en accueil (titre)</label>
+            <input name="admin_theme_settings[featured-menus-title-color]" id="featured-menus-title-color" value="{{ theme_settings.featured-menus-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-menus-ribbon-color">Menus en accueil (ruban)</label>
+            <input name="admin_theme_settings[featured-menus-ribbon-color]" id="featured-menus-ribbon-color" value="{{ theme_settings.featured-menus-ribbon-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-menus-border-color">Menus en accueil (bordure)</label>
+            <input name="admin_theme_settings[featured-menus-border-color]" id="featured-menus-border-color" value="{{ theme_settings.featured-menus-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="featured-foods-background">Plats en accueil (fond)</label>
+            <input name="admin_theme_settings[featured-foods-background]" id="featured-foods-background" value="{{ theme_settings.featured-foods-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-foods-title-color">Plats en accueil (titre)</label>
+            <input name="admin_theme_settings[featured-foods-title-color]" id="featured-foods-title-color" value="{{ theme_settings.featured-foods-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-foods-ribbon-color">Plats en accueil (ruban)</label>
+            <input name="admin_theme_settings[featured-foods-ribbon-color]" id="featured-foods-ribbon-color" value="{{ theme_settings.featured-foods-ribbon-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="featured-foods-border-color">Plats en accueil (bordure)</label>
+            <input name="admin_theme_settings[featured-foods-border-color]" id="featured-foods-border-color" value="{{ theme_settings.featured-foods-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="opening-hours-background">Horaires (fond)</label>
+            <input name="admin_theme_settings[opening-hours-background]" id="opening-hours-background" value="{{ theme_settings.opening-hours-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="opening-hours-title-color">Horaires (titre)</label>
+            <input name="admin_theme_settings[opening-hours-title-color]" id="opening-hours-title-color" value="{{ theme_settings.opening-hours-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="opening-hours-ribbon-color">Horaires (ruban)</label>
+            <input name="admin_theme_settings[opening-hours-ribbon-color]" id="opening-hours-ribbon-color" value="{{ theme_settings.opening-hours-ribbon-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="opening-hours-border-color">Horaires (bordure)</label>
+            <input name="admin_theme_settings[opening-hours-border-color]" id="opening-hours-border-color" value="{{ theme_settings.opening-hours-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="opening-hours-day-color">Horaires (jour)</label>
+            <input name="admin_theme_settings[opening-hours-day-color]" id="opening-hours-day-color" value="{{ theme_settings.opening-hours-day-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="opening-hours-shifts-color">Horaires (heures)</label>
+            <input name="admin_theme_settings[opening-hours-shifts-color]" id="opening-hours-shifts-color" value="{{ theme_settings.opening-hours-shifts-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="directions-background">Localisation (fond)</label>
+            <input name="admin_theme_settings[directions-background]" id="directions-background" value="{{ theme_settings.directions-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="directions-title-color">Localisation (titre)</label>
+            <input name="admin_theme_settings[directions-title-color]" id="directions-title-color" value="{{ theme_settings.directions-title-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="directions-ribbon-color">Localisation (ruban)</label>
+            <input name="admin_theme_settings[directions-ribbon-color]" id="directions-ribbon-color" value="{{ theme_settings.directions-ribbon-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="directions-border-color">Localisation (bordure)</label>
+            <input name="admin_theme_settings[directions-border-color]" id="directions-border-color" value="{{ theme_settings.directions-border-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+        <div class="row">
+          <div class="columns medium-4 large-3 end">
+            <label for="address-color">Localisation (adresse)</label>
+            <input name="admin_theme_settings[address-color]" id="address-color" value="{{ theme_settings.address-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Galerie photo</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="restaurant-gallery-background">Fond</label>
+            <input name="admin_theme_settings[restaurant-gallery-background]" id="restaurant-gallery-background" value="{{ theme_settings.restaurant-gallery-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="gallery-item-background">Image de la galerie (fond)</label>
+            <input name="admin_theme_settings[gallery-item-background]" id="gallery-item-background" value="{{ theme_settings.gallery-item-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="gallery-caption-color">Image de la galerie (légende)</label>
+            <input name="admin_theme_settings[gallery-caption-color]" id="gallery-caption-color" value="{{ theme_settings.gallery-caption-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Page contact</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="contact-form-background">Fond partie formulaire</label>
+            <input name="admin_theme_settings[contact-form-background]" id="contact-form-background" value="{{ theme_settings.contact-form-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="contact-form-legend-color">Titre du formulaire</label>
+            <input name="admin_theme_settings[contact-form-legend-color]" id="contact-form-legend-color" value="{{ theme_settings.contact-form-legend-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="contact-form-label-color">Label de champ</label>
+            <input name="admin_theme_settings[contact-form-label-color]" id="contact-form-label-color" value="{{ theme_settings.contact-form-label-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Page inscription newsletter</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="newsletter-form-background">Fond partie formulaire</label>
+            <input name="admin_theme_settings[newsletter-form-background]" id="newsletter-form-background" value="{{ theme_settings.newsletter-form-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="newsletter-form-legend-color">Titre du formulaire</label>
+            <input name="admin_theme_settings[newsletter-form-legend-color]" id="newsletter-form-legend-color" value="{{ theme_settings.newsletter-form-legend-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="newsletter-form-label-color">Label de champ</label>
+            <input name="admin_theme_settings[newsletter-form-label-color]" id="newsletter-form-label-color" value="{{ theme_settings.newsletter-form-label-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Page mentions légales</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="legal-page-background">Fond de la page</label>
+            <input name="admin_theme_settings[legal-page-background]" id="legal-page-background" value="{{ theme_settings.legal-page-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="legal-page-link-color">Lien</label>
+            <input name="admin_theme_settings[legal-page-link-color]" id="legal-page-link-color" value="{{ theme_settings.legal-page-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="legal-page-link-hover-color">Lien (survol)</label>
+            <input name="admin_theme_settings[legal-page-link-hover-color]" id="legal-page-link-hover-color" value="{{ theme_settings.legal-page-link-hover-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Messages</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="message-success-background">Succès (fond)</label>
+            <input name="admin_theme_settings[message-success-background]" id="message-success-background" value="{{ theme_settings.message-success-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="message-success-color">Succès (texte)</label>
+            <input name="admin_theme_settings[message-success-color]" id="message-success-color" value="{{ theme_settings.message-success-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="message-error-background">Erreur (fond)</label>
+            <input name="admin_theme_settings[message-error-background]" id="message-error-background" value="{{ theme_settings.message-error-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="message-error-color">Erreur (texte)</label>
+            <input name="admin_theme_settings[message-error-color]" id="message-error-color" value="{{ theme_settings.message-error-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Message de champ de formulaire</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="input-hint-info-background">Info (fond)</label>
+            <input name="admin_theme_settings[input-hint-info-background]" id="input-hint-info-background" value="{{ theme_settings.input-hint-info-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="input-hint-info-color">Info (texte)</label>
+            <input name="admin_theme_settings[input-hint-info-color]" id="input-hint-info-color" value="{{ theme_settings.input-hint-info-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="input-hint-error-background">Erreur (fond)</label>
+            <input name="admin_theme_settings[input-hint-error-background]" id="input-hint-error-background" value="{{ theme_settings.input-hint-error-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="input-hint-error-color">Erreur (texte)</label>
+            <input name="admin_theme_settings[input-hint-error-color]" id="input-hint-error-color" value="{{ theme_settings.input-hint-error-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Bouton</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="button-background">Fond du bouton</label>
+            <input name="admin_theme_settings[button-background]" id="button-background" value="{{ theme_settings.button-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="button-color">Texte du bouton</label>
+            <input name="admin_theme_settings[button-color]" id="button-color" value="{{ theme_settings.button-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="button-hover-background">Fond du bouton (survol)</label>
+            <input name="admin_theme_settings[button-hover-background]" id="button-hover-background" value="{{ theme_settings.button-hover-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="button-hover-color">Texte du bouton (survol)</label>
+            <input name="admin_theme_settings[button-hover-color]" id="button-hover-color" value="{{ theme_settings.button-hover-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-2">
+      <fieldset>
+        <legend>Polices</legend>
+        <div class="row">
+          <div class="columns medium-6 large-4">
+            <label for="body-font">Police générale</label>
+            <select id="body-font" name="admin_theme_settings[body-font]">
+              <optgroup label="Google Web Fonts">
+                <option value="{{ theme_settings.body-font }}" selected>{{ theme_settings.body-font | remove: 'Google+' | replace: '+', ' ' }}</option>
+                <option value='Google+Almendra'>Almendra</option>
+                <option value='Google+Arvo'>Arvo</option>
+                <option value='Google+Asap'>Asap</option>
+                <option value='Google+Cabin'>Cabin</option>
+                <option value='Google+Copse'>Copse</option>
+                <option value='Google+Droid+Sans'>Droid Sans</option>
+                <option value='Google+Droid+Serif'>Droid Serif</option>
+                <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+                <option value='Google+Josefin+Slab'>Josefin Slab</option>
+                <option value='Google+Josefin+Sans'>Josefin Sans</option>
+                <option value='Google+Kreon'>Kreon</option>
+                <option value='Google+Lato'>Lato</option>
+                <option value='Google+Merriweather'>Merriweather</option>
+                <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+                <option value='Google+Open+Sans'>Open Sans</option>
+                <option value='Google+UnifrakturMaguntia'>UnifrakturMaguntia</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="columns medium-6 large-4 end">
+            <label for="header-font">Police d'entête</label>
+            <select id="header-font" name="admin_theme_settings[header-font]">
+              <optgroup label="Google Web Fonts">
+                <option value="{{ theme_settings.header-font }}" selected>{{ theme_settings.header-font | remove: 'Google+' | replace: '+', ' ' }}</option>
+                <option value='Google+Almendra'>Almendra</option>
+                <option value='Google+Arvo'>Arvo</option>
+                <option value='Google+Asap'>Asap</option>
+                <option value='Google+Cabin'>Cabin</option>
+                <option value='Google+Copse'>Copse</option>
+                <option value='Google+Droid+Sans'>Droid Sans</option>
+                <option value='Google+Droid+Serif'>Droid Serif</option>
+                <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
+                <option value='Google+Josefin+Slab'>Josefin Slab</option>
+                <option value='Google+Josefin+Sans'>Josefin Sans</option>
+                <option value='Google+Kreon'>Kreon</option>
+                <option value='Google+Lato'>Lato</option>
+                <option value='Google+Merriweather'>Merriweather</option>
+                <option value='Google+Old+Standard+TT'>Old Standard TT</option>
+                <option value='Google+Open+Sans'>Open Sans</option>
+                <option value='Google+UnifrakturMaguntia'>UnifrakturMaguntia</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-3">
+      <fieldset>
+        <legend>Communication</legend>
+        <div class="small-12 medium-6 large-6 columns">
+          {% if theme_settings.footer_display_newsletter %}
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
+        </div>
+
+        <div class="small-12 medium-6 large-6 columns end">
+          {% if theme_settings.display_contact_form %}
+            <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' checked/>
+          {% else %}
+            <input class="icheck-me" name="admin_theme_settings[display_contact_form]" id="display_contact_form" type="checkbox" value="{{ theme_settings.display_contact_form }}" data-skin='black-green' />
+          {% endif %}
+          <label style="margin-right:.5em;" for="display_contact_form">Afficher le formulaire de contact</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Carte Google</legend>
+        <div class="small-12 medium-6 large-6 columns">
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Visite virtuelle
+          <a class="small dropdown" data-options="align:top" data-dropdown="informations-link" style="display:inline;width:25px;text-align:center;">
+            &nbsp<i class="fa fa-info"></i>&nbsp
+          </a>
+          <div class="f-dropdown content info" id="informations-link" data-dropdown-content="">
+            <p>
+              Où trouver vos informations ? <a target="blank" href='https://www.google.com/maps?output=classic'>google.com/maps?output=classic</a>
+            </p>
+            <img src="/assets/business-view-info.jpg">
+          </div>
+        </legend>
+        <div class="small-12 medium-6 large-6 columns end">
+          <div class="row">
+            {% if theme_settings.display_google_business_view_embed %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' checked/>
+            {% else %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' />
+            {% endif %}
+            <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
+          </div>
+
+          <div class="row">
+            <label class="left" for="google_business_view_embed">Code HTML</label>
+            <input name="admin_theme_settings[google_business_view_embed]" type="text" id="google_business_view_embed" value="{{ theme_settings.google_business_view_embed | escape_once }}" />
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-6 columns">
+          <div class="row">
+            {% if theme_settings.display_google_business_view_url %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' checked/>
+            {% else %}
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' />
+            {% endif %}
+            <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
+          </div>
+
+          <div class="row">
+            <label class="left" for="google_business_view_url">Url</label>
+            <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<section class="page-header page-header--menus">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ "Notre carte" | t }}</h1>
+    </header>
+  </div>
+</section>
+
+<section class="menus">
+  <div class="wrapper">
+    <hr class="menus__separator">
+    {% for menu in menus %}
+      <header class="section__header">
+        <h2 class="section__title">
+          <a class="menus__menu-link" href="{{ menu.url }}">{{ menu.name }}</a>
+        </h2>
+      </header>
+      <main class="section__main">
+        <ol class="menus__children">
+          {% for child in menu.children %}
+            <li class="menus__child">
+              <a class="menus__child-link" href="{{ menu.url }}#menu-{{child.id}}">{{ child.name }}</a>
+            </li>
+          {% endfor %}
+        </ol>
+      </main>
+      <hr class="menus__separator">
+    {% endfor %}
+  </div>
+</section>

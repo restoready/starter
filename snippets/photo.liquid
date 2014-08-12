@@ -1,0 +1,8 @@
+<figure class="gallery__item">
+  {{ photo.image | large_image_url | image_tag:'class:gallery__image' }}
+  {% if photo.caption %}
+    <figcaption class="gallery__caption">
+      {{ photo.caption }}
+    </figcaption>
+  {% endif %}
+</figure>

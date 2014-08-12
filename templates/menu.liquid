@@ -1,0 +1,20 @@
+<section class="page-header page-header--menu">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ menu.name }}</h1>
+    </header>
+    {% if menu.summary? %}
+      <main class="section__main page-header__description">
+        {{ menu.summary }}
+      </main>
+    {% endif %}
+  </div>
+</section>
+
+{% if menu.children? %}
+  {% for child in menu.children %}
+    {% include 'menu' with menu:child, title:true %}
+  {% endfor %}
+{% else %}
+  {% include 'menu' with menu:menu, title:true %}
+{% endif %}

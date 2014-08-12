@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ current_locale }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% meta_description_tag %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% title_tag %}
+    {{ 'application.css' | asset_url | stylesheet_tag }}
+    {% if theme_settings.header-font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.header-font | remove: 'Google+' }}">
+    {% endif %}
+    {% if theme_settings.body-font contains 'Google' %}
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ theme_settings.body-font | remove: 'Google+' }}:400,700">
+    {% endif %}
+    <script src="//polyfill.io"></script>
+    {{ restaurant.host | url_canonical | canonical_tag }}
+  </head>
+  <body>
+    <section class="page" id="top">
+      <header class="main-header" role="navigation">
+        {% include 'nav' %}
+      </header>
+      <main class="main-content" role="main">
+        {{ content_for_layout }}
+      </main>
+      <footer class="main-footer" role="contentinfo">
+        {% include 'footer' %}
+      </footer>
+    </section>
+  </body>
+</html>

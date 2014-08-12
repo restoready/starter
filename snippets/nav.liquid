@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <h1 class="restaurant-name">
+    <a class="restaurant-name__link" href="{{ localized_root_path }}">
+      {{ restaurant.name }}
+    </a>
+  </h1>
+
+  {% if restaurant.slogan? %}
+  <div class="slogan">
+    <p class="slogan__description">
+      {{ restaurant.slogan }}
+    </p>
+  </div>
+  {% endif %}
+
+  {% if restaurant.phone? %}
+    <div class="phone-call">
+      <div class="non-semantic-protector">
+        <a  class="phone-call__link button--ribbon" href="tel:{{ restaurant.phone_uri }}">
+         <span class="ribbon-content">
+          {{ restaurant.phone }}
+         </span>
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  <nav class="main-nav">
+    <ul class="main-nav__items">
+      <li class="main-nav__item">
+        <a class="main-nav__link" href="{{ localized_root_path }}">{{ "Accueil" | t }}</a>
+      </li>
+      {% for menu in menus %}
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="{{ menu.url }}">{{ menu.name }}</a>
+        </li>
+      {% endfor %}
+      <li class="main-nav__item">
+        <a class="main-nav__link" href="{{ restaurant.url }}">{{ "À propos" | t }}</a>
+      </li>
+      {% if theme_settings.display_contact_form %}
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="{{ restaurant.contact_path }}">
+            {% if contact_settings.navigation_label? %}
+              {{ contact_settings.navigation_label }}
+            {% else %}
+              {{ contact_settings.contact_title }}
+            {% endif %}
+          </a>
+        </li>
+      {% endif %}
+      {% for path in localized_page_paths %}
+        <li class="main-nav__item">
+          <a class="main-nav__link" href="{{ path.url }}">{{ path.locale_name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% if restaurant.logo? %}
+    <div class="logo">
+      <a class="logo__link" href="{{ localized_root_path }}">
+        {{ restaurant.logo_url | image_tag:'class:logo__image' }}
+      </a>
+    </div>
+  {% endif %}
+</div>
