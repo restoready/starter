@@ -455,53 +455,22 @@
       <fieldset>
         <legend>Polices</legend>
         <div class="row">
-          <div class="columns medium-6 large-4">
-            <label for="body-font">Police générale</label>
-            <select id="body-font" name="admin_theme_settings[body-font]">
-              <optgroup label="Google Web Fonts">
-                <option value="{{ theme_settings.body-font }}" selected>{{ theme_settings.body-font | remove: 'Google+' | replace: '+', ' ' }}</option>
-                <option value='Google+Almendra'>Almendra</option>
-                <option value='Google+Arvo'>Arvo</option>
-                <option value='Google+Asap'>Asap</option>
-                <option value='Google+Cabin'>Cabin</option>
-                <option value='Google+Copse'>Copse</option>
-                <option value='Google+Droid+Sans'>Droid Sans</option>
-                <option value='Google+Droid+Serif'>Droid Serif</option>
-                <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
-                <option value='Google+Josefin+Slab'>Josefin Slab</option>
-                <option value='Google+Josefin+Sans'>Josefin Sans</option>
-                <option value='Google+Kreon'>Kreon</option>
-                <option value='Google+Lato'>Lato</option>
-                <option value='Google+Merriweather'>Merriweather</option>
-                <option value='Google+Old+Standard+TT'>Old Standard TT</option>
-                <option value='Google+Open+Sans'>Open Sans</option>
-                <option value='Google+UnifrakturMaguntia'>UnifrakturMaguntia</option>
-              </optgroup>
-            </select>
+          <div class="columns">
+            <p>Si vous utilisez une ou plusieurs polices du service Google Fonts, indiquez dans ce champ le code fourni par Google. Lorsque vous êtes à l'étape "Use" sur Google Fonts, le point "3. Add this code to your website:" affiche un tag &lt;link&gt;. Copiez tout le code et collez-le ici.</p>
+            <label for="google-fonts-link">Google Fonts : tag &lt;link&gt;</label>
+            <input type="text" id="google-fonts-link" name="admin_theme_settings[google-fonts-link]" value="{{ theme_settings.google-fonts-link }}" placeholder="&lt;link href='http://fonts.googleapis.com/css?family=...">
           </div>
-          <div class="columns medium-6 large-4 end">
-            <label for="header-font">Police d'entête</label>
-            <select id="header-font" name="admin_theme_settings[header-font]">
-              <optgroup label="Google Web Fonts">
-                <option value="{{ theme_settings.header-font }}" selected>{{ theme_settings.header-font | remove: 'Google+' | replace: '+', ' ' }}</option>
-                <option value='Google+Almendra'>Almendra</option>
-                <option value='Google+Arvo'>Arvo</option>
-                <option value='Google+Asap'>Asap</option>
-                <option value='Google+Cabin'>Cabin</option>
-                <option value='Google+Copse'>Copse</option>
-                <option value='Google+Droid+Sans'>Droid Sans</option>
-                <option value='Google+Droid+Serif'>Droid Serif</option>
-                <option value='Google+Gentium+Book+Basic'>Gentium Book Basic</option>
-                <option value='Google+Josefin+Slab'>Josefin Slab</option>
-                <option value='Google+Josefin+Sans'>Josefin Sans</option>
-                <option value='Google+Kreon'>Kreon</option>
-                <option value='Google+Lato'>Lato</option>
-                <option value='Google+Merriweather'>Merriweather</option>
-                <option value='Google+Old+Standard+TT'>Old Standard TT</option>
-                <option value='Google+Open+Sans'>Open Sans</option>
-                <option value='Google+UnifrakturMaguntia'>UnifrakturMaguntia</option>
-              </optgroup>
-            </select>
+        </div>
+        <div class="row">
+          <div class="columns medium-6">
+            <label for="body-font">Corps de texte</label>
+            <input type="text" id="body-font" name="admin_theme_settings[body-font]" value="{{ theme_settings.body-font }}">
+            <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
+          </div>
+          <div class="columns medium-6">
+            <label for="header-font">Titres</label>
+            <input type="text" id="header-font" name="admin_theme_settings[header-font]" value="{{ theme_settings.header-font }}">
+            <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
           </div>
         </div>
       </fieldset>
