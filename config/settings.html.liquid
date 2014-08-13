@@ -47,13 +47,22 @@
             <label for="main-nav-link-color">Lien</label>
             <input name="admin_theme_settings[main-nav-link-color]" id="main-nav-link-color" value="{{ theme_settings.main-nav-link-color }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3">
+          <div class="columns medium-4 large-3 end">
             <label for="main-nav-link-hover-color">Lien (survol)</label>
             <input name="admin_theme_settings[main-nav-link-hover-color]" id="main-nav-link-hover-color" value="{{ theme_settings.main-nav-link-hover-color }}" type="text" class="minicolors">
           </div>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="main-nav-background">Fond de la navigation</label>
+            <input name="admin_theme_settings[main-nav-background]" id="main-nav-background" value="{{ theme_settings.main-nav-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="main-nav-link-background">Fond du lien</label>
+            <input name="admin_theme_settings[main-nav-link-background]" id="main-nav-link-background" value="{{ theme_settings.main-nav-link-background }}" type="text" class="minicolors">
+          </div>
           <div class="columns medium-4 large-3 end">
-            <label for="main-nav-link-hover-border-color">Bordure du lien (survol)</label>
-            <input name="admin_theme_settings[main-nav-link-hover-border-color]" id="main-nav-link-hover-border-color" value="{{ theme_settings.main-nav-link-hover-border-color }}" type="text" class="minicolors">
+            <label for="main-nav-link-hover-background">Fond du lien (survol)</label>
+            <input name="admin_theme_settings[main-nav-link-hover-background]" id="main-nav-link-hover-background" value="{{ theme_settings.main-nav-link-hover-background }}" type="text" class="minicolors">
           </div>
         </div>
       </fieldset>
@@ -148,13 +157,9 @@
             <label for="menu-link-color">Titre (si lien)</label>
             <input name="admin_theme_settings[menu-link-color]" id="menu-link-color" value="{{ theme_settings.menu-link-color }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3">
+          <div class="columns medium-4 large-3 end">
             <label for="menu-link-hover-color">Titre (survol si lien)</label>
             <input name="admin_theme_settings[menu-link-hover-color]" id="menu-link-hover-color" value="{{ theme_settings.menu-link-hover-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="menu-title-separator-color">Souligné du titre</label>
-            <input name="admin_theme_settings[menu-title-separator-color]" id="menu-title-separator-color" value="{{ theme_settings.menu-title-separator-color }}" type="text" class="minicolors">
           </div>
         </div>
         <div class="row">
@@ -336,53 +341,23 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend>Page contact</legend>
+        <legend>Formulaire</legend>
         <div class="row">
           <div class="columns medium-4 large-3">
-            <label for="contact-form-background">Fond partie formulaire</label>
-            <input name="admin_theme_settings[contact-form-background]" id="contact-form-background" value="{{ theme_settings.contact-form-background }}" type="text" class="minicolors">
+            <label for="form-legend-color">Titre de groupe</label>
+            <input name="admin_theme_settings[form-legend-color]" id="form-legend-color" value="{{ theme_settings.form-legend-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="contact-form-legend-color">Titre du formulaire</label>
-            <input name="admin_theme_settings[contact-form-legend-color]" id="contact-form-legend-color" value="{{ theme_settings.contact-form-legend-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="contact-form-label-color">Label de champ</label>
-            <input name="admin_theme_settings[contact-form-label-color]" id="contact-form-label-color" value="{{ theme_settings.contact-form-label-color }}" type="text" class="minicolors">
-          </div>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Page inscription newsletter</legend>
-        <div class="row">
-          <div class="columns medium-4 large-3">
-            <label for="newsletter-form-background">Fond partie formulaire</label>
-            <input name="admin_theme_settings[newsletter-form-background]" id="newsletter-form-background" value="{{ theme_settings.newsletter-form-background }}" type="text" class="minicolors">
+            <label for="form-label-color">Label de champ</label>
+            <input name="admin_theme_settings[form-label-color]" id="form-label-color" value="{{ theme_settings.form-label-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="newsletter-form-legend-color">Titre du formulaire</label>
-            <input name="admin_theme_settings[newsletter-form-legend-color]" id="newsletter-form-legend-color" value="{{ theme_settings.newsletter-form-legend-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="newsletter-form-label-color">Label de champ</label>
-            <input name="admin_theme_settings[newsletter-form-label-color]" id="newsletter-form-label-color" value="{{ theme_settings.newsletter-form-label-color }}" type="text" class="minicolors">
-          </div>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Page mentions légales</legend>
-        <div class="row">
-          <div class="columns medium-4 large-3">
-            <label for="legal-page-background">Fond de la page</label>
-            <input name="admin_theme_settings[legal-page-background]" id="legal-page-background" value="{{ theme_settings.legal-page-background }}" type="text" class="minicolors">
+            <label for="form-field-background">Champ de saisie (fond)</label>
+            <input name="admin_theme_settings[form-field-background]" id="form-field-background" value="{{ theme_settings.form-field-background }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="legal-page-link-color">Lien</label>
-            <input name="admin_theme_settings[legal-page-link-color]" id="legal-page-link-color" value="{{ theme_settings.legal-page-link-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="legal-page-link-hover-color">Lien (survol)</label>
-            <input name="admin_theme_settings[legal-page-link-hover-color]" id="legal-page-link-hover-color" value="{{ theme_settings.legal-page-link-hover-color }}" type="text" class="minicolors">
+            <label for="form-field-border-color">Champ de saisie (bord)</label>
+            <input name="admin_theme_settings[form-field-border-color]" id="form-field-border-color" value="{{ theme_settings.form-field-border-color }}" type="text" class="minicolors">
           </div>
         </div>
       </fieldset>
