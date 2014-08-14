@@ -6,6 +6,7 @@
     "body-background": "#ffffff",
     "body-color": "#333333",
     "restaurant-name-color": "#333333",
+    "restaurant-summary-color": "#ffffff",
     "slogan-color": "#999999",
     "phone-number-link-color": "#727272",
     "phone-number-link-hover-color": "#333333",

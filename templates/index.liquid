@@ -1,12 +1,12 @@
-{% if restaurant.summary? %}
-  <section class="page-header page-header--home">
+<div class="restaurant-main-image" style="{% if restaurant.main_image?%}background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }}{% endif %})">
+  {% if restaurant.summary? %}
     <div class="wrapper">
-      <main class="section__main page-header__description">
+      <div class="restaurant-summary">
         {{ restaurant.summary }}
-      </main>
+      </div>
     </div>
-  </section>
-{% endif %}
+  {% endif %}
+</div>
 
 {% if slides.size > 0 %}
   <section class="slides">

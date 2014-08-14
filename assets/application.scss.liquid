@@ -5,6 +5,7 @@ $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 
 $restaurant-name-color: {{ theme_settings.restaurant-name-color }};
+$restaurant-summary-color: {{ theme_settings.restaurant-summary-color }};
 $slogan-color: {{ theme_settings.slogan-color }};
 
 $phone-number-link-color: {{ theme_settings.phone-number-link-color }};
@@ -1039,8 +1040,6 @@ body {
 }
   .section__header {
   }
-  .section__main {
-  }
   .section__footer {
   }
 
@@ -1202,9 +1201,20 @@ label {
     }
   }
 
-// Menus
-.menus {
-
+// Home
+.restaurant-main-image {
+  background-color: rgba(0,0,0, .5);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.restaurant-summary {
+  color: $restaurant-summary-color;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  p {
+    font-size: 1.2em;
+  }
 }
 .menus--featured {
   background-color: $featured-menus-background;
