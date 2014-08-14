@@ -4,13 +4,12 @@
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 
-$button-background: {{ theme_settings.button-background }};
-$button-color: {{ theme_settings.button-color }};
-$button-hover-background: {{ theme_settings.button-hover-background }};
-$button-hover-color: {{ theme_settings.button-hover-color }};
-
 $restaurant-name-color: {{ theme_settings.restaurant-name-color }};
 $slogan-color: {{ theme_settings.slogan-color }};
+
+$phone-number-link-color: {{ theme_settings.phone-number-link-color }};
+$phone-number-link-hover-color: {{ theme_settings.phone-number-link-hover-color }};
+
 $main-nav-background: {{ theme_settings.main-nav-background }};
 $main-nav-link-color: {{ theme_settings.main-nav-link-color }};
 $main-nav-link-hover-color: {{ theme_settings.main-nav-link-hover-color }};
@@ -20,8 +19,6 @@ $main-nav-link-hover-background: {{ theme_settings.main-nav-link-hover-backgroun
 $footer-background: {{ theme_settings.footer-background }};
 $back-to-top-link-color: {{ theme_settings.back-to-top-link-color }};
 $back-to-top-link-hover-color: {{ theme_settings.back-to-top-link-hover-color }};
-$footer-subscribe-background: rgba(scale-color($footer-background, $lightness: -50%), .5);
-$footer-subscribe-title-color: {{ theme_settings.footer-subscribe-title-color }};
 $footer-subscribe-label-color: {{ theme_settings.footer-subscribe-label-color }};
 $social-link-color: {{ theme_settings.social-link-color }};
 $social-link-hover-color: {{ theme_settings.social-link-hover-color }};
@@ -38,6 +35,12 @@ $input-hint-info-background: {{ theme_settings.input-hint-info-background }};
 $input-hint-info-color: {{ theme_settings.input-hint-info-color }};
 $input-hint-error-background: {{ theme_settings.input-hint-error-background }};
 $input-hint-error-color: {{ theme_settings.input-hint-error-color }};
+
+// Buttons
+$button-background: {{ theme_settings.button-background }};
+$button-color: {{ theme_settings.button-color }};
+$button-hover-background: {{ theme_settings.button-hover-background }};
+$button-hover-color: {{ theme_settings.button-hover-color }};
 
 // Messages
 $message-success-background: {{ theme_settings.message-success-background }};
@@ -75,10 +78,12 @@ $label-vegetarian-color: {{ theme_settings.label-vegetarian-color }};
 $label-new-background: {{ theme_settings.label-new-background }};
 $label-new-color: {{ theme_settings.label-new-color }};
 
-// Page header
+// Page
 $page-header-background: {{ theme_settings.page-header-background }};
 $page-header-title-color: {{ theme_settings.page-header-title-color }};
 $page-header-description-color: {{ theme_settings.page-header-description-color }};
+$page-body-link-color: {{ theme_settings.page-body-link-color }};
+$page-body-link-hover-color: {{ theme_settings.page-body-link-hover-color }};
 
 // Featured menus
 $featured-menus-background:   {{ theme_settings.featured-menus-background }};
@@ -705,7 +710,13 @@ $class-type: unquote(".");
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .hidden { display: none; }
-
+.hide-text {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
 .display-table {
   display: table;
 }
@@ -736,7 +747,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: $headerFontStack;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.4;
   a {
     font-weight: inherit;
     text-decoration: none;
@@ -948,16 +959,13 @@ body {
 }
 .page {
   @extend .clearfix;
-  section {
-    padding: $gutter 0;
-  }
 }
 
 .main-header {
-  background-size: cover;
-  background-position: center center;
 }
   .logo {
+    width: 50%;
+    margin: 1em auto;
   }
     .logo__link {
       display: block;
@@ -967,18 +975,28 @@ body {
         @extend .auto;
       }
   .restaurant-name {
-    font-family: {{ theme_settings.header-font }};
+    text-align: center;
   }
     .restaurant-name__link {
       color: $restaurant-name-color;
+      font-family: {{ theme_settings.header-font }};
+      font-size: 2em;
       text-decoration: none;
     }
-  .phone-call {
+  .phone-number {
+    margin-bottom: 1em;
+    text-align: center;
   }
-    .phone-call__label {
+    .phone-number__link {
+      color: {{ theme_settings.phone-number-link-color }};
+      font-size: 1.25em;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: {{ theme_settings.phone-number-link-hover-color }};
+      }
     }
-    .phone-call__link {
-    }
+      .phone-number__label {
+      }
 
 .main-nav {
   @include clearfix();
@@ -1013,24 +1031,23 @@ body {
       margin: 0;
     }
 
-.section__header {
+.main-content {
+  margin-bottom: 1em;
 }
-.section__main {
-}
-.section__footer {
-}
+  .section__header {
+  }
+  .section__main {
+  }
+  .section__footer {
+  }
 
 .main-footer {
   background-color: $footer-background;
+  border-top: 1px solid scale-color($footer-background, $lightness: -5%);
 }
   .back-to-top {
     padding: $gutter;
     text-align: center;
-    &:before {
-      color: $back-to-top-link-color;
-      content: "\2191";
-      display: inline-block;
-    }
   }
     .back-to-top__link {
       color: $back-to-top-link-color;
@@ -1039,19 +1056,20 @@ body {
         color: $back-to-top-link-hover-color;
       }
     }
+      .back-to-top__label {
+      }
   .footer__subscribe {
-    background-color: $footer-subscribe-background;
-    padding: $gutter;
-    .subscribe__title {
-      color: $footer-subscribe-title-color;
-    }
+    margin-bottom: 1em;
     .subscribe__label {
       color: $footer-subscribe-label-color;
+    }
+    .subscribe__submit {
     }
   }
   .footer__social {
   }
     .social__items {
+      margin: .75em 0;
       text-align: center;
     }
       .social__item {
@@ -1069,14 +1087,10 @@ body {
           }
         }
           .social__label {
-            height: 1px;
-            width: 1px;
-            position: absolute;
-            overflow: hidden;
-            top: -10px;
+            @extend .hide-text;
           }
   .footer__legal {
-    padding: $gutter;
+    margin-bottom: 1em;
     text-align: center;
   }
     .legal__link {
@@ -1137,6 +1151,7 @@ label {
   }
 
 .submit {
+  text-align: center;
 }
 
 // Messages
@@ -1158,9 +1173,9 @@ label {
 // ==============================================================================
 .page-header {
   background-color: $page-header-background;
+  padding: 1em 0;
 }
   .page-header__header {
-
   }
     .page-header__title {
       color: $page-header-title-color;
@@ -1172,6 +1187,17 @@ label {
         margin-bottom: 0;
       }
     }
+  .page-body {
+    a {
+      color: $page-body-link-color;
+      border-bottom: 1px solid scale-color($page-body-link-color, $lightness: +75%);
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $page-body-link-hover-color;
+        border-bottom: 1px solid scale-color($page-body-link-hover-color, $lightness: +75%);
+      }
+    }
+  }
 
 // Menus
 .menus {

@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="back-to-top">
     <a class="back-to-top__link" href="#top">
-      {{ "Haut de la page" | t }}
+      <i class="icon-arrow-up"></i> <span class="back-to-top__label">{{ "Haut de la page" | t }}</span>
     </a>
   </div>
 
@@ -11,13 +11,14 @@
         <div class="footer__subscribe">
           {% newsletter_subscribe_form %}
             <fieldset class="field-group">
-              <legend class="field-group__legend subscribe__title">{{ "Newsletter" | t }}</legend>
-              <div class="input subscribe__input subscribe__input--email">
-                <label class="subscribe__label" for="subscriberEmail">{{ "Votre adresse email :" | t }}</label>
+              <div class="input">
+                <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter :" | t }}</label>
                 <input id="subscriberEmail" name="subscriber[email]" type="email" required>
               </div>
-              <div class="submit subscribe__input subscribe__input--submit">
-                <input class="button" type="submit" value="{{ "Valider" | t }}">
+              <div class="submit">
+                <button class="button" type="submit">
+                  <i class="icon-check"></i> {{ "Valider" | t }}
+                </button>
               </div>
             </fieldset>
           {% endnewsletter_subscribe_form %}

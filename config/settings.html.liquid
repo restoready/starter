@@ -69,20 +69,10 @@
       <fieldset>
         <legend>Pied de page</legend>
         <div class="row">
-          <div class="columns medium-4 large-3">
+          <div class="columns medium-4 large-3 end">
             <label for="footer-background">Fond</label>
             <input name="admin_theme_settings[footer-background]" id="footer-background" value="{{ theme_settings.footer-background }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3">
-            <label for="footer-restaurant-name-color">Nom du restaurant</label>
-            <input name="admin_theme_settings[footer-restaurant-name-color]" id="footer-restaurant-name-color" value="{{ theme_settings.footer-restaurant-name-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3 end">
-            <label for="footer-restaurant-name-border-color">Bordure nom du restaurant</label>
-            <input name="admin_theme_settings[footer-restaurant-name-border-color]" id="footer-restaurant-name-border-color" value="{{ theme_settings.footer-restaurant-name-border-color }}" type="text" class="minicolors">
-          </div>
-        </div>
-        <div class="row">
           <div class="columns medium-4 large-3">
             <label for="back-to-top-link-color">Lien haut de page</label>
             <input name="admin_theme_settings[back-to-top-link-color]" id="back-to-top-link-color" value="{{ theme_settings.back-to-top-link-color }}" type="text" class="minicolors">
@@ -92,23 +82,11 @@
             <input name="admin_theme_settings[back-to-top-link-hover-color]" id="back-to-top-link-hover-color" value="{{ theme_settings.back-to-top-link-hover-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="footer-email-color">Email</label>
-            <input name="admin_theme_settings[footer-email-color]" id="footer-email-color" value="{{ theme_settings.footer-email-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="footer-email-hover-color">Email (survol)</label>
-            <input name="admin_theme_settings[footer-email-hover-color]" id="footer-email-hover-color" value="{{ theme_settings.footer-email-hover-color }}" type="text" class="minicolors">
-          </div>
-        </div>
-        <div class="row">
-          <div class="columns medium-4 large-3">
-            <label for="footer-subscribe-title-color">Newsletter (titre)</label>
-            <input name="admin_theme_settings[footer-subscribe-title-color]" id="footer-subscribe-title-color" value="{{ theme_settings.footer-subscribe-title-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
             <label for="footer-subscribe-label-color">Newsletter (label)</label>
             <input name="admin_theme_settings[footer-subscribe-label-color]" id="footer-subscribe-label-color" value="{{ theme_settings.footer-subscribe-label-color }}" type="text" class="minicolors">
           </div>
+        </div>
+        <div class="row">
           <div class="columns medium-4 large-3">
             <label for="social-link-color">Lien réseau social</label>
             <input name="admin_theme_settings[social-link-color]" id="social-link-color" value="{{ theme_settings.social-link-color }}" type="text" class="minicolors">
@@ -117,13 +95,11 @@
             <label for="social-link-hover-border-color">Lien réseau social (survol)</label>
             <input name="admin_theme_settings[social-link-hover-border-color]" id="social-link-hover-border-color" value="{{ theme_settings.social-link-hover-border-color }}" type="text" class="minicolors">
           </div>
-        </div>
-        <div class="row">
           <div class="columns medium-4 large-3">
             <label for="legal-link-color">Lien mentions légales</label>
             <input name="admin_theme_settings[legal-link-color]" id="legal-link-color" value="{{ theme_settings.legal-link-color }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3 end">
+          <div class="columns medium-4 large-3">
             <label for="legal-link-hover-color">Lien mentions légales (survol)</label>
             <input name="admin_theme_settings[legal-link-hover-color]" id="legal-link-hover-color" value="{{ theme_settings.legal-link-hover-color }}" type="text" class="minicolors">
           </div>

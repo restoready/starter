@@ -18,7 +18,7 @@
   </head>
   <body>
     <section class="page" id="top">
-      <header class="main-header" {% if restaurant.main_image? %} style="background-image: url({{ restaurant.main_image | custom_image_url: '1920x640#' }})" {% endif %}>
+      <header class="main-header">
         <div class="wrapper">
           <div class="grid">
             <div class="grid-item large--two-thirds">
@@ -34,14 +34,13 @@
               </div>
             </div>
             <div class="grid-item large--one-third">
-              <div class="phone-call">
-                {% if restaurant.phone? %}
-                  <a class="phone-call__link" href="tel:{{ restaurant.phone_uri }}">
-                    <span class="phone-call__label">{{ "Tél. :" | t }}</span>
-                    {{ restaurant.phone }}
+              {% if restaurant.phone? %}
+                <div class="phone-number">
+                  <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
+                    <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
                   </a>
-                {% endif %}
-              </div>
+                </div>
+              {% endif %}
             </div>
           </div>
         </div>
