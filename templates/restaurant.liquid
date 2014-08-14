@@ -15,9 +15,11 @@
   <section class="restaurant-gallery">
     <div class="wrapper">
       <main class="section__main gallery">
-        {% for photo in photos %}
-          {% include 'photo' with photo:photo %}
-        {% endfor %}
+        <div class="grid">
+          {% for photo in photos %}
+            {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
+          {% endfor %}
+        </div>
       </main>
     </div>
   </section>
