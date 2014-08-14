@@ -88,13 +88,11 @@ $page-body-link-hover-color: {{ theme_settings.page-body-link-hover-color }};
 // Featured menus
 $featured-menus-background:   {{ theme_settings.featured-menus-background }};
 $featured-menus-title-color:  {{ theme_settings.featured-menus-title-color }};
-$featured-menus-ribbon-color: {{ theme_settings.featured-menus-ribbon-color }};
 $featured-menus-border-color: {{ theme_settings.featured-menus-border-color }};
 
 // Featured foods
 $featured-foods-background:   {{ theme_settings.featured-foods-background }};
 $featured-foods-title-color:  {{ theme_settings.featured-foods-title-color }};
-$featured-foods-ribbon-color: {{ theme_settings.featured-foods-ribbon-color }};
 $featured-foods-border-color: {{ theme_settings.featured-foods-border-color }};
 
 // Opening hours
@@ -1210,10 +1208,12 @@ label {
 }
 .menus--featured {
   background-color: $featured-menus-background;
+  margin-bottom: 1em;
+  padding: 1em 0;
   .section__title {
     color: $featured-menus-title-color;
     border-bottom: 1px solid $featured-menus-border-color;
-    margin-bottom: 1em;
+    margin-bottom: .75em;
   }
 }
   .menus__menu-link {
@@ -1246,15 +1246,18 @@ label {
 
 .foods--featured {
   background-color: $featured-foods-background;
+  margin-bottom: 1em;
+  padding: 1em 0;
   .section__title {
     color: $featured-foods-title-color;
     border-bottom: 1px solid $featured-foods-border-color;
-    margin-bottom: 1em;
+    margin-bottom: .75em;
   }
 }
 
 .opening-hours {
   background-color: $opening-hours-background;
+  margin-bottom: 1em;
   .section__title {
     color: $opening-hours-title-color;
     border-bottom: 1px solid $opening-hours-border-color;
@@ -1263,6 +1266,7 @@ label {
 }
   .opening-days {
     @extend .clearfix;
+    margin-bottom: 1em;
   }
     .opening-day {
       color: $opening-hours-day-color;
@@ -1278,10 +1282,12 @@ label {
     }
   .opening-hours__information {
     font-size: 1.1em;
+    margin-bottom: 1em;
   }
 
 .directions, .business-view {
   background-color: $directions-background;
+  margin-bottom: 1em;
   .section__title {
     color: $directions-title-color;
     border-bottom: 1px solid $directions-border-color;

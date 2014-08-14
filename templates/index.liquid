@@ -39,13 +39,9 @@
         {% endfor %}
       </main>
       <footer class="section__footer">
-        <div class="non-semantic-protector">
-          <a class="featured__link button--ribbon" href="{{ restaurant.menus_path }}">
-            <span class="ribbon-content">
-              {{ "Voir toute la carte" | t }}
-            </span>
-          </a>
-        </div>
+        <a class="button featured__link" href="{{ restaurant.menus_path }}">
+          {{ "Voir toute la carte" | t }}
+        </a>
       </footer>
     </div>
   </section>
@@ -63,13 +59,9 @@
         {% endfor %}
       </main>
       <footer class="section__footer">
-        <div class="non-semantic-protector">
-          <a class="featured__link button--ribbon" href="{{ restaurant.menus_path }}">
-            <span class="ribbon-content">
-              {{ "Voir toute la carte" | t }}
-            </span>
-          </a>
-        </div>
+        <a class="button featured__link" href="{{ restaurant.menus_path }}">
+          {{ "Voir toute la carte" | t }}
+        </a>
       </footer>
     </div>
   </section>
@@ -131,13 +123,9 @@
       {% endif %}
     </main>
     <footer class="section__footer">
-      <div class="non-semantic-protector">
-        <a class="directions__link button--ribbon" href="{% google_map_url %}">
-          <span class="ribbon-content">
-            {{ "Voir l'itinéraire" | t }}
-          </span>
+        <a class="button directions__link" href="{% google_map_url %}">
+          {{ "Voir l'itinéraire" | t }}
         </a>
-      </div>
     </footer>
   </div>
 </section>
