@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="grid">
-    <div class="grid-item large--two-thirds">
+    <div class="grid-item medium--two-thirds large--three-quarters">
       <ul class="main-nav__items">
         <li class="main-nav__item">
           <a class="main-nav__link" href="{{ localized_root_path }}">{{ "Accueil" | t }}</a>
@@ -30,7 +30,7 @@
       </ul>
     </div>
 
-    <div class="grid-item large--one-third">
+    <div class="grid-item medium--one-third large--one-quarter">
       {% if localized_page_paths.size > 0 %}
         <ul class="main-nav__languages">
           {% for path in localized_page_paths %}

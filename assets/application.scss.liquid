@@ -977,6 +977,12 @@ body {
   .restaurant-name {
     text-align: center;
   }
+    .slogan {
+      color: $slogan-color;
+      font-size: .95em;
+      font-style: italic;
+      margin-bottom: .5em;
+    }
     .restaurant-name__link {
       color: $restaurant-name-color;
       font-family: {{ theme_settings.header-font }};
@@ -1625,6 +1631,21 @@ label {
   select {
     font-size: 112.5%;
   }
+
+  .logo {
+    width: 17.5%;
+    float: left;
+    margin: 1em 1em 0 0;
+  }
+  .restaurant-name {
+    float: left;
+    text-align: left;
+    padding-top: 1em;
+  }
+
+  .main-nav__languages {
+    text-align: right;
+  }
 }
 
 // Large
@@ -1635,6 +1656,16 @@ label {
   button,
   select {
     font-size: 125%;
+  }
+
+  .logo {
+    width: 15%;
+    margin: 1em 1em 1em 0;
+  }
+
+  .phone-number {
+    margin: 1.45em 0;
+    text-align: right;
   }
 }
 

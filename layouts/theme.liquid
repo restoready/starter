@@ -31,6 +31,9 @@
               {% endif %}
               <div class="restaurant-name">
                 <a class="restaurant-name__link" href="{{ localized_root_path }}">{{ restaurant.name }}</a>
+                {% if restaurant.slogan? %}
+                <div class="slogan">{{ restaurant.slogan }}</div>
+                {% endif %}
               </div>
             </div>
             <div class="grid-item large--one-third">
