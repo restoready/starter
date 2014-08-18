@@ -13,8 +13,8 @@
       <h3>Éditeur</h3>
       <p>
         Ce site est publié par l'entreprise <strong>{{company.name}}</strong>, <strong>{{company.statute}}</strong>
-        {% if company.capital? %}
-         au capital de <strong>{{restaurant.capital}} euros</strong>
+        {% if company.capital != nil %}
+         au capital de <strong>{{company.capital}} euros</strong>
         {% endif %}
         , immatriculée sous le numéro <strong>{{ company.registration_number }}</strong> et dont le siège social est situé <strong>{{ company.registration_address }}</strong>. Le responsable de publication du site <a href="http://{{ restaurant.host }}/" title="{{ restaurant.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> est <strong>{{ company.publication_director }}</strong>
       </p>
