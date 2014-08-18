@@ -13,8 +13,8 @@
       <h3>Publisher</h3>
       <p>
         This website is published by <strong>{{company.name}}</strong>, <strong>{{company.statute}}</strong>
-        {% if company.capital? %}
-         with a capital of <strong>{{restaurant.capital}} euros</strong>
+        {% if company.capital != nil %}
+         with a capital of <strong>{{company.capital}} euros</strong>
         {% endif %}
         , registered under number <strong>{{ company.registration_number }}</strong> and whose head office is situate at <strong>{{ company.registration_address }}</strong>. The publication manager of <a href="http://{{ restaurant.host }}/" title="{{ restaurant.name }} - {{ restaurant.host }}">{{ restaurant.host }}</a> is <strong>{{ company.publication_director }}</strong>
       </p>
