@@ -1,7 +1,7 @@
 <section class="page-header page-header--menus">
   <div class="wrapper">
     <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ "Notre carte" | t }}</h1>
+      <h1 class="section__title section_title--allMenus page-header__title">{{ "Notre carte" | t }}</h1>
     </header>
   </div>
 </section>
@@ -11,7 +11,7 @@
     <hr class="menus__separator">
     {% for menu in menus %}
       <header class="section__header">
-        <h2 class="section__title">
+        <h2 class="section__title section_title--allMenus">
           <a class="menus__menu-link" href="{{ menu.url }}">{{ menu.name }}</a>
         </h2>
       </header>
@@ -19,6 +19,11 @@
         <ol class="menus__children">
           {% for child in menu.children %}
             <li class="menus__child">
+              {% if child.main_image? %}
+                <div class="menus-thumbnail menus-thumbnail--all">
+                  {{ child.main_image | custom_image_url: "75x75#" | image_tag }}
+                </div>
+              {% endif %}
               <a class="menus__child-link" href="{{ menu.url }}#menu-{{child.id}}">{{ child.name }}</a>
             </li>
           {% endfor %}
