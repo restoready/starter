@@ -1519,30 +1519,21 @@ label {
 }
 .lb-overlay > div {
   position: relative;
-  width: 450px;
-  height: 80px;
-  margin: 40px auto 0px auto;
+  width: 100%;
+  margin: 50px auto 0px auto;
 }
 .lb-overlay div h3 {
-  padding: 0px 20px;
-  width: 200px;
-  height: 60px;
-}
-.lb-overlay div h3 {
-  font-size: 24px;
   text-align: center;
+  font-size: 24px;
   width: 100%;
 }
 .lb-overlay a.lb-close{
   z-index: 1001;
   position: absolute;
-  top: 43px;
-  left: 50%;
+  top: 5px;
   text-align: center;
-  width: 50px;
   height: 23px;
   overflow: hidden;
-  margin-left: -25px;
   text-decoration: none;
 }
 .lb-overlay img{
@@ -1550,6 +1541,7 @@ label {
   max-height: 100%;
   position: relative;
   opacity: 0;
+  top: 30px;
   filter: alpha(opacity=0); /* internet explorer */
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
   -webkit-transition: opacity 0.5s linear;
@@ -1560,7 +1552,6 @@ label {
 }
 .lb-prev, .lb-next{
   position: absolute;
-  top: -32px;
   width: 24px;
   height: 25px;
   left: 50%;
@@ -1584,11 +1575,10 @@ label {
   text-decoration: none;
 }
 .lb-overlay:target {
-  width: auto;
+  width: 100%;
   height: auto;
   bottom: 0px;
   right: 0px;
-  padding: 80px 100px 120px 100px;
 }
 .lb-overlay:target img,
 .lb-overlay:target a.lb-close{
@@ -1803,6 +1793,18 @@ x:-o-prefocus, .lb-overlay img {
     margin: 1.45em 0;
     text-align: right;
   }
+
+  /**
+ * Pure CSS Lightbox
+ * @see http://tympanus.net/codrops/2011/12/26/css3-lightbox/
+ */
+.lb-overlay a.lb-close{
+  top: 45px;
+}
+.lb-overlay:target {
+  width: auto;
+  padding: 80px 100px 120px 100px;
+}
 }
 
 // > Large
