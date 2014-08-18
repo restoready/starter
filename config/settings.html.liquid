@@ -92,10 +92,6 @@
             <input name="admin_theme_settings[social-link-color]" id="social-link-color" value="{{ theme_settings.social-link-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="social-link-hover-border-color">Lien réseau social (survol)</label>
-            <input name="admin_theme_settings[social-link-hover-border-color]" id="social-link-hover-border-color" value="{{ theme_settings.social-link-hover-border-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
             <label for="legal-link-color">Lien mentions légales</label>
             <input name="admin_theme_settings[legal-link-color]" id="legal-link-color" value="{{ theme_settings.legal-link-color }}" type="text" class="minicolors">
           </div>
@@ -206,6 +202,25 @@
             <label for="label-new-color">Nouveau (texte)</label>
             <input name="admin_theme_settings[label-new-color]" id="label-new-color" value="{{ theme_settings.label-new-color }}" type="text" class="minicolors">
           </div>
+          <div class="columns medium-4 large-3">
+            <label for="label-no-pork-background">Pas de porc (fond)</label>
+            <input name="admin_theme_settings[label-no-pork-background]" id="label-no-pork-background" value="{{ theme_settings.label-no-pork-background }}" type="text" class="minicolors">
+          </div>
+
+          <div class="columns medium-4 large-3">
+            <label for="label-no-pork-color">Pas de porc (texte)</label>
+            <input name="admin_theme_settings[label-no-pork-color]" id="label-no-pork-color" value="{{ theme_settings.label-no-pork-color }}" type="text" class="minicolors">
+          </div>
+
+          <div class="columns medium-4 large-3">
+            <label for="label-no-meat-background">Pas de viande (fond)</label>
+            <input name="admin_theme_settings[label-no-meat-background]" id="label-no-meat-background" value="{{ theme_settings.label-no-meat-background }}" type="text" class="minicolors">
+          </div>
+
+          <div class="columns medium-4 large-3">
+            <label for="label-no-meat-color">Pas de viande (texte)</label>
+            <input name="admin_theme_settings[label-no-meat-color]" id="label-no-meat-color" value="{{ theme_settings.label-no-meat-color }}" type="text" class="minicolors">
+          </div>
         </div>
       </fieldset>
       <fieldset>
@@ -218,10 +233,6 @@
           <div class="columns medium-4 large-3">
             <label for="featured-menus-title-color">Menus en accueil (titre)</label>
             <input name="admin_theme_settings[featured-menus-title-color]" id="featured-menus-title-color" value="{{ theme_settings.featured-menus-title-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="featured-menus-ribbon-color">Menus en accueil (ruban)</label>
-            <input name="admin_theme_settings[featured-menus-ribbon-color]" id="featured-menus-ribbon-color" value="{{ theme_settings.featured-menus-ribbon-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
             <label for="featured-menus-border-color">Menus en accueil (bordure)</label>
@@ -238,10 +249,6 @@
             <input name="admin_theme_settings[featured-foods-title-color]" id="featured-foods-title-color" value="{{ theme_settings.featured-foods-title-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="featured-foods-ribbon-color">Plats en accueil (ruban)</label>
-            <input name="admin_theme_settings[featured-foods-ribbon-color]" id="featured-foods-ribbon-color" value="{{ theme_settings.featured-foods-ribbon-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
             <label for="featured-foods-border-color">Plats en accueil (bordure)</label>
             <input name="admin_theme_settings[featured-foods-border-color]" id="featured-foods-border-color" value="{{ theme_settings.featured-foods-border-color }}" type="text" class="minicolors">
           </div>
@@ -254,10 +261,6 @@
           <div class="columns medium-4 large-3">
             <label for="opening-hours-title-color">Horaires (titre)</label>
             <input name="admin_theme_settings[opening-hours-title-color]" id="opening-hours-title-color" value="{{ theme_settings.opening-hours-title-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="opening-hours-ribbon-color">Horaires (ruban)</label>
-            <input name="admin_theme_settings[opening-hours-ribbon-color]" id="opening-hours-ribbon-color" value="{{ theme_settings.opening-hours-ribbon-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
             <label for="opening-hours-border-color">Horaires (bordure)</label>
@@ -284,10 +287,6 @@
             <input name="admin_theme_settings[directions-title-color]" id="directions-title-color" value="{{ theme_settings.directions-title-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="directions-ribbon-color">Localisation (ruban)</label>
-            <input name="admin_theme_settings[directions-ribbon-color]" id="directions-ribbon-color" value="{{ theme_settings.directions-ribbon-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
             <label for="directions-border-color">Localisation (bordure)</label>
             <input name="admin_theme_settings[directions-border-color]" id="directions-border-color" value="{{ theme_settings.directions-border-color }}" type="text" class="minicolors">
           </div>
@@ -305,10 +304,6 @@
           <div class="columns medium-4 large-3">
             <label for="restaurant-gallery-background">Fond</label>
             <input name="admin_theme_settings[restaurant-gallery-background]" id="restaurant-gallery-background" value="{{ theme_settings.restaurant-gallery-background }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
-            <label for="gallery-item-background">Image de la galerie (fond)</label>
-            <input name="admin_theme_settings[gallery-item-background]" id="gallery-item-background" value="{{ theme_settings.gallery-item-background }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3 end">
             <label for="gallery-caption-color">Image de la galerie (légende)</label>
