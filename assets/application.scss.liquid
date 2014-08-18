@@ -1008,10 +1008,12 @@ body {
 }
   .main-nav__items {
     margin: 0;
+    text-align: center;
   }
     .main-nav__item {
-      display: inline-block;
+      //display: inline-block;
       margin: 0;
+      font-size: 1.25rem;
     }
       .main-nav__link {
         @include transition(background-color .25s);
@@ -1029,10 +1031,12 @@ body {
       }
   .main-nav__languages {
     margin: 0;
+    text-align: center;
   }
     .main-nav__language {
-      display: inline-block;
+      //display: inline-block;
       margin: 0;
+      font-size: 1.25rem;
     }
 
 .main-content {
@@ -1769,10 +1773,6 @@ x:-o-prefocus, .lb-overlay img {
     text-align: left;
     padding-top: 1em;
   }
-
-  .main-nav__languages {
-    text-align: right;
-  }
 }
 
 // Large
@@ -1793,6 +1793,23 @@ x:-o-prefocus, .lb-overlay img {
     margin: 1.45em 0;
     text-align: right;
   }
+  .main-nav__items {
+    margin: 0;
+    text-align: left;
+  }
+    .main-nav__item {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+  .main-nav__languages {
+    text-align: center;
+  }
+    .main-nav__language {
+      display: inline-block;
+      font-size: 1rem;
+      text-align: right;
+    }
 
   /**
  * Pure CSS Lightbox
