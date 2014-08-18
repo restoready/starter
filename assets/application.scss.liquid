@@ -1207,6 +1207,9 @@ label {
 
 // Home
 .restaurant-main-image {
+  {% if restaurant.main_image?%}
+    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
+  {% endif %}
   background-color: rgba(0,0,0, .5);
   background-size: cover;
   background-position: center center;

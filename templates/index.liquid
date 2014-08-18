@@ -1,4 +1,4 @@
-<div class="restaurant-main-image" style="{% if restaurant.main_image?%}background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }}{% endif %})">
+<div class="restaurant-main-image">
   {% if restaurant.summary? %}
     <div class="wrapper">
       <div class="restaurant-summary">
@@ -7,16 +7,6 @@
     </div>
   {% endif %}
 </div>
-
-{% if slides.size > 0 %}
-  <section class="slides">
-    {% for slide in slides %}
-      <div class="slide" id="slide-{{ index }}">
-        <img src="{{ slide.image | custom_image_url: '960x540#' }}" alt="{{ slide.caption }}"/>
-      </div>
-    {% endfor %}
-  </section>
-{% endif %}
 
 {% if home_menus.size > 0 %}
   <section class="menus menus--featured">
