@@ -21,9 +21,29 @@
             <label for="body-background">Fond de page</label>
             <input name="admin_theme_settings[body-background]" id="body-background" value="{{ theme_settings.body-background }}" type="text" class="minicolors">
           </div>
-          <div class="columns medium-4 large-3 end">
+          <div class="columns medium-4 large-3">
             <label for="body-color">Couleur par défaut du texte</label>
             <input name="admin_theme_settings[body-color]" id="body-color" value="{{ theme_settings.body-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="page-body-link-color">Couleur des liens (défault)</label>
+            <input name="admin_theme_settings[page-body-link-color]" id="page-body-link-color" value="{{ theme_settings.page-body-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="page-body-link-hover-color">Couleur des liens (survol)</label>
+            <input name="admin_theme_settings[page-body-link-hover-color]" id="page-body-link-hover-color" value="{{ theme_settings.page-body-link-hover-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="restaurant-summary-color">Description (texte)</label>
+            <input name="admin_theme_settings[restaurant-summary-color]" id="restaurant-summary-color" value="{{ theme_settings.restaurant-summary-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="phone-number-link-color">Numéro de téléphone (texte)</label>
+            <input name="admin_theme_settings[phone-number-link-color]" id="phone-number-link-color" value="{{ theme_settings.phone-number-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="phone-number-link-hover-color">Numéro de téléphone (survol)</label>
+            <input name="admin_theme_settings[phone-number-link-hover-color]" id="phone-number-link-hover-color" value="{{ theme_settings.phone-number-link-hover-color }}" type="text" class="minicolors">
           </div>
         </div>
       </fieldset>
@@ -90,6 +110,10 @@
           <div class="columns medium-4 large-3">
             <label for="social-link-color">Lien réseau social</label>
             <input name="admin_theme_settings[social-link-color]" id="social-link-color" value="{{ theme_settings.social-link-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="social-link-hover-color">Lien réseau social (survol)</label>
+            <input name="admin_theme_settings[social-link-hover-color]" id="social-link-hover-color" value="{{ theme_settings.social-link-hover-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
             <label for="legal-link-color">Lien mentions légales</label>
