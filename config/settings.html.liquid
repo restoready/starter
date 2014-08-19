@@ -404,7 +404,7 @@
           <div class="columns">
             <p>Si vous utilisez une ou plusieurs polices du service Google Fonts, indiquez dans ce champ le code fourni par Google. Lorsque vous êtes à l'étape "Use" sur Google Fonts, le point "3. Add this code to your website:" affiche un tag &lt;link&gt;. Copiez tout le code et collez-le ici.</p>
             <label for="google-fonts-link">Google Fonts : tag &lt;link&gt;</label>
-            <input type="text" id="google-fonts-link" name="admin_theme_settings[google-fonts-link]" value="{{ theme_settings.google-fonts-link }}" placeholder="&lt;link href='http://fonts.googleapis.com/css?family=...">
+            <input type="text" id="google-fonts-link" name="admin_theme_settings[google-fonts-link]" value="{{ theme_settings.google-fonts-link | escape_once }}" placeholder="&lt;link href='http://fonts.googleapis.com/css?family=...">
           </div>
         </div>
         <div class="row">
