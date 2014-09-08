@@ -1018,12 +1018,13 @@ a {
       //display: inline-block;
       margin: 0;
       font-size: 1.25rem;
+      position: relative;
     }
       .main-nav__link {
         @include transition(background-color .25s);
         background-color: $main-nav-link-background;
         color: $main-nav-link-color;
-        display: inline-block;
+        display: block;
         font-size: 1em;
         text-decoration: none;
         padding: .5em;
@@ -1042,6 +1043,25 @@ a {
       margin: 0;
       font-size: 1.25rem;
     }
+
+.main-sub-nav__items {
+  padding: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+.main-sub-nav__item {
+  display: block;
+}
+.main-sub-nav__link{
+  @extend .main-nav__link;
+}
+.main-nav__item:hover .main-sub-nav__items {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
 
 .main-content {
   margin-bottom: 1em;
@@ -1847,6 +1867,11 @@ x:-o-prefocus, .lb-overlay img {
       font-size: 1rem;
       text-align: right;
     }
+
+  .main-sub-nav__items {
+    position: absolute;
+    left: 0;
+  }
 
   /**
  * Pure CSS Lightbox
