@@ -1,118 +1,47 @@
+/*
+* RestoReady v1.0
+* Copyright 2014 MH Communication.
+* Author MH Communication @MHCommunication
+* Built with Sass - http://sass-lang.com/
+
+* Some things to know about this file:
+    - Sass is compiled on RestoReady's server so you don't need to convert it to CSS yourself
+    - The output CSS is compressed and comments are removed
+    - You cannot use @imports in this file
+    - Helpers variables, mixins, and starter classes are provided. Change as needed.
+    - The file is prepped with a CSS reset
+*/
+/* Table of Contents
+==================================================
+  Colors
+  Box Model
+  Breakpoint and Grid Variables
+  General Variables
+  Sass Mixins
+  Dependency-free breakpoint mixin
+  Reset
+  Grid Setup
+  Basic Styles
+  Helper classes
+  Typography
+  Lists
+  Images and Iframes
+  Forms
+  Links and buttons
+  Layout
+  Modules
+  Icomoon Font
+  Breakpoints
+================================================== */
+
 // ==============================================================================
 // #Colors
 // ==============================================================================
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 
-$restaurant-name-color: {{ theme_settings.restaurant-name-color }};
-$restaurant-summary-color: {{ theme_settings.restaurant-summary-color }};
-$slogan-color: {{ theme_settings.slogan-color }};
-
-$phone-number-link-color: {{ theme_settings.phone-number-link-color }};
-$phone-number-link-hover-color: {{ theme_settings.phone-number-link-hover-color }};
-
-$main-nav-background: {{ theme_settings.main-nav-background }};
-$main-nav-link-color: {{ theme_settings.main-nav-link-color }};
-$main-nav-link-hover-color: {{ theme_settings.main-nav-link-hover-color }};
-$main-nav-link-background: {{ theme_settings.main-nav-link-background }};
-$main-nav-link-hover-background: {{ theme_settings.main-nav-link-hover-background }};
-
-$footer-background: {{ theme_settings.footer-background }};
-$back-to-top-link-color: {{ theme_settings.back-to-top-link-color }};
-$back-to-top-link-hover-color: {{ theme_settings.back-to-top-link-hover-color }};
-$footer-subscribe-label-color: {{ theme_settings.footer-subscribe-label-color }};
-$social-link-color: {{ theme_settings.social-link-color }};
-$social-link-hover-color: {{ theme_settings.social-link-hover-color }};
-$legal-link-color: {{ theme_settings.legal-link-color }};
-$legal-link-hover-color: {{ theme_settings.legal-link-hover-color }};
-
-// Forms
-$form-legend-color: {{ theme_settings.form-legend-color }};
-$form-label-color: {{ theme_settings.form-label-color }};
-$form-field-background: {{ theme_settings.form-field-border-color }};
-$form-field-border-color: {{ theme_settings.form-field-border-color }};
-
-$input-hint-info-background: {{ theme_settings.input-hint-info-background }};
-$input-hint-info-color: {{ theme_settings.input-hint-info-color }};
-$input-hint-error-background: {{ theme_settings.input-hint-error-background }};
-$input-hint-error-color: {{ theme_settings.input-hint-error-color }};
-
-// Buttons
-$button-background: {{ theme_settings.button-background }};
-$button-color: {{ theme_settings.button-color }};
-$button-hover-background: {{ theme_settings.button-hover-background }};
-$button-hover-color: {{ theme_settings.button-hover-color }};
-
-// Messages
-$message-success-background: {{ theme_settings.message-success-background }};
-$message-success-color:      {{ theme_settings.message-success-color }};
-$message-error-background:   {{ theme_settings.message-error-background }};
-$message-error-color:        {{ theme_settings.message-error-color }};
-
-// Menus
-$menu-title-color: {{ theme_settings.menu-title-color }};
-$menu-description-color: {{ theme_settings.menu-description-color }};
-$menu-link-color: {{ theme_settings.menu-link-color }};
-$menu-link-hover-color: {{ theme_settings.menu-link-hover-color }};
-
-$back-to-menu-link-color: {{ theme_settings.back-to-menu-link-color }};
-$back-to-menu-link-hover-color: {{ theme_settings.back-to-menu-link-hover-color }};
-
 // Foods
 $food-separator-color: rgba(black, .075);
-$food-summary-description-color: {{ theme_settings.food-summary-description-color }};
-$featured-star-color: {{ theme_settings.featured-star-color }};
-
-// Prices
-$price-label-background: transparent;
-$price-label-color: {{ theme_settings.price-label-color }};
-$price-value-background: {{ theme_settings.price-value-background }};
-$price-value-color: {{ theme_settings.price-value-color }};
-$price-border-color: {{ theme_settings.price-border-color }};
-$price-label-border-color: $price-border-color;
-$prices-top-border-color: $price-border-color;
-$price-value-border-color: $price-border-color;
-
-// Tags
-$label-vegetarian-background: {{ theme_settings.label-vegetarian-background }};
-$label-vegetarian-color: {{ theme_settings.label-vegetarian-color }};
-$label-new-background: {{ theme_settings.label-new-background }};
-$label-new-color: {{ theme_settings.label-new-color }};
-
-// Page
-$page-header-background: {{ theme_settings.page-header-background }};
-$page-header-title-color: {{ theme_settings.page-header-title-color }};
-$page-header-description-color: {{ theme_settings.page-header-description-color }};
-$page-body-link-color: {{ theme_settings.page-body-link-color }};
-$page-body-link-hover-color: {{ theme_settings.page-body-link-hover-color }};
-
-// Featured menus
-$featured-menus-background:   {{ theme_settings.featured-menus-background }};
-$featured-menus-title-color:  {{ theme_settings.featured-menus-title-color }};
-$featured-menus-border-color: {{ theme_settings.featured-menus-border-color }};
-
-// Featured foods
-$featured-foods-background:   {{ theme_settings.featured-foods-background }};
-$featured-foods-title-color:  {{ theme_settings.featured-foods-title-color }};
-$featured-foods-border-color: {{ theme_settings.featured-foods-border-color }};
-
-// Opening hours
-$opening-hours-background:   {{ theme_settings.opening-hours-background }};
-$opening-hours-title-color:  {{ theme_settings.opening-hours-title-color }};
-$opening-hours-border-color: {{ theme_settings.opening-hours-border-color }};
-$opening-hours-day-color:    {{ theme_settings.opening-hours-day-color }};
-$opening-hours-shifts-color: {{ theme_settings.opening-hours-shifts-color }};
-
-// Directions
-$directions-background:   {{ theme_settings.directions-background }};
-$directions-title-color:  {{ theme_settings.directions-title-color }};
-$directions-border-color: {{ theme_settings.directions-border-color }};
-$address-color: {{ theme_settings.address-color }};
-
-// Restaurant photo gallery
-$restaurant-gallery-background: {{ theme_settings.restaurant-gallery-background }};
-$gallery-caption-color: {{ theme_settings.gallery-caption-color }};
-
 
 // ==============================================================================
 // #Box model
@@ -912,9 +841,9 @@ form.form-horizontal,
 // ==============================================================================
 .button {
   @include transition(background-color .25s);
-  background-color: $button-background;
+  background-color: #9f2a13;
   border: 0;
-  color: $button-color;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   margin: 0;
@@ -937,8 +866,8 @@ form.form-horizontal,
   &:hover,
   &:active,
   &:focus {
-    background-color: $button-hover-background;
-    color: $button-hover-color;
+    background-color: #fb3a28;
+    color: #fff;
   }
 
   &[disabled],
@@ -980,57 +909,55 @@ a {
     text-align: center;
   }
     .slogan {
-      color: $slogan-color;
+      color: #000;
       font-size: .95em;
       font-style: italic;
       margin-bottom: .5em;
     }
     .restaurant-name__link {
-      color: $restaurant-name-color;
+      color: #000;
       font-family: {{ theme_settings.header-font }};
       font-size: 2em;
       text-decoration: none;
+      line-height: 1;
     }
   .phone-number {
     margin-bottom: 1em;
     text-align: center;
   }
     .phone-number__link {
-      color: {{ theme_settings.phone-number-link-color }};
+      color: #000;
       font-size: 1.25em;
       text-decoration: none;
-      &:hover, &:focus {
-        color: {{ theme_settings.phone-number-link-hover-color }};
-      }
     }
       .phone-number__label {
       }
 
 .main-nav {
   @include clearfix();
-  background-color: $main-nav-background;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
 }
   .main-nav__items {
     margin: 0;
     text-align: center;
   }
     .main-nav__item {
-      //display: inline-block;
       margin: 0;
       font-size: 1.25rem;
     }
       .main-nav__link {
         @include transition(background-color .25s);
-        background-color: $main-nav-link-background;
-        color: $main-nav-link-color;
-        display: inline-block;
-        font-size: 1em;
+        color: #000;
+        display: block;
+        font-size: 0.85em;
         text-decoration: none;
-        padding: .5em;
+        padding: .25em;
+        width: 100%;
         &:hover,
         &:focus {
-          background-color: $main-nav-link-hover-background;
-          color: $main-nav-link-hover-color;
+          color: #555;
+          background-color: #f2f2f2;
         }
       }
   .main-nav__languages {
@@ -1052,26 +979,23 @@ a {
   }
 
 .main-footer {
-  background-color: $footer-background;
-  border-top: 1px solid scale-color($footer-background, $lightness: -5%);
+  background-color: #fff;
+  border-top: 1px solid scale-color(#fff, $lightness: -5%);
 }
   .back-to-top {
     padding: $gutter;
     text-align: center;
   }
     .back-to-top__link {
-      color: $back-to-top-link-color;
+      color: #000;
       text-decoration: none;
-      &:hover, &:focus {
-        color: $back-to-top-link-hover-color;
-      }
     }
       .back-to-top__label {
       }
   .footer__subscribe {
     margin-bottom: 1em;
     .subscribe__label {
-      color: $footer-subscribe-label-color;
+      color: #000;
     }
     .subscribe__submit {
     }
@@ -1087,13 +1011,13 @@ a {
       }
         .social__link {
           @include transition(color .25s);
-          color: $social-link-color;
+          color: #9f2a13;
           display: inline-block;
           font-size: 2em;
           padding: .5em;
           text-decoration: none;
           &:hover, &:focus {
-            color: $social-link-hover-color;
+            color: #fb3a28;
           }
         }
           .social__label {
@@ -1104,10 +1028,10 @@ a {
     text-align: center;
   }
     .legal__link {
-      color: $legal-link-color;
+      color: #9f2a13;
       text-decoration: none;
       &:hover, &:focus {
-        color: $legal-link-hover-color;
+        color: #fb3a28;
       }
     }
 
@@ -1122,16 +1046,16 @@ input[type="number"],
 input[type="tel"],
 textarea,
 select {
-  background-color: $form-field-background;
-  border: 1px solid $form-field-border-color;
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 legend {
-  color: $form-legend-color;
+  color: #000;
 }
 
 label {
-  color: $form-label-color;
+  color: #000;
 }
 
 .field-group {
@@ -1152,12 +1076,12 @@ label {
     padding: .15em .4em;
   }
   .input-hint--info {
-    background: $input-hint-info-background;
-    color: $input-hint-info-color;
+    background: #68708A;
+    color: #fff;
   }
   .input-hint--error {
-    background: $input-hint-error-background;
-    color: $input-hint-error-color;
+    background: #DF5900;
+    color: #fff;
   }
 
 .submit {
@@ -1169,12 +1093,12 @@ label {
   padding: .5em 1em;
 }
 .message--success {
-  background-color: $message-success-background;
-  color: $message-success-color;
+  background-color: #4E6F25;
+  color: #fff;
 }
 .message--error {
-  background-color: $message-error-background;
-  color: $message-error-color;
+  background-color: #811515;
+  color: #fff;
 }
 
 
@@ -1182,16 +1106,16 @@ label {
 // #Modules
 // ==============================================================================
 .page-header {
-  background-color: $page-header-background;
+  background-color: #fff;
   padding: 1em 0;
 }
   .page-header__header {
   }
     .page-header__title {
-      color: $page-header-title-color;
+      color: #000;
     }
     .page-header__description {
-      color: $page-header-description-color;
+      color: #000;
       p {
         font-size: 1.2em;
         margin-bottom: 0;
@@ -1199,19 +1123,19 @@ label {
     }
   .page-body {
     a {
-      color: $page-body-link-color;
-      border-bottom: 1px solid scale-color($page-body-link-color, $lightness: +75%);
+      color: #9f2a13;
+      border-bottom: 1px solid scale-color(#9f2a13, $lightness: +75%);
       text-decoration: none;
       &:hover, &:focus {
-        color: $page-body-link-hover-color;
-        border-bottom: 1px solid scale-color($page-body-link-hover-color, $lightness: +75%);
+        color: #fb3a28;
+        border-bottom: 1px solid scale-color(#fb3a28, $lightness: +75%);
       }
     }
   }
 
 // Home
 .restaurant-main-image {
-  {% if restaurant.main_image?%}
+  {% if restaurant.main_image? %}
     background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
   {% endif %}
   background-color: rgba(0,0,0, .5);
@@ -1220,7 +1144,7 @@ label {
   background-repeat: no-repeat;
 }
 .restaurant-summary {
-  color: $restaurant-summary-color;
+  color: #fff;
   padding-top: 4em;
   padding-bottom: 3em;
   text-align: center;
@@ -1229,20 +1153,17 @@ label {
   }
 }
 .menus--featured {
-  background-color: $featured-menus-background;
+  background-color: #fff;
   margin-bottom: 1em;
   padding: 1em 0;
   .section__title {
-    color: $featured-menus-title-color;
-    border-bottom: 1px solid $featured-menus-border-color;
+    color: #000;
+    border-bottom: 1px solid #000;
     margin-bottom: .75em;
   }
 }
   .menus__menu-link {
-    color: $menu-link-color;
-    &:hover, &:focus {
-      color: $menu-link-hover-color;
-    }
+    color: #9f2a13;
   }
   .menus__children {
     list-style: none;
@@ -1253,11 +1174,8 @@ label {
       margin-bottom: 2rem;
     }
       .menus__child-link {
-        color: $menu-link-color;
+        color: #9f2a13;
         text-decoration: none;
-        &:hover, &:focus {
-          color: $menu-link-hover-color;
-        }
       }
   .menus__separator {
     border: none;
@@ -1268,22 +1186,22 @@ label {
   }
 
 .foods--featured {
-  background-color: $featured-foods-background;
+  background-color: #f2f2f2;
   margin-bottom: 1em;
   padding: 1em 0;
   .section__title {
-    color: $featured-foods-title-color;
-    border-bottom: 1px solid $featured-foods-border-color;
+    color: #000;
+    border-bottom: 1px solid #747474;
     margin-bottom: .75em;
   }
 }
 
 .opening-hours {
-  background-color: $opening-hours-background;
+  background-color: #fff;
   margin-bottom: 1em;
   .section__title {
-    color: $opening-hours-title-color;
-    border-bottom: 1px solid $opening-hours-border-color;
+    color: #000;
+    border-bottom: 1px solid #747474;
     margin-bottom: 1em;
   }
 }
@@ -1292,14 +1210,14 @@ label {
     margin-bottom: 1em;
   }
     .opening-day {
-      color: $opening-hours-day-color;
+      color: #000;
       clear: left;
       float: left;
       font-size: 1.2em;
       width: 40%;
     }
     .opening-shifts {
-      color: $opening-hours-shifts-color;
+      color: #9f2a13;
       font-size: 1.2em;
       margin-left: 50%;
     }
@@ -1309,11 +1227,11 @@ label {
   }
 
 .directions, .business-view {
-  background-color: $directions-background;
+  background-color: #fff;
   margin-bottom: 1em;
   .section__title {
-    color: $directions-title-color;
-    border-bottom: 1px solid $directions-border-color;
+    color: #000;
+    border-bottom: 1px solid #747474;
     margin-bottom: 1em;
   }
 }
@@ -1324,7 +1242,7 @@ label {
       @extend .auto;
     }
   .address {
-    color: $address-color;
+    color: #000;
     font-size: 1.2em;
   }
   .directions__footer {
@@ -1346,17 +1264,14 @@ label {
 
   }
     .menu__title {
-      color: $menu-title-color;
+      color: #000;
       margin-bottom: .5em;
       a {
-        color: $menu-link-color;
-        &:hover {
-          color: $menu-link-hover-color;
-        }
+        color: #9f2a13;
       }
     }
   .menu__description {
-    color: $menu-description-color;
+    color: #000;
     font-size: 1.2em;
     margin-bottom: 1em;
   }
@@ -1423,7 +1338,7 @@ label {
     }
     .food__summary {
       font-size: 1em;
-      color: $food-summary-description-color;
+      color: #000;
     }
     .foot-prices {
 
@@ -1437,7 +1352,7 @@ label {
   }
 .food--featured {
   .icon-star {
-    color: $featured-star-color;
+    color: #ffcc00;
   }
   .food__title {
     font-weight: bold;
@@ -1446,21 +1361,17 @@ label {
 
 .prices {
   @extend .clearfix;
-  border-top: 1px dotted $prices-top-border-color;
   margin-bottom: 1em;
 }
   .price__label {
     clear: left;
-    color: $price-label-color;
-    background-color: $price-label-background;
-    border-bottom: 1px dotted $price-label-border-color;
+    color: #000;
     float: left;
     width: 66%;
   }
   .price__value {
-    color: $price-value-color;
-    background-color: $price-value-background;
-    border-bottom: 1px dotted $price-value-border-color;
+    color: #000;
+    background-color: #f2f2f2;
     float: right;
     font-weight: 700;
     text-align: right;
@@ -1472,16 +1383,16 @@ label {
 .back-to-menu {
     text-align: center;
     &:before {
-      color: $back-to-menu-link-color;
+      color: #727272;
       content: "\2191";
       display: inline-block;
     }
   }
     .back-to-menu__link {
-      color: $back-to-menu-link-color;
+      color: #727272;
       text-decoration: none;
       &:hover, &:focus {
-        color: $back-to-menu-link-hover-color;
+        color: #000;
       }
     }
 
@@ -1495,17 +1406,17 @@ label {
     padding: .2em .4em;
   }
     .tag--vegan, .tag--vegetarian {
-      background-color: $label-vegetarian-background;
-      color: $label-vegetarian-color;
+      background-color: #8a9e6c;
+      color: #fff;
     }
     .tag--new {
-      background-color: $label-new-background;
-      color: $label-new-color;
+      background-color: #d8c061;
+      color: #fff;
     }
 
 // Gallery
 .restaurant-gallery {
-  background-color: $restaurant-gallery-background;
+  background-color: #fff;
 }
   .gallery__item {
     position: relative;
@@ -1527,7 +1438,7 @@ label {
     .photo__link {
       @include transition(background-color .5s);
       background-color: rgba(0, 0, 0, 0.5);
-      color: $gallery-caption-color;
+      color: #fff;
       font-weight: 700;
       line-height: 200px;
       position: absolute;
@@ -1799,9 +1710,8 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-
   .logo {
-    width: 17.5%;
+    width: 85px;
     float: left;
     margin: 1em 1em 0 0;
   }
@@ -1820,9 +1730,14 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 125%;
   }
-
+  .main-nav-wrapper {
+    @include clearfix();
+    max-width: $siteWidth;
+    margin: 0 auto;
+    padding: 0 $gutter;
+  }
   .logo {
-    width: 15%;
+    width: 100px;
     margin: 1em 1em 1em 0;
   }
 
