@@ -3,7 +3,7 @@
     <div class="grid-item large--three-quarters">
       <ul class="main-nav__items">
         {% for link in linklists.navigation-primaire.links %}
-          {% if link.linklist_handle == null %}
+          {% if link.linklist_handle == "" %}
             <li class="main-nav__item">
               <a class="main-nav__link" href="{{ link.url }}">{{ link.title }}</a>
             </li>
