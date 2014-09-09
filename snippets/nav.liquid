@@ -20,11 +20,6 @@
             </li>
           {% endif %}
         {% endfor %}
-        {% for menu in menus %}
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="{{ menu.url }}">{{ menu.name }}</a>
-          </li>
-        {% endfor %}
         <li class="main-nav__item">
           {{ "Newsletter" | newsletter_subscribe_url:'class:main-nav__link' }}
         </li>
