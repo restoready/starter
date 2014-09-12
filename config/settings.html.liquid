@@ -25,6 +25,10 @@
             <label for="body-color">Couleur par défaut du texte</label>
             <input name="admin_theme_settings[body-color]" id="body-color" value="{{ theme_settings.body-color }}" type="text" class="minicolors">
           </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="accent-color">Couleur d'accent</label>
+            <input name="admin_theme_settings[accent-color]" id="accent-color" value="{{ theme_settings.accent-color }}" type="text" class="minicolors">
+          </div>
         </div>
       </fieldset>
     </div>
@@ -40,12 +44,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="columns medium-6">
+          <div class="columns large-6">
             <label for="body-font">Corps de texte</label>
             <input type="text" id="body-font" name="admin_theme_settings[body-font]" value="{{ theme_settings.body-font }}">
             <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
           </div>
-          <div class="columns medium-6">
+          <div class="columns large-6">
             <label for="header-font">Titres</label>
             <input type="text" id="header-font" name="admin_theme_settings[header-font]" value="{{ theme_settings.header-font }}">
             <span>Indiquez le nom de la police seulement, ou bien la font stack</span>
@@ -57,19 +61,15 @@
     <div class="tab-body" id="tab-body-3">
       <fieldset>
         <legend>Communication</legend>
-        <div class="small-12 medium-12 large-12 columns">
-          {% if theme_settings.footer_display_newsletter %}
-            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' checked/>
-          {% else %}
-            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" data-skin='black-green' />
-          {% endif %}
+        <div class="columns">
+            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Carte Google</legend>
-        <div class="small-12 medium-6 large-6 columns">
+        <div class="columns">
           <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
           <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
@@ -92,35 +92,35 @@
             <img src="/assets/business-view-info.jpg">
           </div>
         </legend>
-        <div class="small-12 medium-6 large-6 columns end">
+        <div class="columns large-6">
           <div class="row">
-            {% if theme_settings.display_google_business_view_embed %}
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' checked/>
-            {% else %}
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' />
-            {% endif %}
+            <div class="columns">
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
             <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
+            </div>
           </div>
 
           <div class="row">
-            <label class="left" for="google_business_view_embed">Code HTML</label>
-            <input name="admin_theme_settings[google_business_view_embed]" type="text" id="google_business_view_embed" value="{{ theme_settings.google_business_view_embed | escape_once }}" />
+            <div class="columns">
+              <label class="left" for="google_business_view_embed">Code HTML</label>
+              <input name="admin_theme_settings[google_business_view_embed]" type="text" id="google_business_view_embed" value="{{ theme_settings.google_business_view_embed | escape_once }}" />
+            </div>
           </div>
         </div>
 
-        <div class="small-12 medium-6 large-6 columns">
+        <div class="columns large-6">
           <div class="row">
-            {% if theme_settings.display_google_business_view_url %}
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' checked/>
-            {% else %}
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' />
-            {% endif %}
-            <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
+            <div class="columns">
+              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
+              <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
+            </div>
           </div>
 
           <div class="row">
-            <label class="left" for="google_business_view_url">Url</label>
-            <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+            <div class="columns">
+              <label class="left" for="google_business_view_url">Url</label>
+              <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
+            </div>
           </div>
         </div>
       </fieldset>

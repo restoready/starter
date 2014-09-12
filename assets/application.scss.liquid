@@ -39,9 +39,10 @@
 // ==============================================================================
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
+$accent-color: {{ theme_settings.accent-color }};
 
 // Foods
-$food-separator-color: rgba(black, .075);
+$food-separator-color: #f0f0f0;
 
 // ==============================================================================
 // #Box model
@@ -102,7 +103,8 @@ $bodyFontStack: {{ theme_settings.body-font }};
   &:after {
     content: "";
     display: table;
-    clear: both; }
+    clear: both;
+  }
   *zoom: 1;
 }
 @mixin clearfix() {
@@ -840,8 +842,7 @@ form.form-horizontal,
 // #Links and Buttons
 // ==============================================================================
 .button {
-  @include transition(background-color .25s);
-  background-color: #9f2a13;
+  background-color: $accent-color;
   border: 0;
   color: #fff;
   cursor: pointer;
@@ -866,8 +867,7 @@ form.form-horizontal,
   &:hover,
   &:active,
   &:focus {
-    background-color: #fb3a28;
-    color: #fff;
+    background-color: scale-color($accent-color, $lightness: -15%);
   }
 
   &[disabled],
@@ -884,10 +884,7 @@ body {
   color: $body-color;
   background-color: $body-background;
 }
-a {
-  text-decoration: none;
-  color: $body-color;
-}
+
 .page {
   @extend .clearfix;
 }
@@ -909,76 +906,77 @@ a {
     text-align: center;
   }
     .slogan {
-      color: #000;
-      font-size: .95em;
+      color: scale-color($body-color, $lightness: +25%);
+      font-size: .9em;
       font-style: italic;
-      margin-bottom: .5em;
     }
     .restaurant-name__link {
-      color: #000;
+      color: scale-color($body-color, $lightness: -25%);
       font-family: {{ theme_settings.header-font }};
       font-size: 2em;
-      text-decoration: none;
       line-height: 1;
+      text-decoration: none;
     }
   .phone-number {
-    margin-bottom: 1em;
+    margin: 1em 0;
     text-align: center;
   }
     .phone-number__link {
-      color: #000;
-      font-size: 1.25em;
+      color: $accent-color;
+      font-size: 1.5em;
       text-decoration: none;
+      &:hover, &:focus {
+        color: #000;
+        .phone-number__label {
+          color: #000;
+        }
+      }
     }
       .phone-number__label {
+        color: $body-color;
       }
 
 .main-nav {
   @include clearfix();
-  background-color: #fff;
+  background-color: scale-color($body-color, $lightness: +95%);
 }
   .main-nav__items {
     margin: 0;
-    text-align: center;
   }
     .main-nav__item {
+      border-bottom: 1px solid $body-background;
       margin: 0;
-      font-size: 1.25rem;
       position: relative;
     }
       .main-nav__link {
-        @include transition(background-color .25s);
-        color: #000;
+        color: $body-color;
         display: block;
-        font-size: 0.85em;
+        font-size: 1em;
+        padding: .25em;
+        text-align: center;
         text-decoration: none;
-        padding: .7em;
-        width: 100%;
-        &:hover,
-        &:focus {
-          color: #555;
-          background-color: #f2f2f2;
+        &:hover, &:focus {
+          color: #fff;
+          background-color: $accent-color;
         }
       }
   .main-nav__languages {
     margin: 0;
-    text-align: center;
   }
     .main-nav__language {
       margin: 0;
-      font-size: 1.25rem;
     }
 
 .main-sub-nav__items {
-  padding: 0;
+  background-color: scale-color($body-color, $lightness: +85%);
   display: none;
-  opacity: 0;
-  visibility: hidden;
   margin: 0;
-  background-color: #fff;
+  opacity: 0;
+  padding: 0;
+  visibility: hidden;
 }
 .main-sub-nav__item {
-  display: block;
+  @extend .main-nav__item;
 }
 .main-sub-nav__link{
   @extend .main-nav__link;
@@ -998,23 +996,25 @@ a {
   }
 
 .main-footer {
-  background-color: #fff;
-  border-top: 1px solid scale-color(#fff, $lightness: -5%);
+  background-color: scale-color($body-color, $lightness: +95%);
+  border-top: 1px solid scale-color($body-color, $lightness: +85%);
 }
   .back-to-top {
     padding: $gutter;
     text-align: center;
   }
     .back-to-top__link {
-      color: #000;
+      color: scale-color($body-color, $lightness: +25%);
       text-decoration: none;
+      &:hover, &:focus {
+        color: $body-color;
+      }
     }
       .back-to-top__label {
       }
   .footer__subscribe {
     margin-bottom: 1em;
     .subscribe__label {
-      color: #000;
     }
     .subscribe__submit {
     }
@@ -1029,34 +1029,33 @@ a {
         display: inline-block;
       }
         .social__link {
-          @include transition(color .25s);
-          color: #9f2a13;
+          color: $body-color;
           display: inline-block;
-          vertical-align: middle;
           font-size: 2em;
-          padding: .5em;
+          padding: .25em;
           text-decoration: none;
+          vertical-align: middle;
           &:hover, &:focus {
-            color: #fb3a28;
+            color: $accent-color;
           }
+        }
+        .social__link .icon-phone,
+        .social__link .icon-envelope {
+          font-size: .7em;
         }
           .social__label {
             @extend .hide-text;
           }
-        .social__link.icon-phone,
-        .social__link.icon-envelope {
-          font-size: 1.5em;
-        }
 
   .footer__legal {
     margin-bottom: 1em;
     text-align: center;
   }
     .legal__link {
-      color: #9f2a13;
+      color: scale-color($body-color, $lightness: +25%);
       text-decoration: none;
       &:hover, &:focus {
-        color: #fb3a28;
+        color: $body-color;
       }
     }
 
@@ -1072,14 +1071,10 @@ input[type="tel"],
 textarea,
 select {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid scale-color($body-color, $lightness: +50%);
 }
 
 legend {
-  color: #000;
-}
-
-label {
   color: #000;
 }
 
@@ -1089,7 +1084,7 @@ label {
   .field-group__legend {
     font-size: 1.5em;
     font-weight: 700;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
   }
 
 .input,
@@ -1115,10 +1110,20 @@ label {
 
 // Messages
 .message {
+  margin-bottom: 1em;
   padding: .5em 1em;
 }
+  .message__description {
+    p {
+      margin-bottom: 0;
+    }
+  }
 .message--success {
   background-color: #4E6F25;
+  color: #fff;
+}
+.message--notice {
+  background-color: #DF5900;
   color: #fff;
 }
 .message--error {
@@ -1131,29 +1136,35 @@ label {
 // #Modules
 // ==============================================================================
 .page-header {
-  background-color: #fff;
   padding: 1em 0;
 }
   .page-header__header {
   }
     .page-header__title {
-      color: #000;
     }
     .page-header__description {
-      color: #000;
       p {
         font-size: 1.2em;
-        margin-bottom: 0;
       }
     }
   .page-body {
+    ol, ul, dl {
+      margin-left: 2em;
+    }
+    ul {
+      list-style: disc;
+    }
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
     a {
-      color: #9f2a13;
-      border-bottom: 1px solid scale-color(#9f2a13, $lightness: +75%);
+      border-bottom: 1px solid scale-color($accent-color, $lightness: +75%);
+      color: $accent-color;
       text-decoration: none;
       &:hover, &:focus {
-        color: #fb3a28;
-        border-bottom: 1px solid scale-color(#fb3a28, $lightness: +75%);
+        color: #000;
+        border-bottom-color: #000;
       }
     }
   }
@@ -1163,10 +1174,13 @@ label {
   {% if restaurant.main_image? %}
     background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
   {% endif %}
-  background-color: rgba(0,0,0, .5);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: $accent-color;
+  .wrapper {
+    background-color: rgba(0,0,0, .5);
+  }
 }
 .restaurant-summary {
   color: #fff;
@@ -1183,24 +1197,30 @@ label {
   padding: 1em 0;
   .section__title {
     color: #000;
-    border-bottom: 1px solid #000;
-    margin-bottom: .75em;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
   }
 }
   .menus__menu-link {
-    color: #9f2a13;
+    color: $body-color;
+    &:hover, &:focus {
+      color: #000;
+    }
   }
   .menus__children {
     list-style: none;
   }
     .menus__child {
-      font-size: 1.2em;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1em;
     }
       .menus__child-link {
-        color: #9f2a13;
+        color: scale-color($accent-color, $saturation: -75%);
+        font-size: 1.2em;
         text-decoration: none;
+        &:hover, &:focus {
+          color: $accent-color;
+        }
       }
   .menus__separator {
     border: none;
@@ -1211,14 +1231,19 @@ label {
   }
 
 .foods--featured {
-  background-color: #f2f2f2;
+  background-color: scale-color($body-color, $lightness: +95%);
   margin-bottom: 1em;
   padding: 1em 0;
   .section__title {
     color: #000;
-    border-bottom: 1px solid #747474;
-    margin-bottom: .75em;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
   }
+}
+
+.menus__footer,
+.foods__footer {
+  text-align: center;
 }
 
 .opening-hours {
@@ -1226,8 +1251,8 @@ label {
   margin-bottom: 1em;
   .section__title {
     color: #000;
-    border-bottom: 1px solid #747474;
-    margin-bottom: 1em;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
   }
 }
   .opening-days {
@@ -1235,19 +1260,19 @@ label {
     margin-bottom: 1em;
   }
     .opening-day {
-      color: #000;
+      color: $body-color;
       clear: left;
       float: left;
-      font-size: 1.2em;
-      width: 40%;
+      font-size: 1em;
+      width: 25%;
     }
     .opening-shifts {
-      color: #9f2a13;
-      font-size: 1.2em;
-      margin-left: 50%;
+      color: scale-color($accent-color, $saturation: -75%);
+      font-size: 1em;
+      margin-left: 30%;
     }
   .opening-hours__information {
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-bottom: 1em;
   }
 
@@ -1256,7 +1281,7 @@ label {
   margin-bottom: 1em;
   .section__title {
     color: #000;
-    border-bottom: 1px solid #747474;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     margin-bottom: 1em;
   }
 }
@@ -1267,14 +1292,15 @@ label {
       @extend .auto;
     }
   .address {
-    color: #000;
+    color: $body-color;
     font-size: 1.2em;
   }
   .directions__footer {
+    text-align: center;
   }
 
 .menu {
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
 }
   .menu--featured {
 
@@ -1317,16 +1343,18 @@ label {
 }
 .anchor-items {
   display: inline-block;
+  text-align: center;
 }
 .anchor-item {
   display: inline-block;
   vertical-align: middle;
-  margin: 0.25em 0.5em;
+  margin: .25em .5em;
+  text-align: center;
 }
 .anchor-scroll {
-  font-size: 0.7rem;
-  text-decoration: none;
   color: $body-color;
+  font-size: 0.75em;
+  text-decoration: none;
 }
 .anchor-image {
   border-radius: 50%;
@@ -1344,26 +1372,22 @@ label {
     margin-right: $gutter / 2;
   }
 
-  .food__image--right {
-    float: right;
-    margin-left: $gutter / 2;
-  }
-
-  .food__image img,
-  .food__image--right img {
+  .food__image img {
     display: block;
+    vertical-align: middle;
   }
 
   .food-body {
   }
     .food__title {
+      color: #000;
       font-family: $bodyFontStack;
       font-size: 1.2em;
+      font-weight: 700;
       margin-bottom: .25em;
     }
     .food__summary {
       font-size: 1em;
-      color: #000;
     }
     .foot-prices {
 
@@ -1372,36 +1396,25 @@ label {
     border: none;
     border-top: 1px solid $food-separator-color;
     color: $food-separator-color;
-    margin: .675em 0;
+    margin: .75em 0;
     padding: 0;
   }
 .food--featured {
   .icon-star {
     color: #ffcc00;
   }
-  .food__title {
-    font-weight: bold;
-  }
 }
 
 .prices {
-  @extend .clearfix;
   margin-bottom: 1em;
+  text-align: right;
 }
   .price__label {
-    clear: left;
-    color: #000;
-    float: left;
-    width: 66%;
+    color: scale-color($body-color, $lightness: +25%);
   }
   .price__value {
     color: #000;
-    background-color: #f2f2f2;
-    float: right;
     font-weight: 700;
-    text-align: right;
-    width: 33%;
-    padding-right: .5em;
   }
 
 
@@ -1441,42 +1454,37 @@ label {
 
 // Gallery
 .restaurant-gallery {
-  background-color: #fff;
+  margin-bottom: 1em;
 }
   .gallery__item {
     position: relative;
     margin-bottom: 1em;
   }
     .gallery__img {
-      position: relative;
       img {
-        display: block;
-        max-width: 100%;
+        @extend .auto;
+        vertical-align: middle;
       }
     }
-    .photo__caption {
-      display: inline-block;
-      vertical-align: middle;
-      line-height: normal;
-      word-break: break-word;
-    }
-    .photo__link {
-      @include transition(background-color .5s);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      font-weight: 700;
-      line-height: 200px;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: block;
-      overflow: hidden;
-      text-align: center;
-      text-decoration: none;
-    }
-  .gallery__item:hover .photo__link {
-      background-color: rgba(0, 0, 0, 0.25);
-  }
+      .photo__link {
+        display: block;
+        &:hover {
+          .photo__caption {
+            background-color: $accent-color;
+          }
+        }
+      }
+        .photo__caption {
+          color: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: .5em;
+          font-size: 1em;
+          font-weight: 700;
+          background-color: rgba($body-color, .75);
+        }
 
 /**
  * Pure CSS Lightbox

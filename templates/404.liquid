@@ -1,19 +1,23 @@
 <section class="page-header page-header--error">
   <div class="wrapper">
-    <header class="section__header">
+    <header class="section__header page-header__header">
       <h1 class="page-header__title">{{ "Page introuvable" | t }}</h1>
     </header>
     <main class="section__main page-header__description">
-      <p>{{ "La page que vous avez demandée n'existe pas." | t }}</p>
+      <div class="message message--notice">
+        <div class="message__description">
+          <p>
+            <i class="icon-warning"></i> {{ "La page que vous avez demandée n'existe pas." | t }}
+          </p>
+        </div>
+      </div>
     </main>
     <footer class="section__footer">
-      <div class="non-semantic-protector">
-        <a class="featured__link button--ribbon" href="{{ restaurant.root_path }}">
-         <span class="ribbon-content">
+      <p>
+        <a class="button" href="{{ restaurant.root_path }}">
           {{ "Retour à l'accueil" | t }}
-         </span>
         </a>
-      </div>
+      </p>
     </footer>
   </div>
 </section>

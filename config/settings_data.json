@@ -4,7 +4,8 @@
     "header-font": "'Linden Hill', serif",
     "body-font": "'Open Sans', sans-serif",
     "body-background": "#ffffff",
-    "body-color": "#333333",
+    "body-color": "#465155",
+    "accent-color": "#e5442e",
     "google_business_view_url": "",
     "display_google_business_view_url": false,
     "google_business_view_embed": "",
@@ -15,16 +16,17 @@
   "presets":{
     "Original":{
       "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Linden+Hill|Open+Sans:400,700' rel='stylesheet' type='text/css'>",
-    "header-font": "'Linden Hill', serif",
-    "body-font": "'Open Sans', sans-serif",
-    "body-background": "#ffffff",
-    "body-color": "#333333",
-    "google_business_view_url": "",
-    "display_google_business_view_url": false,
-    "google_business_view_embed": "",
-    "display_google_business_view_embed": false,
-    "google_map_type": "image",
-    "footer_display_newsletter": true
+      "header-font": "'Linden Hill', serif",
+      "body-font": "'Open Sans', sans-serif",
+      "body-background": "#ffffff",
+      "body-color": "#465155",
+      "accent-color": "#e5442e",
+      "google_business_view_url": "",
+      "display_google_business_view_url": false,
+      "google_business_view_embed": "",
+      "display_google_business_view_embed": false,
+      "google_map_type": "image",
+      "footer_display_newsletter": true
     }
   }
 }

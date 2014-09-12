@@ -28,10 +28,12 @@
           {% endfor %}
         {% endfor %}
       </main>
-      <footer class="section__footer">
-        <a class="button featured__link" href="{{ restaurant.menus_path }}">
-          {{ "Voir toute la carte" | t }}
-        </a>
+      <footer class="section__footer menus__footer">
+        <p>
+          <a class="button" href="{{ restaurant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </p>
       </footer>
     </div>
   </section>
@@ -48,10 +50,12 @@
           {% include 'food' with food:food %}
         {% endfor %}
       </main>
-      <footer class="section__footer">
-        <a class="button featured__link" href="{{ restaurant.menus_path }}">
-          {{ "Voir toute la carte" | t }}
-        </a>
+      <footer class="section__footer foods__footer">
+        <p>
+          <a class="button" href="{{ restaurant.menus_path }}">
+            {{ "Voir toute la carte" | t }}
+          </a>
+        </p>
       </footer>
     </div>
   </section>
@@ -114,10 +118,12 @@
           </div>
           {% endif %}
         </main>
-        <footer class="section__footer">
-            <a class="button directions__link" href="{% google_map_url %}">
+        <footer class="section__footer directions__footer">
+          <p>
+            <a class="button" href="{% google_map_url %}">
               {{ "Voir l'itinéraire" | t }}
             </a>
+          </p>
         </footer>
       </section>
     </div>

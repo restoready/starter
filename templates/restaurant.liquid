@@ -15,11 +15,9 @@
   <section class="restaurant-gallery">
     <div class="wrapper">
       <main class="section__main gallery">
-        <div class="grid">
-          {% for photo in photos %}
-            {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
-          {% endfor %}
-        </div>
+        {% for photo in photos %}
+          {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
+        {% endfor %}
       </main>
     </div>
   </section>
@@ -33,16 +31,13 @@
       </header>
       {% google_business_view_embed: "size:100%x300" %}
       {% if theme_settings.display_google_business_view_url %}
-        <footer class="section__footer">
-          <div class="non-semantic-protector">
-            <a class="business__link button--ribbon" href="{% google_business_view_url %}">
-              <span class="ribbon-content">
-                {{ "Visiter" | t }}
-              </span>
-            </a>
-          </div>
-        </footer>
+      <footer class="section__footer">
+        <p>
+          <a class="button business__link" href="{% google_business_view_url %}">
+            {{ "Visiter" | t }}
+          </a>
+        </p>
+      </footer>
       {% endif %}
-    </div>
   </section>
 {% endif %}

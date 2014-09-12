@@ -23,10 +23,14 @@
     {% endif %}
     {% if prices.size > 0 %}
       <div class="food-prices">
-        <dl class="prices">
+        <ul class="prices">
           {% for price in prices %}
-            <dt class="price__label">{{ price.title }}</dt>
-            <dd class="price__value">{{ price.amount | money }}</dd>
+          <li>
+            {% if price.title != nil %}
+              <span class="price__label">{{ price.title }} : </span>
+            {% endif %}
+             <span class="price__value">{{ price.amount | money }}</span>
+          </li>
           {% endfor %}
         </dl>
       </div>
