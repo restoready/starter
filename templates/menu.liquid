@@ -1,15 +1,14 @@
 <section class="page-header page-header--menu">
   <div class="wrapper">
     <header class="section__header page-header__header">
-      <h1 class="section__title section__title--menu page-header__title">{{ menu.name }}</h1>
+      <h1 class="section__title page-header__title">{{ menu.name }}</h1>
       {% if menu.children? %}
-        <ul class="anchor-items">
+        <ul class="menu-children">
           {% for child in menu.children %}
-            <li class="anchor-item">
-              <a href="#menu-{{child.id}}" class="anchor-scroll">
-                {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:anchor-image" }}
-                <br>
-                <p class="anchor-name">{{ child.name}}</p>
+            <li class="menu-child">
+              <a href="#menu-{{child.id}}" class="menu-child__link">
+                {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:menu-child__image" }}
+                <span class="menu-child__title">{{ child.name}}</span>
               </a>
             </li>
           {% endfor %}

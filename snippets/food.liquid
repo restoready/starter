@@ -1,6 +1,6 @@
 <div class="food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
   {% if food.main_image? %}
-    {{ food.main_image | custom_image_url:'80x80#' | image_tag:'class:food__image circle' }}
+    {{ food.main_image | custom_image_url:'100x100#' | image_tag:'class:food__image circle' }}
   {% endif %}
   <div class="food__body">
     <h5 class="food__title">
@@ -22,19 +22,18 @@
       </div>
     {% endif %}
     {% if prices.size > 0 %}
-      <div class="food-prices">
+      <div class="food__prices">
         <ul class="prices">
           {% for price in prices %}
-          <li>
-            {% if price.title != nil %}
-              <span class="price__label">{{ price.title }} : </span>
-            {% endif %}
-             <span class="price__value">{{ price.amount | money }}</span>
+          <li class="price">
+            <span class="price__label">{{ price.title }}</span>
+            <span class="price__value">{{ price.amount | money }}</span>
           </li>
           {% endfor %}
-        </dl>
+        </ul>
       </div>
     {% endif %}
   </div>
-  <hr class="food__separator">
 </div>
+
+<hr class="food__separator">

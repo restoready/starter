@@ -1,18 +1,19 @@
 /*
-* RestoReady v1.0
-* Copyright 2014 MH Communication.
-* Author MH Communication @MHCommunication
-* Built with Sass - http://sass-lang.com/
-
-* Some things to know about this file:
+ * RestoReady v1.0
+ * Copyright 2014 MH Communication.
+ * Author MH Communication @MHCommunication
+ * Built with Sass - http://sass-lang.com/
+ 
+ * Some things to know about this file:
     - Sass is compiled on RestoReady's server so you don't need to convert it to CSS yourself
     - The output CSS is compressed and comments are removed
     - You cannot use @imports in this file
     - Helpers variables, mixins, and starter classes are provided. Change as needed.
     - The file is prepped with a CSS reset
 */
+
 /* Table of Contents
-==================================================
+==============================================================================
   Colors
   Box Model
   Breakpoint and Grid Variables
@@ -32,11 +33,11 @@
   Modules
   Icomoon Font
   Breakpoints
-================================================== */
+=========================================================================== */
 
-// ==============================================================================
+// ===========================================================================
 // #Colors
-// ==============================================================================
+// ===========================================================================
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 $accent-color: {{ theme_settings.accent-color }};
@@ -44,18 +45,18 @@ $accent-color: {{ theme_settings.accent-color }};
 // Foods
 $food-separator-color: #f0f0f0;
 
-// ==============================================================================
+// ===========================================================================
 // #Box model
-// ==============================================================================
+// ===========================================================================
 *, input, :before, :after {
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
 }
 
-// ==============================================================================
+// ===========================================================================
 // #Breakpoint and Grid Variables
-// ==============================================================================
+// ===========================================================================
 $viewportIncrement: 1px;
 
 $small: 480px;
@@ -77,9 +78,9 @@ $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
 $breakpoint-has-push:  ('medium', 'medium-down', 'large');
 $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 
-// ==============================================================================
+// ===========================================================================
 // #General Variables
-// ==============================================================================
+// ===========================================================================
 
 
 /* Width variables */
@@ -96,9 +97,9 @@ $bodyFontStack: {{ theme_settings.body-font }};
 
 
 
-// ==============================================================================
+// ===========================================================================
 // #Sass Mixins
-// ==============================================================================
+// ===========================================================================
 .clearfix {
   &:after {
     content: "";
@@ -143,10 +144,10 @@ $bodyFontStack: {{ theme_settings.body-font }};
 
 
 
-// ==============================================================================
+// ===========================================================================
 // Dependency-free breakpoint mixin
 // http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
-// ==============================================================================
+// ===========================================================================
 $min: min-width;
 $max: max-width;
 @mixin at-query ($constraint, $viewport1, $viewport2:null) {
@@ -165,19 +166,19 @@ $max: max-width;
   }
 }
 
-// ==============================================================================
+// ===========================================================================
 // #Reset
-// ==============================================================================
+// ===========================================================================
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}code,pre{background-color:#faf7f5;font-family:Consolas,monospace;border:0 none;padding:0 2px;color:#51ab62;}pre{overflow:auto;padding:0.5em;margin:0 0 1em;}
 
 
-// ==============================================================================
+// ===========================================================================
 // #Grid Setup
 //
 // - Based on csswizardry grid, but with floated columns and a fixed gutter size
 // - Breakpoints defined above, under #Breakpoint and Grid Variables
 // - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid-items
-// ==============================================================================
+// ===========================================================================
 $responsive:         true;
 $mobile-first:       true;
 $use-silent-classes: false;
@@ -620,9 +621,9 @@ $class-type: unquote(".");
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Basic Styles
-// ==============================================================================
+// ===========================================================================
 .wrapper {
   @include clearfix();
   max-width: $siteWidth;
@@ -631,9 +632,9 @@ $class-type: unquote(".");
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Helper Classes
-// ==============================================================================
+// ===========================================================================
 .left { float: left; }
 .right { float: right; }
 .text-center { text-align: center; }
@@ -656,9 +657,9 @@ $class-type: unquote(".");
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Typography
-// ==============================================================================
+// ===========================================================================
 body,
 input,
 textarea,
@@ -704,9 +705,9 @@ sup {
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Lists
-// ==============================================================================
+// ===========================================================================
 ul, ol { margin-bottom: 1em; }
 ul { list-style: none outside; }
 ol { list-style: decimal; }
@@ -721,9 +722,9 @@ li { margin-bottom: 0.25em; }
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Images and Iframes
-// ==============================================================================
+// ===========================================================================
 img.auto,
 .grid-item img,
 .grid-item iframe {
@@ -736,9 +737,9 @@ img.circle {
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Forms
-// ==============================================================================
+// ===========================================================================
 .button,
 button,
 input[type="text"],
@@ -838,9 +839,9 @@ form.form-horizontal,
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Links and Buttons
-// ==============================================================================
+// ===========================================================================
 .button {
   background-color: $accent-color;
   border: 0;
@@ -877,9 +878,9 @@ form.form-horizontal,
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Layout
-// ==============================================================================
+// ===========================================================================
 body {
   color: $body-color;
   background-color: $body-background;
@@ -1132,9 +1133,9 @@ legend {
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Modules
-// ==============================================================================
+// ===========================================================================
 .page-header {
   padding: 1em 0;
 }
@@ -1201,34 +1202,6 @@ legend {
     margin-bottom: .5em;
   }
 }
-  .menus__menu-link {
-    color: $body-color;
-    &:hover, &:focus {
-      color: #000;
-    }
-  }
-  .menus__children {
-    list-style: none;
-  }
-    .menus__child {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-      .menus__child-link {
-        color: scale-color($accent-color, $saturation: -75%);
-        font-size: 1.2em;
-        text-decoration: none;
-        &:hover, &:focus {
-          color: $accent-color;
-        }
-      }
-  .menus__separator {
-    border: none;
-    border-top: medium solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
 
 .foods--featured {
   background-color: scale-color($body-color, $lightness: +95%);
@@ -1305,9 +1278,6 @@ legend {
   .menu--featured {
 
   }
-  .menu__image-container {
-    margin-bottom: 1em;
-  }
     .menu__image {
       @extend .auto;
     }
@@ -1317,58 +1287,65 @@ legend {
     .menu__title {
       color: #000;
       margin-bottom: .5em;
-      a {
-        color: #9f2a13;
-      }
     }
   .menu__description {
-    color: #000;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 1em;
   }
 
+.menus__menu-link {
+    color: scale-color($accent-color, $saturation: -75%);
+    &:hover, &:focus {
+      color: $accent-color;
+    }
+  }
+  .menus__separator {
+    border: none;
+    border-top: medium solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
 
-// http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
-// all menus
-.section_title--allMenus {
-  text-align: center;
+.menu-children {
 }
-.menus-thumbnail--all img {
-  border-radius: 50%;
-}
-// menu page
-.section__title--menu {
-  display: inline-block;
-  margin-right: 2rem;
-}
-.anchor-items {
-  display: inline-block;
-  text-align: center;
-}
-.anchor-item {
-  display: inline-block;
-  vertical-align: middle;
-  margin: .25em .5em;
-  text-align: center;
-}
-.anchor-scroll {
-  color: $body-color;
-  font-size: 0.75em;
-  text-decoration: none;
-}
-.anchor-image {
-  border-radius: 50%;
-}
+  .menu-child {
+    display: inline-block;
+    margin-bottom: .5em;
+    text-align: center;
+    vertical-align: top;
+    width: 49%;
+  }
+    .menu-child__link {
+      display: block;
+      padding: .5em;
+      text-decoration: none;
+      &:hover, &:focus {
+        .menu-child__title {
+          color: $accent-color;
+        }
+      }
+    }
+      .menu-child__image {
+        @extend .auto;
+        border-radius: 50%;
+        margin-bottom: .5em;
+        vertical-align: middle;
+      }
+      .menu-child__title {
+        color: scale-color($accent-color, $saturation: -75%);
+        display: block;
+      }
+
+// @see http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 .food {
   overflow: hidden;
   _overflow: visible;
-  padding: 0;
-  position: relative;
   zoom: 1;
+  padding: 0;
 }
   .food__image {
     float: left;
-    margin-bottom: $gutter / 2;
     margin-right: $gutter / 2;
   }
 
@@ -1377,44 +1354,46 @@ legend {
     vertical-align: middle;
   }
 
-  .food-body {
+  .food__body {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
   }
     .food__title {
       color: #000;
       font-family: $bodyFontStack;
-      font-size: 1.2em;
+      font-size: 1.25em;
       font-weight: 700;
       margin-bottom: .25em;
     }
     .food__summary {
       font-size: 1em;
     }
-    .foot-prices {
-
-    }
   .food__separator {
     border: none;
     border-top: 1px solid $food-separator-color;
     color: $food-separator-color;
-    margin: .75em 0;
+    margin: 1em 0;
     padding: 0;
   }
 .food--featured {
   .icon-star {
-    color: #ffcc00;
+    color: $accent-color;
   }
 }
 
 .prices {
-  margin-bottom: 1em;
-  text-align: right;
 }
+  .price {
+    @include clearfix;
+  }
   .price__label {
     color: scale-color($body-color, $lightness: +25%);
+    float: left;
   }
   .price__value {
-    color: #000;
     font-weight: 700;
+    float: right;
   }
 
 
@@ -1583,10 +1562,10 @@ x:-o-prefocus, .lb-overlay img {
 
 
 
-// ==============================================================================
+// ===========================================================================
 // #Icomoon font
 // https://icomoon.io/app/
-// ==============================================================================
+// ===========================================================================
 @font-face {
   font-family: 'restoready-starter';
   src:url("{{ 'restoready-starter.eot?g9q59m' | asset_url }}");
@@ -1647,9 +1626,9 @@ x:-o-prefocus, .lb-overlay img {
 }
 
 
-// ==============================================================================
+// ===========================================================================
 // #Breakpoints
-// ==============================================================================
+// ===========================================================================
 
 // Medium
 @include at-query($min, $small) {
