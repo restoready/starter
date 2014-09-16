@@ -319,12 +319,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Pixel to EM conversion tool http://pxtoem.com/
-h1 { font-size: 3em; }       // 42px
-h2 { font-size: 2.429em; }   // 34px
-h3 { font-size: 2em; }       // 28px
-h4 { font-size: 1.429em; }   // 20px
-h5 { font-size: 1.143em; }   // 16px
-h6 { font-size: 1em; }       // 14px
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: .9em; }
 
 p { margin: 0 0 1em 0; }
 p img { margin: 0; }
@@ -609,9 +609,10 @@ body {
   display: block;
 }
 .main-nav__items {
-  height: auto;
-  display: none;
   background-color: $accent-color;
+  display: none;
+  height: auto;
+  margin-bottom: 0;
 }
   .main-nav:target .main-nav__items {
     display: block;
@@ -707,11 +708,6 @@ body {
       .back-to-top__label {
       }
   .footer__subscribe {
-    margin-bottom: 1em;
-    .subscribe__label {
-    }
-    .subscribe__submit {
-    }
   }
   .footer__social {
   }
@@ -769,11 +765,11 @@ select {
 }
 
 legend {
-  color: #000;
+  color: #444;
 }
 
 .field-group {
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
   .field-group__legend {
     font-size: 1.5em;
@@ -784,7 +780,7 @@ legend {
 .input,
 .select,
 .textarea {
-  margin: 0 0 1em;
+  margin: 0 0 .5em 0;
 }
   .input-hint {
     padding: .15em .4em;
@@ -829,6 +825,29 @@ legend {
 // ===========================================================================
 // #Modules
 // ===========================================================================
+.page-header {
+  padding: 1em 0;
+}
+  .page-body {
+    ol, ul, dl {
+      margin-left: 2em;
+    }
+    ul {
+      list-style: disc;
+    }
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    a {
+      color: $accent-color;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: #999;
+      }
+    }
+  }
+
 // Home
 .restaurant-main-image {
   {% if restaurant.main_image? %}
@@ -838,10 +857,10 @@ legend {
   background-position: center center;
   background-repeat: no-repeat;
   background-color: $accent-color;
-  .wrapper {
+}
+  .restaurant-main-image__overlay {
     background-color: rgba(0,0,0, .5);
   }
-}
 .restaurant-summary {
   color: #fff;
   padding-top: 4em;
@@ -856,7 +875,7 @@ legend {
   margin-bottom: 1em;
   padding: 1em 0;
   .section__title {
-    color: #000;
+    color: #444;
     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     margin-bottom: .5em;
   }
@@ -867,7 +886,7 @@ legend {
   margin-bottom: 1em;
   padding: 1em 0;
   .section__title {
-    color: #000;
+    color: #444;
     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     margin-bottom: .5em;
   }
@@ -882,7 +901,7 @@ legend {
   background-color: #fff;
   margin-bottom: 1em;
   .section__title {
-    color: #000;
+    color: #444;
     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     margin-bottom: .5em;
   }
@@ -912,7 +931,7 @@ legend {
   background-color: #fff;
   margin-bottom: 1em;
   .section__title {
-    color: #000;
+    color: #444;
     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     margin-bottom: 1em;
   }
@@ -1303,6 +1322,10 @@ x:-o-prefocus, .lb-overlay img {
     text-align: left;
   }
 
+  .menu-child {
+    width: 32%;
+  }
+
   .gallery__item {
     display: inline-block;
     vertical-align: top;
@@ -1356,6 +1379,34 @@ x:-o-prefocus, .lb-overlay img {
             padding-left: 1em;
           }
   
+  .footer__subscribe {
+    .input {
+      display: inline-block;
+      width: 70%;
+    }
+    .submit {
+      display: inline-block;
+      width: 20%;
+      vertical-align: top;
+      margin-top: 1.65em;
+    }
+  }
+
+  .opening-hours,
+  .directions {
+    width: 48%;
+  }
+  .opening-hours {
+    float: left;
+  }
+  .directions {
+    float: right;
+  }
+
+  .menu-child {
+    width: 19%;
+  }
+
   .gallery__item {
     width: 30%;
     margin: 1%;
@@ -1371,5 +1422,8 @@ x:-o-prefocus, .lb-overlay img {
 
 // > Large
 @include at-query($min, $siteWidth) {
-
+  .footer__subscribe {
+    margin: 0 auto;
+    width: 75%;
+  }
 }
