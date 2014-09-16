@@ -50,7 +50,7 @@
           </div>
         </div>
       </header>
-      <nav class="main-nav" role="navigation">
+      <nav id="nav" class="main-nav" role="navigation">
         {% include 'nav' %}
       </nav>
       <main class="main-content" role="main">
@@ -62,5 +62,11 @@
     </section>
 
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
+    {{ 'doubletaptogo.min.js' | javascript_tag }}
+    <script type="text/javascript">
+      $( function() {
+        $( '.has-sub-nav' ).doubleTapToGo();
+      });
+    </script>
   </body>
 </html>
