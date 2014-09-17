@@ -1372,6 +1372,9 @@ x:-o-prefocus, .lb-overlay img {
     }
       .main-nav__item {
         display: inline-block;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
       }
         .main-nav__link {
           display: inline-block;
@@ -1387,6 +1390,7 @@ x:-o-prefocus, .lb-overlay img {
             display: block;
             padding-left: 1em;
           }
+
   
   .footer__subscribe {
     .input {
