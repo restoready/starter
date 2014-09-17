@@ -826,30 +826,32 @@ legend {
 // ===========================================================================
 // #Modules
 // ===========================================================================
+
+// Default page
 .page-header {
   padding: 1em 0;
 }
-  .page-body {
-    ol, ul, dl {
-      margin-left: 2em;
-    }
-    ul {
-      list-style: disc;
-    }
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-    }
-    a {
-      color: $accent-color;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: #999;
-      }
+.page-body {
+  ol, ul, dl {
+    margin-left: 2em;
+  }
+  ul {
+    list-style: disc;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #999;
     }
   }
+}
 
-// Home
+// Home page
 .restaurant-main-image {
   {% if restaurant.main_image? %}
     background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
@@ -924,7 +926,6 @@ legend {
       margin-left: 30%;
     }
   .opening-hours__information {
-    font-size: 1.2em;
     margin-bottom: 1em;
   }
 
@@ -951,6 +952,7 @@ legend {
     text-align: center;
   }
 
+// Menu item
 .menu {
   padding-bottom: 1em;
 }
@@ -986,6 +988,7 @@ legend {
     padding: 0;
   }
 
+// Menu children
 .menu-children {
 }
   .menu-child {
@@ -1016,6 +1019,7 @@ legend {
         display: block;
       }
 
+// Food item
 .food {
   @include media;
   padding: 0;
@@ -1051,6 +1055,7 @@ legend {
   }
 }
 
+// Food prices
 .prices {
 }
   .price {
@@ -1065,7 +1070,7 @@ legend {
     float: right;
   }
 
-
+// Back to menu
 .back-to-menu {
     text-align: center;
     &:before {
@@ -1229,6 +1234,24 @@ x:-o-prefocus, .lb-overlay img {
 }
 
 
+// Contact page
+.contact-item {
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #999;
+    }
+  }
+}
+  .contact-item__name {
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    color: #444;
+    margin-bottom: .5em;
+  }
+  .contact-item__label {
+    font-weight: 700;
+  }
 
 
 // ===========================================================================
@@ -1431,6 +1454,19 @@ x:-o-prefocus, .lb-overlay img {
     width: auto;
     padding: 80px 100px 120px 100px;
   }
+
+  .aside--contact {
+    float: left;
+    font-size: 75%;
+    width: floor($siteWidth / 3);
+  }
+  .page-header--contact,
+  .page-body--contact {
+    margin-left: ceil($siteWidth / 3) + $gutter;
+  }
+    .contact-item__name {
+      margin-top: 2.15em;
+    }
 }
 
 // > Large
