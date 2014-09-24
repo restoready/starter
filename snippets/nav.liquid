@@ -2,7 +2,7 @@
 <a href="#" class="main-nav__toggle toggle--close" title="{{ "Fermer le menu" | t }}">{{ "Fermer le menu" | t }}</a>
 <ul class="main-nav__items">
   {% for link in linklists.navigation-primaire.links %}
-    {% if link.linklist_handle == "" %}
+    {% if link.linklist_handle == "" or link.linklist_handle == null %}
       <li class="main-nav__item {{ link.url | current_path: 'class:main-nav__item--current' }}">
         <a class="main-nav__link" href="{{ link.url }}">{{ link.title }}</a>
       </li>
