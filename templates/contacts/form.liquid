@@ -43,7 +43,7 @@
         <span class="contact-item__label">{{ "Horaires :" | t }}</span>
       </p>
       <dl class="opening-days">
-        {% for day in restaurant.opening_hours %}
+        {% for day in opening_hours %}
           {{ day.meta_microdata }}
           <dt class="opening-day">
             {{ day.name }}
