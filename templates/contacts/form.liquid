@@ -3,6 +3,7 @@
     <div class="contact-item">
       <h3 class="contact-item__name" itemprop="name">{{ restaurant.name }}</h3>
     </div>
+    {% if restaurant.phone? %}
     <div class="contact-item">
       <p>
         <span class="contact-item__label">{{ "Téléphone :" | t }}</span>
@@ -12,6 +13,8 @@
         </a>
       </p>
     </div>
+    {% endif %}
+    {% if restaurant.email? %}
     <div class="contact-item">
       <p>
         <span class="contact-item__label">{{ "Adresse email :" | t }}</span>
@@ -21,6 +24,7 @@
         </a>
       </p>
     </div>
+    {% endif %}
     <div class="contact-item">
       <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <span class="contact-item__label">{{ "Adresse :" | t }}</span>
