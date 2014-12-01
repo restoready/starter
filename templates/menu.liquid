@@ -7,7 +7,11 @@
           {% for child in menu.children %}
             <li class="menu-child">
               <a href="#menu-{{child.id}}" class="menu-child__link">
-                {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:menu-child__image" }}
+                {% if child.main_image? %}
+                  {{ child.main_image | custom_image_url: "100x100#" | image_tag: "class:menu-child__image" }}
+                {% else %}
+                  {{ 'fallback-image.gif' | asset_url | image_tag: 'alt:menus', 'class:anchor-image', 'width:100' }}
+                {% endif %}
                 <span class="menu-child__title">{{ child.name}}</span>
               </a>
             </li>
