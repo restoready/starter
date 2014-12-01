@@ -14,7 +14,7 @@
   <section class="menus menus--featured">
     <div class="wrapper">
       <header class="section__header">
-        <h2 class="section__title">{{ "Cette semaine" | t }}</h2>
+        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
       </header>
       <main class="section__main">
         {% for menu in home_menus %}
@@ -45,7 +45,7 @@
   <section class="foods foods--featured">
     <div class="wrapper">
       <header class="section__header">
-        <h2 class="section__title">{{ "Nos suggestions" | t }}</h2>
+        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
       </header>
       <main class="section__main">
         {% for food in home_foods %}

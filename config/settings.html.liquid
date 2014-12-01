@@ -11,6 +11,10 @@
   <label for="tab3">
     Modules
   </label>
+  <input class="tab-head" id="tab4" name="tab" type="radio">
+  <label for="tab4">
+    Titres
+  </label>
 
   <div class="tab-body-wrapper">
     <div class="tab-body" id="tab-body-1">
@@ -121,6 +125,31 @@
               <label class="left" for="google_business_view_url">Url</label>
               <input name="admin_theme_settings[google_business_view_url]" type="text" id="google_business_view_url" value="{{ theme_settings.google_business_view_url }}" />
             </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-4">
+      <fieldset>
+        <legend>Page d'accueil</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+
+            <label for="home-menus-featured-text_fr">Titre menus en avant (fr)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_fr]" id="home_menus_featured_text_fr" value="{{ theme_settings.home_menus_featured_text_fr }}" type="text">
+
+            <label for="home-menus-featured-text_en">Titre menus en avant (en)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_en]" id="home_menus_featured_text_en" value="{{ theme_settings.home_menus_featured_text_en }}" type="text">
+
+          </div>
+          <div class="columns medium-4 large-3 end">
+
+            <label for="home-foods-featured-text_fr">Titre plats en avant (fr)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_fr]" id="home_foods_featured_text_fr" value="{{ theme_settings.home_foods_featured_text_fr }}" type="text">
+
+             <label for="home-foods-featured-text_en">Titre plats en avant (en)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_en]" id="home_foods_featured_text_en" value="{{ theme_settings.home_foods_featured_text_en }}" type="text">
+
           </div>
         </div>
       </fieldset>
