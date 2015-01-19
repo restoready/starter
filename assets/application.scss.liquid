@@ -477,6 +477,76 @@ form.form-horizontal,
   }
 }
 
+// Forms
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid scale-color($body-color, $lightness: +50%);
+}
+
+legend {
+  color: #444;
+}
+
+.field-group {
+  margin-bottom: .5em;
+}
+  .field-group__legend {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: .5em;
+  }
+
+.input,
+.select,
+.textarea {
+  margin: 0 0 .5em 0;
+}
+  .input-hint {
+    padding: .15em .4em;
+  }
+  .input-hint--info {
+    background: #68708A;
+    color: #fff;
+  }
+  .input-hint--error {
+    background: #DF5900;
+    color: #fff;
+  }
+
+.submit {
+  text-align: center;
+}
+
+// Messages
+.message {
+  margin-bottom: 1em;
+  padding: .5em 1em;
+}
+  .message__description {
+    p {
+      margin-bottom: 0;
+    }
+  }
+.message--success {
+  background-color: #4E6F25;
+  color: #fff;
+}
+.message--notice {
+  background-color: #DF5900;
+  color: #fff;
+}
+.message--error {
+  background-color: #811515;
+  color: #fff;
+}
 
 // ===========================================================================
 // #Links and Buttons
@@ -778,78 +848,6 @@ body {
         color: $body-color;
       }
     }
-
-
-// Forms
-input[type="text"],
-input[type="search"],
-input[type="password"],
-input[type="email"],
-input[type="file"],
-input[type="number"],
-input[type="tel"],
-textarea,
-select {
-  background-color: #fff;
-  border: 1px solid scale-color($body-color, $lightness: +50%);
-}
-
-legend {
-  color: #444;
-}
-
-.field-group {
-  margin-bottom: .5em;
-}
-  .field-group__legend {
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: .5em;
-  }
-
-.input,
-.select,
-.textarea {
-  margin: 0 0 .5em 0;
-}
-  .input-hint {
-    padding: .15em .4em;
-  }
-  .input-hint--info {
-    background: #68708A;
-    color: #fff;
-  }
-  .input-hint--error {
-    background: #DF5900;
-    color: #fff;
-  }
-
-.submit {
-  text-align: center;
-}
-
-// Messages
-.message {
-  margin-bottom: 1em;
-  padding: .5em 1em;
-}
-  .message__description {
-    p {
-      margin-bottom: 0;
-    }
-  }
-.message--success {
-  background-color: #4E6F25;
-  color: #fff;
-}
-.message--notice {
-  background-color: #DF5900;
-  color: #fff;
-}
-.message--error {
-  background-color: #811515;
-  color: #fff;
-}
 
 
 // ===========================================================================
