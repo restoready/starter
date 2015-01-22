@@ -678,7 +678,7 @@ body {
 .main-nav__toggle {
   display: none;
   float: right;
-  width: 3.9em;
+  width: 7em;
   height: 3.9em;
   text-align: left;
   text-indent: -9999px;
@@ -687,22 +687,29 @@ body {
   &:before,
   &:after {
     position: absolute;
-    border: 2px solid #fff;
-    top: 42%;
-    left: 15%;
-    right: 15%;
+    left: 10%;
+    right: 60%;
     content: '';
   }
+  &:before {
+    top: 25%;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    height: 13px;
+  }
   &:after {
+    border: 2px solid #fff;
     top: 60%;
   }
 }
 .main-nav__toggle-link {
   position: absolute;
   right: 7px;
+  top: 1em;
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 1em;
 }
   .toggle--close {
     background-color: $body-color;
@@ -1457,18 +1464,15 @@ x:-o-prefocus, .lb-overlay img {
     padding: 1em 0;
     text-align: left;
   }
-  .phone-number {
-    margin: 0 0;
-  }
   .local-choice-item {
     font-size: 1.75em;
   }
-  .main-nav__toggle {
-    width: 3.1em;
+  .main-nav__toggle { 
+    width: 5.5em;
     height: 3.1em;
   }
   .main-nav__toggle-link {
-    font-size: .85em;
+    font-size: .75em;
   }
   .main-nav__link {
     font-size: 1em;
