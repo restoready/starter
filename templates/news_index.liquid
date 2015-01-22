@@ -1,0 +1,38 @@
+<section class="page-header page-header--news">
+  <div class="wrapper">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ "Actualités" | t }}</h1>
+    </header>
+  </div>
+</section>
+
+{% if all_news.size > 0 %}
+  <section class="wrapper">
+    <section class="news">
+      <main class="section__main news__body">
+        {% for news in all_news %}
+          <section class="news__one-news">
+            <a href="{{ news.url }}" class="news__one-news-link">
+              <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
+                <h6 class="news__one-news-date">{{ news.date }}</h6>
+                <div class="news__one-news-content">
+                  {% if news.title %}
+                    <h5 class="news__one-news-title">{{ news.title }}</h5>
+                  {% endif %}
+                  {% if news.image? %}
+                    <div class="news__one-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
+                  {% endif %}
+                  {% if news.summary %}
+                    <p class="news__one-news-summary">{{ news.summary }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </section>
+          <hr class="news__separator {% if forloop.last %}news__separator--last{% endif %}">
+          <div class="clearer"></div>
+        {% endfor %}
+      </main>
+    </section>
+  </section>
+{% endif %}
