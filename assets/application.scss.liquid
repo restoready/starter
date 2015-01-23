@@ -629,7 +629,7 @@ body {
       text-decoration: none;
     }
   .phone-number {
-    margin: 1em 0;
+    margin: .5em 0;
     text-align: center;
   }
     .phone-number__link {
@@ -646,6 +646,27 @@ body {
       .phone-number__label {
         color: $body-color;
       }
+
+  .local-choice {
+    text-align: center;
+  }
+  .local-choice-item {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: none;
+    .local-choice-code {
+      color: $body-color;
+      .local-separator {
+        margin: 0 .25em;
+        color: $body-color;
+      }
+    }
+  }
+  .local-choice-item--current {
+    .local-choice-code {
+      color: $accent-color;
+    }
+  }
 
 .main-nav {
   position: absolute;
@@ -1380,6 +1401,12 @@ x:-o-prefocus, .lb-overlay img {
     padding: 1em 0;
     text-align: left;
   }
+  .phone-number {
+    margin: 0 0;
+  }
+  .local-choice-item {
+    font-size: 1.75em;
+  }
   .main-nav__toggle {
     width: 3.1em;
     height: 3.1em;
@@ -1420,7 +1447,16 @@ x:-o-prefocus, .lb-overlay img {
     text-align: right;
     width: 35%;
   }
-  
+  .local-choice {
+    margin-bottom: .5em;
+    text-align: right;
+  }
+  .local-choice-item {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
   .main-nav {
     position: relative;
     text-align: center;

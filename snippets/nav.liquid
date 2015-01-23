@@ -22,18 +22,4 @@
       </li>
     {% endif %}
   {% endfor %}
-  {% if localized_page_paths.size > 0 %}
-    <li class="main-nav__item has-sub-nav">
-      <a class="main-nav__link" href="#" aria-haspopup="true">
-        <span>{{ "Langue" | t }}</span>
-      </a>
-      <ul class="main-sub-nav__items">
-        {% for path in localized_page_paths %}
-          <li class="main-sub-nav__item">
-            <a class="main-sub-nav__link" href="{{ path.url }}">{{ path.locale_name }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </li>
-  {% endif %}
 </ul>
