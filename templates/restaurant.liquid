@@ -4,9 +4,9 @@
       <header class="section__header page-header__header">
         <h1 class="section__title page-header__title">{{ "Le restaurant" | t }}</h1>
       </header>
-      <main class="section__main page-header__description">
+      <div class="section__main page-header__description">
         {{ restaurant.summary }}
-      </main>
+      </div>
     </div>
   </section>
 {% endif %}
@@ -14,11 +14,11 @@
 {% if photos.size > 0 %}
   <section class="restaurant-gallery">
     <div class="wrapper">
-      <main class="section__main gallery">
+      <div class="section__main gallery">
         {% for photo in photos %}
           {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
         {% endfor %}
-      </main>
+      </div>
     </div>
   </section>
 {% endif %}

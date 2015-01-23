@@ -16,7 +16,7 @@
       <header class="section__header">
         <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
       </header>
-      <main class="section__main">
+      <div class="section__main">
         {% for menu in home_menus %}
           <h3 class="menu__title">{{ menu.name }}</h3>
           {% if menu.summary? %}
@@ -29,7 +29,7 @@
             {% include 'food' with food:food %}
           {% endfor %}
         {% endfor %}
-      </main>
+      </div>
       <footer class="section__footer menus__footer">
         <p>
           <a class="button" href="{{ restaurant.menus_path }}">
@@ -47,11 +47,11 @@
       <header class="section__header">
         <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
       </header>
-      <main class="section__main">
+      <div class="section__main">
         {% for food in home_foods %}
           {% include 'food' with food:food %}
         {% endfor %}
-      </main>
+      </div>
       <footer class="section__footer foods__footer">
         <p>
           <a class="button" href="{{ restaurant.menus_path }}">
@@ -68,7 +68,7 @@
     <header class="section__header">
       <h2 class="section__title">{{ "Horaires" | t }}</h2>
     </header>
-    <main class="section__main">
+    <div class="section__main">
       <dl class="opening-days">
       {% for day in opening_hours %}
         <dt class="opening-day">
@@ -84,14 +84,14 @@
         <p>{{ restaurant.opening_hours_information }}</p>
       </div>
     {% endif %}
-    </main>
+    </div>
   </section>
 
   <section class="directions">
     <header class="section__header">
       <h2 class="section__title">{{ "Localisation" | t }}</h2>
     </header>
-    <main class="section__main">
+    <div class="section__main">
       {% if theme_settings.google_map_type != "" %}
         <div class="map">
           {% if theme_settings.google_map_type == "embed" %}
@@ -115,7 +115,7 @@
         </p>
       </div>
       {% endif %}
-    </main>
+    </div>
     <footer class="section__footer directions__footer">
       <p>
         <a class="button" href="{% google_map_url %}">

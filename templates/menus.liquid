@@ -14,7 +14,7 @@
           <a class="menus__menu-link" href="{{ menu.url }}">{{ menu.name }}</a>
         </h2>
       </header>
-      <main class="section__main">
+      <div class="section__main">
         <ul class="menu-children">
           {% for child in menu.children %}
             <li class="menu-child">
@@ -29,7 +29,7 @@
             </li>
           {% endfor %}
         </ul>
-      </main>
+      </div>
       <footer class="section__main menus__footer">
         <p>
           <a class="button" href="{{ menu.url }}">{{ "Voir les plats" | t }}</a>
