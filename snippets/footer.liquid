@@ -70,7 +70,22 @@
 
   <div class="footer__legal">
     <a class="legal__link" href="{{ restaurant.terms_of_use_url }}">
-      {{ "Mentions légales" | t }}
+      {{ "Mentions légales |" | t }}
     </a>
+    {% if localized_page_paths.size > 0 %}
+      <div class="footer__local-choice">
+        {% for path in localized_page_paths %}
+          {% if path.current? %}
+            <strong class="footer__local-choice-item--current">
+              <span class="footer__local-choice">{% if forloop.last %}{{ path.locale_name }}{% else %}{{ path.locale_name }}<span class="footer__local-separator">|</span>{% endif%}</span>
+            </strong>
+          {% else %}
+          <a href="{{ path.url }}" class="footer__local-choice-item">
+            <span class="footer__local-choice">{% if forloop.last %}{{ path.locale_name }}{% else %}{{ path.locale_name }}<span class="footer__local-separator">|</span>{% endif%}</span>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 </div>

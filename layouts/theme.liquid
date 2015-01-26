@@ -22,6 +22,15 @@
     <section class="page" id="top">
       <header class="main-header">
         <div class="wrapper">
+          {% if localized_page_paths.size > 0 %}
+            <div class="local-choice-wrapper">
+              <select class="local-choice" name="language" id="language" onChange="location = this.options[this.selectedIndex].value;">
+                {% for path in localized_page_paths %}
+                  <option value="{{ path.url }}" class="local-choice-item" {% if path.current? %}selected{%endif%}>{{ path.locale_code }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          {% endif %}
           <div class="identity">
             {% if restaurant.logo? %}
               <div class="logo">
@@ -48,15 +57,7 @@
               </a>
             </div>
           {% endif %}
-          {% if localized_page_paths.size > 0 %}
-            <div class="local-choice">
-              {% for path in localized_page_paths %}
-                <a href="{{ path.url }}" class="local-choice-item {% if path.current? %}local-choice-item--current{% endif %}">
-                  <span class="local-choice-code">{% if forloop.last %}{{ path.locale_code }}{% else %}{{ path.locale_code }}<span class="local-separator">|</span>{% endif%}</span>
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
+
         </div>
       </header>
       <nav id="nav" class="main-nav" role="navigation">
@@ -75,6 +76,9 @@
     <script type="text/javascript">
       $( function() {
         $( '.has-sub-nav' ).doubleTapToGo();
+        $('.main-nav__toggle').click(function(){
+          $('.local-choice-wrapper').toggle();
+        });
       });
     </script>
   </body>

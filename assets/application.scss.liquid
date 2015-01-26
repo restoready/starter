@@ -600,6 +600,9 @@ body {
 }
 
 .main-header {
+  .wrapper {
+    position: relative;
+  }
 }
   .logo {
     text-align: center;
@@ -647,25 +650,27 @@ body {
         color: $body-color;
       }
 
+  .local-choice-wrapper {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    margin: .5em auto 0 auto;
+    background: url('{{ "arrow.png" | asset_url }}') no-repeat right;
+  }
   .local-choice {
-    text-align: center;
-  }
-  .local-choice-item {
-    font-size: 2.5em;
+    cursor: pointer;
+    width: 65px;
+    height: 30px;
+    margin: 0 auto;
+    background: transparent;
+    -webkit-appearance: none;
+    font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
-    .local-choice-code {
-      color: $body-color;
-      .local-separator {
-        margin: 0 .25em;
-        color: $body-color;
-      }
-    }
-  }
-  .local-choice-item--current {
-    .local-choice-code {
-      color: $accent-color;
-    }
+    color: #465155;
+    border: 2px solid #465155;
+    text-transform: uppercase;
+    border-radius: 0;
+    outline: none;
   }
 
 .main-nav {
@@ -876,7 +881,23 @@ body {
         color: $body-color;
       }
     }
-
+    .footer__local-choice {
+      display: inline-block;
+    }
+      .footer__local-choice-item {
+        text-decoration: none;
+        color: scale-color($body-color, $lightness: +25%);
+        &:hover, &:focus {
+          color: $body-color;
+        }
+      }
+      .footer__local-choice-item--current {
+        color: $accent-color;
+      }
+      .footer__local-separator {
+        color: scale-color($body-color, $lightness: +25%);
+        font-weight: normal;
+      }
 
 // ===========================================================================
 // #Modules
@@ -1464,10 +1485,8 @@ x:-o-prefocus, .lb-overlay img {
     padding: 1em 0;
     text-align: left;
   }
-  .local-choice-item {
-    font-size: 1.75em;
-  }
-  .main-nav__toggle { 
+
+  .main-nav__toggle {
     width: 5.5em;
     height: 3.1em;
   }
@@ -1507,14 +1526,9 @@ x:-o-prefocus, .lb-overlay img {
     text-align: right;
     width: 35%;
   }
-  .local-choice {
-    margin-bottom: .5em;
-    text-align: right;
-  }
-  .local-choice-item {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
+  .local-choice-wrapper {
+    position: absolute;
+    bottom: 1em; right: 1.25em;
   }
 
   .main-nav {
@@ -1551,7 +1565,7 @@ x:-o-prefocus, .lb-overlay img {
             padding-left: 1em;
           }
 
-  
+
   .footer__subscribe {
     .input {
       display: inline-block;
