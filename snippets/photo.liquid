@@ -9,14 +9,14 @@
       <div>
         <h3>{{ photo.caption }}</h3>
         <a href="#image-{% if i == 1 %}{{ l }}{% else %}{{ i | minus: 1 }}{% endif %}" class="lb-prev">
-          <i class="icon-chevron-left"></i>
+          <i class="icon icon-arrow-left"></i>
         </a>
         <a href="#image-{% if i == l %}{{ 1 }}{% else %}{{ i | plus: 1 }}{% endif %}" class="lb-next">
-          <i class="icon-chevron-right"></i>
+          <i class="icon icon-arrow-right"></i>
         </a>
       </div>
       <a href="#page" class="lb-close">
-        <i class="icon-times"></i>
+        <i class="icon icon-close"></i>
       </a>
     </div>
   </div>

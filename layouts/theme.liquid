@@ -29,6 +29,7 @@
                   <option value="{{ path.url }}" class="local-choice-item" {% if path.current? %}selected{%endif%}>{{ path.locale_code }}</option>
                 {% endfor %}
               </select>
+              <i class="icon icon-arrow-down local-choice__icon"></i>
             </div>
           {% endif %}
           <div class="identity">
@@ -53,7 +54,7 @@
           {% if restaurant.phone? %}
             <div class="phone-number">
               <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
-                <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+                <i class="icon icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
               </a>
             </div>
           {% endif %}

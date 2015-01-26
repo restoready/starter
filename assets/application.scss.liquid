@@ -655,7 +655,6 @@ body {
     z-index: 10;
     display: inline-block;
     margin: .5em auto 0 auto;
-    background: url('{{ "arrow.png" | asset_url }}') no-repeat right;
   }
   .local-choice {
     cursor: pointer;
@@ -666,13 +665,21 @@ body {
     -webkit-appearance: none;
     font-size: 16px;
     font-weight: bold;
-    color: #465155;
-    border: 2px solid #465155;
+    color: $body-color;
+    border: 2px solid $body-color;
     text-transform: uppercase;
     border-radius: 0;
     outline: none;
+    position: relative;
+    z-index: 1;
   }
-
+  .local-choice__icon {
+    position: absolute;
+    top: .25em;
+    right: .5em;
+    z-index: 0;
+    color: $body-color;
+  }
 .main-nav {
   position: absolute;
   top: 0;
@@ -846,6 +853,7 @@ body {
     }
       .social__item {
         display: inline-block;
+        vertical-align: middle;
       }
         .social__link {
           color: $body-color;
@@ -1394,68 +1402,69 @@ x:-o-prefocus, .lb-overlay img {
   display: none;
 }
 
-// ===========================================================================
-// #Icomoon font
-// https://icomoon.io/app/
-// ===========================================================================
+/*
+  Icon Font: fontcustom
+*/
+
 @font-face {
-  font-family: 'restoready-starter';
-  src:url("{{ 'restoready-starter.eot?g9q59m' | asset_url }}");
-  src:url("{{ 'restoready-starter.eot?#iefixg9q59m' | asset_url }}") format('embedded-opentype'),
-    url("{{ 'restoready-starter.woff?g9q59m' | asset_url }}") format('woff'),
-    url("{{ 'restoready-starter.ttf?g9q59m' | asset_url }}") format('truetype'),
-    url("{{ 'restoready-starter.svg?g9q59m#restoready-starter' | asset_url }}") format('svg');
+  font-family: "fontcustom";
+  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot" | asset_url }}');
+  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.woff" | asset_url }}') format("woff"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.ttf" | asset_url }}') format("truetype"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'restoready-starter';
-  speak: none;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-down:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-check:before,
+.icon-close:before,
+.icon-envelop:before,
+.icon-facebook:before,
+.icon-phone:before,
+.icon-star:before,
+.icon-tripadvisor:before,
+.icon-twitter:before,
+.icon-warning:before {
+  display: inline-block;
+  font-family: "fontcustom";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
-.icon-tripadvisor:before {
-  content: "\e600";
-}
-.icon-times:before {
-  content: "\e601";
-}
-.icon-chevron-right:before {
-  content: "\e602";
-}
-.icon-chevron-left:before {
-  content: "\e603";
-}
-.icon-star:before {
-  content: "\e604";
-}
-.icon-warning:before {
-  content: "\e605";
-}
-.icon-input-checked:before {
-  content: "\e606";
-}
-.icon-social-twitter:before {
-  content: "\e607";
-}
-.icon-social-facebook:before {
-  content: "\e608";
-}
-.icon-phone:before {
-  content: "\e609";
-}
-.icon-envelope:before {
-  content: "\f0e0";
-}
+.icon-arrow-down:before { content: "\f100"; }
+.icon-arrow-left:before { content: "\f101"; }
+.icon-arrow-right:before { content: "\f102"; }
+.icon-check:before { content: "\f103"; }
+.icon-close:before { content: "\f104"; }
+.icon-envelop:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-phone:before { content: "\f107"; }
+.icon-star:before { content: "\f108"; }
+.icon-tripadvisor:before { content: "\f109"; }
+.icon-twitter:before { content: "\f10a"; }
+.icon-warning:before { content: "\f10b"; }
 
 
 // ===========================================================================
@@ -1485,7 +1494,9 @@ x:-o-prefocus, .lb-overlay img {
     padding: 1em 0;
     text-align: left;
   }
-
+  .local-choice__icon {
+    top:0;
+  }
   .main-nav__toggle {
     width: 5.5em;
     height: 3.1em;
