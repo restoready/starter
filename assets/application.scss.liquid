@@ -44,7 +44,7 @@ $accent-color: {{ theme_settings.accent-color }};
 
 // Foods
 $food-separator-color: #f0f0f0;
-
+$separator-color: #f0f0f0;
 // ===========================================================================
 // #Box model
 // ===========================================================================
@@ -600,6 +600,9 @@ body {
 }
 
 .main-header {
+  .wrapper {
+    position: relative;
+  }
 }
   .logo {
     text-align: center;
@@ -647,27 +650,36 @@ body {
         color: $body-color;
       }
 
+  .local-choice-wrapper {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    margin: .5em auto 0 auto;
+  }
   .local-choice {
-    text-align: center;
-  }
-  .local-choice-item {
-    font-size: 2.5em;
+    cursor: pointer;
+    width: 65px;
+    height: 30px;
+    margin: 0 auto;
+    background: transparent;
+    -webkit-appearance: none;
+    font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
-    .local-choice-code {
-      color: $body-color;
-      .local-separator {
-        margin: 0 .25em;
-        color: $body-color;
-      }
-    }
+    color: $body-color;
+    border: 2px solid $body-color;
+    text-transform: uppercase;
+    border-radius: 0;
+    outline: none;
+    position: relative;
+    z-index: 1;
   }
-  .local-choice-item--current {
-    .local-choice-code {
-      color: $accent-color;
-    }
+  .local-choice__icon {
+    position: absolute;
+    top: .25em;
+    right: .5em;
+    z-index: 0;
+    color: $body-color;
   }
-
 .main-nav {
   position: absolute;
   top: 0;
@@ -678,7 +690,7 @@ body {
 .main-nav__toggle {
   display: none;
   float: right;
-  width: 3.9em;
+  width: 7em;
   height: 3.9em;
   text-align: left;
   text-indent: -9999px;
@@ -687,22 +699,29 @@ body {
   &:before,
   &:after {
     position: absolute;
-    border: 2px solid #fff;
-    top: 42%;
-    left: 15%;
-    right: 15%;
+    left: 10%;
+    right: 60%;
     content: '';
   }
+  &:before {
+    top: 25%;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    height: 13px;
+  }
   &:after {
+    border: 2px solid #fff;
     top: 60%;
   }
 }
 .main-nav__toggle-link {
   position: absolute;
   right: 7px;
+  top: 1em;
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 1em;
 }
   .toggle--close {
     background-color: $body-color;
@@ -834,6 +853,7 @@ body {
     }
       .social__item {
         display: inline-block;
+        vertical-align: middle;
       }
         .social__link {
           color: $body-color;
@@ -869,7 +889,23 @@ body {
         color: $body-color;
       }
     }
-
+    .footer__local-choice {
+      display: inline-block;
+    }
+      .footer__local-choice-item {
+        text-decoration: none;
+        color: scale-color($body-color, $lightness: +25%);
+        &:hover, &:focus {
+          color: $body-color;
+        }
+      }
+      .footer__local-choice-item--current {
+        color: $accent-color;
+      }
+      .footer__local-separator {
+        color: scale-color($body-color, $lightness: +25%);
+        font-weight: normal;
+      }
 
 // ===========================================================================
 // #Modules
@@ -1281,12 +1317,12 @@ body {
   filter: alpha(opacity=99); /* internet explorer */
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
 }
-/* 
-  100% Height for Opera as the max-height seems to be ignored, not optimal for large screens 
-  http://bricss.net/post/11230266445/css-hack-to-target-opera 
+/*
+  100% Height for Opera as the max-height seems to be ignored, not optimal for large screens
+  http://bricss.net/post/11230266445/css-hack-to-target-opera
 */
 x:-o-prefocus, .lb-overlay img {
-    height: 100%;
+  height: 100%;
 }
 
 
@@ -1309,69 +1345,126 @@ x:-o-prefocus, .lb-overlay img {
     font-weight: 700;
   }
 
+// news
+.news {
+    margin-top: 1em;
+  }
+.news__header {
+  margin-bottom: 1em;
+}
+.home-news-title__link {
+  text-decoration: none;
+  color: $body-color;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: inline-block;
+  transition: color .25s;
+  &:hover {
+    color: $accent-color;
+  }
+}
+.news__one-news {
+}
+.news__one-news-link {
+  color: $body-color;
+  text-decoration: none;
+}
+.news__one-news-image {
+  width: 100%;
+  display: block;
+  height: 300px;
+  background-position: center center;
+}
+.news__one-news-content-wrapper {
+  width: 100%;
+  padding: 0;
+}
+.news__one-news-date {
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: .75em;
+}
+.news__one-news-content {
+}
+.news__one-news-title {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+.news__one-news-summary {
+  margin-bottom: 0;
+  padding-top: .75em;
+}
+.news__separator {
+  border: 1px solid $separator-color;
+  margin: 1.5em 0;
+}
+.news__separator--last {
+  display: none;
+}
 
-// ===========================================================================
-// #Icomoon font
-// https://icomoon.io/app/
-// ===========================================================================
+/*
+  Icon Font: fontcustom
+*/
+
 @font-face {
-  font-family: 'restoready-starter';
-  src:url("{{ 'restoready-starter.eot?g9q59m' | asset_url }}");
-  src:url("{{ 'restoready-starter.eot?#iefixg9q59m' | asset_url }}") format('embedded-opentype'),
-    url("{{ 'restoready-starter.woff?g9q59m' | asset_url }}") format('woff'),
-    url("{{ 'restoready-starter.ttf?g9q59m' | asset_url }}") format('truetype'),
-    url("{{ 'restoready-starter.svg?g9q59m#restoready-starter' | asset_url }}") format('svg');
+  font-family: "fontcustom";
+  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot" | asset_url }}');
+  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.woff" | asset_url }}') format("woff"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.ttf" | asset_url }}') format("truetype"),
+       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'restoready-starter';
-  speak: none;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-down:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-check:before,
+.icon-close:before,
+.icon-envelop:before,
+.icon-facebook:before,
+.icon-phone:before,
+.icon-star:before,
+.icon-tripadvisor:before,
+.icon-twitter:before,
+.icon-warning:before {
+  display: inline-block;
+  font-family: "fontcustom";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
-.icon-tripadvisor:before {
-  content: "\e600";
-}
-.icon-times:before {
-  content: "\e601";
-}
-.icon-chevron-right:before {
-  content: "\e602";
-}
-.icon-chevron-left:before {
-  content: "\e603";
-}
-.icon-star:before {
-  content: "\e604";
-}
-.icon-warning:before {
-  content: "\e605";
-}
-.icon-input-checked:before {
-  content: "\e606";
-}
-.icon-social-twitter:before {
-  content: "\e607";
-}
-.icon-social-facebook:before {
-  content: "\e608";
-}
-.icon-phone:before {
-  content: "\e609";
-}
-.icon-envelope:before {
-  content: "\f0e0";
-}
+.icon-arrow-down:before { content: "\f100"; }
+.icon-arrow-left:before { content: "\f101"; }
+.icon-arrow-right:before { content: "\f102"; }
+.icon-check:before { content: "\f103"; }
+.icon-close:before { content: "\f104"; }
+.icon-envelop:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-phone:before { content: "\f107"; }
+.icon-star:before { content: "\f108"; }
+.icon-tripadvisor:before { content: "\f109"; }
+.icon-twitter:before { content: "\f10a"; }
+.icon-warning:before { content: "\f10b"; }
 
 
 // ===========================================================================
@@ -1401,18 +1494,15 @@ x:-o-prefocus, .lb-overlay img {
     padding: 1em 0;
     text-align: left;
   }
-  .phone-number {
-    margin: 0 0;
-  }
-  .local-choice-item {
-    font-size: 1.75em;
+  .local-choice__icon {
+    top:0;
   }
   .main-nav__toggle {
-    width: 3.1em;
+    width: 5.5em;
     height: 3.1em;
   }
   .main-nav__toggle-link {
-    font-size: .85em;
+    font-size: .75em;
   }
   .main-nav__link {
     font-size: 1em;
@@ -1447,14 +1537,9 @@ x:-o-prefocus, .lb-overlay img {
     text-align: right;
     width: 35%;
   }
-  .local-choice {
-    margin-bottom: .5em;
-    text-align: right;
-  }
-  .local-choice-item {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
+  .local-choice-wrapper {
+    position: absolute;
+    bottom: 1em; right: 1.25em;
   }
 
   .main-nav {
@@ -1491,7 +1576,7 @@ x:-o-prefocus, .lb-overlay img {
             padding-left: 1em;
           }
 
-  
+
   .footer__subscribe {
     .input {
       display: inline-block;
@@ -1544,6 +1629,30 @@ x:-o-prefocus, .lb-overlay img {
     .contact-item__name {
       margin-top: 2.15em;
     }
+
+    // news
+  .news__one-news {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .news__one-news-image {
+    position: absolute;
+    width: 30%;
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .news__one-news-content-wrapper {
+    width: 70%;
+    float: right;
+    padding: 1em 2em;
+  }
+  .news__one-news-content-wrapper--no-image {
+    width: 100%;
+  }
 }
 
 // > Large
