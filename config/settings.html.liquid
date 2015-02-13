@@ -66,7 +66,7 @@
       <fieldset>
         <legend>Communication</legend>
         <div class="columns">
-            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
       </fieldset>
@@ -74,11 +74,11 @@
       <fieldset>
         <legend>Carte Google</legend>
         <div class="columns">
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
         </div>
       </fieldset>
@@ -99,7 +99,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
             <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
             </div>
           </div>
@@ -115,7 +115,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
               <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
             </div>
           </div>
