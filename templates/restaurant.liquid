@@ -16,7 +16,7 @@
     <div class="wrapper">
       <div class="section__main gallery">
         {% for photo in photos %}
-          {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
+          {% include 'photo' with photo:photo %}
         {% endfor %}
       </div>
     </div>
