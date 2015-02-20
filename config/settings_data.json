@@ -27,7 +27,9 @@
     "google_business_view_embed": "",
     "display_google_business_view_embed": false,
     "google_map_type": "image",
-    "footer_display_newsletter": true
+    "footer_display_newsletter": true,
+    "home_display_news": false,
+    "restaurant_display_news": true
   },
   "presets":{
     "Original":{
@@ -58,7 +60,9 @@
       "google_business_view_embed": "",
       "display_google_business_view_embed": false,
       "google_map_type": "image",
-      "footer_display_newsletter": true
+      "footer_display_newsletter": true,
+      "home_display_news": false,
+      "restaurant_display_news": true
     }
   }
 }
