@@ -1656,13 +1656,17 @@ body{
   Icon Font: fontcustom
 */
 
+/*
+  Icon Font: fontcustom
+*/
+
 @font-face {
   font-family: "fontcustom";
-  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot" | asset_url }}');
-  src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.eot?#iefix" | asset_url }}') format("embedded-opentype"),
-       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.woff" | asset_url }}') format("woff"),
-       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.ttf" | asset_url }}') format("truetype"),
-       url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
+  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot' |asset_url }}");
+  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot?#iefix' |asset_url }}") format("embedded-opentype"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff' |asset_url }}") format("woff"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf' |asset_url }}") format("truetype"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1670,7 +1674,7 @@ body{
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url('{{ "fontcustom_2673841382dc9a21de96f0685f3c73c6.svg#fontcustom" | asset_url }}') format("svg");
+    src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
   }
 }
 
@@ -1678,12 +1682,10 @@ body{
 
 [data-icon]:before,
 .icon-arrow-down:before,
-.icon-arrow-left:before,
-.icon-arrow-right:before,
 .icon-check:before,
-.icon-close:before,
 .icon-envelop:before,
 .icon-facebook:before,
+.icon-google:before,
 .icon-phone:before,
 .icon-star:before,
 .icon-tripadvisor:before,
@@ -1704,12 +1706,10 @@ body{
 }
 
 .icon-arrow-down:before { content: "\f100"; }
-.icon-arrow-left:before { content: "\f101"; }
-.icon-arrow-right:before { content: "\f102"; }
 .icon-check:before { content: "\f103"; }
-.icon-close:before { content: "\f104"; }
 .icon-envelop:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
+.icon-google:before { content: "\f10c"; }
 .icon-phone:before { content: "\f107"; }
 .icon-star:before { content: "\f108"; }
 .icon-tripadvisor:before { content: "\f109"; }
