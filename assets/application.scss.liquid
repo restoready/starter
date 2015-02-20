@@ -1189,14 +1189,16 @@ body {
     background-color: #AAAAAA;
     color: #FFFFFF;
   }
-    .tag--vegan, .tag--vegetarian {
-      background-color: #8a9e6c;
-      color: #fff;
-    }
-    .tag--new {
-      background-color: #d8c061;
-      color: #fff;
-    }
+    {% for tag in tags %}
+      .tag--{{tag.css_class}} {
+        {% if tag.background_value != "" %}
+          background-color: {{ tag.background_value }};
+        {% endif %}
+        {% if tag.color_value != "" %}
+          color: {{ tag.color_value }};
+        {% endif %}
+      }
+    {% endfor %}
 
 // Gallery
 .restaurant-gallery {

@@ -35,6 +35,25 @@
           </div>
         </div>
       </fieldset>
+      <fieldset>
+        <legend>Etiquettes</legend>
+        <div class="row">
+          {% for tag in tags %}
+            <div class="columns medium-4 large-3">
+              <label for="label-{{ tag.css_class }}-background">{{ tag.name }} (fond)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-background]" id="label-{{ tag.css_class }}-background" value="{{ tag.background_value }}" type="text" class="minicolors">
+            </div>
+            {% if forloop.last %}
+              <div class="columns medium-4 large-3 end">
+            {% else %}
+              <div class="columns medium-4 large-3">
+            {% endif %}
+              <label for="label-{{ tag.css_class }}-color">{{ tag.name }} (texte)</label>
+              <input name="admin_theme_settings[tags][{{ tag.css_class }}-color]" id="label-{{ tag.css_class }}-color" value="{{ tag.color_value }}" type="text" class="minicolors">
+            </div>
+          {% endfor %}
+        </div>
+      </fieldset>
     </div>
 
     <div class="tab-body" id="tab-body-2">
