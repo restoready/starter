@@ -23,7 +23,7 @@
                     <div class="news__one-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
                   {% endif %}
                   {% if news.summary %}
-                    <p class="news__one-news-summary">{{ news.summary }}</p>
+                    <p class="news__one-news-summary">{{ news.summary | newline_to_br }}</p>
                   {% endif %}
                 </div>
               </div>
