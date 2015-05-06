@@ -14,7 +14,7 @@
           <section class="news__one-news">
             <a href="{{ news.url }}" class="news__one-news-link">
               <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
-                <h6 class="news__one-news-date">{{ news.updated_at | | translate_date:"date_with_day_name" }}</h6>
+                <h6 class="news__one-news-date">{{ news.updated_at | to_date | translate_date:"date_with_day_name" }}</h6>
                 <div class="news__one-news-content">
                   {% if news.title %}
                     <h5 class="news__one-news-title">{{ news.title }}</h5>
