@@ -1,0 +1,101 @@
+// ===========================================================================
+// #Food
+// ===========================================================================
+.food {
+  @include media;
+  padding: 0;
+}
+  .food__image {
+    @include media-aside;
+    margin-right: $gutter / 2;
+    vertical-align: middle;
+  }
+  .food__body {
+    @include media-body;
+  }
+    .food__title {
+      color: #000;
+      font-family: $bodyFontStack;
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: .25em;
+    }
+    .food__summary {
+      font-size: 1em;
+    }
+  .food__separator {
+    border: none;
+    border-top: 1px solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+.food--featured {
+  .icon-star {
+    color: $accent-color;
+  }
+}
+
+// Food prices
+.prices {
+}
+  .price {
+    @include clearfix;
+  }
+  .price__label {
+    color: scale-color($body-color, $lightness: +25%);
+    float: left;
+  }
+  .price__value {
+    font-weight: 700;
+    float: right;
+  }// Food item
+.food {
+  @include media;
+  padding: 0;
+}
+  .food__image {
+    @include media-aside;
+    margin-right: $gutter / 2;
+    vertical-align: middle;
+  }
+  .food__body {
+    @include media-body;
+  }
+    .food__title {
+      color: #000;
+      font-family: $bodyFontStack;
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: .25em;
+    }
+    .food__summary {
+      font-size: 1em;
+    }
+  .food__separator {
+    border: none;
+    border-top: 1px solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+.food--featured {
+  .icon-star {
+    color: $accent-color;
+  }
+}
+
+// Food prices
+.prices {
+}
+  .price {
+    @include clearfix;
+  }
+  .price__label {
+    color: scale-color($body-color, $lightness: +25%);
+    float: left;
+  }
+  .price__value {
+    font-weight: 700;
+    float: right;
+  }

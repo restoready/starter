@@ -1,0 +1,13 @@
+// ===========================================================================
+// #Layout
+// ===========================================================================
+body {
+  color: $body-color;
+  background-color: $body-background;
+}
+.page {
+  @include clearfix();
+}
+.main-content {
+  margin-bottom: 1em;
+}

@@ -1,0 +1,25 @@
+// ===========================================================================
+// #Custom page
+// ===========================================================================
+.page-header {
+  padding: 1em 0;
+}
+.page-body {
+  ol, ul, dl {
+    margin-left: 2em;
+  }
+  ul {
+    list-style: disc;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: #999;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+// ===========================================================================
+// #Home
+// ===========================================================================
+.restaurant-main-image {
+  {% if restaurant.main_image? %}
+    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
+  {% endif %}
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $accent-color;
+}
+  .restaurant-main-image__overlay {
+    background-color: rgba(0,0,0, .5);
+  }
+.restaurant-summary {
+  color: #fff;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  text-align: center;
+  p {
+    font-size: 1.2em;
+  }
+}
+.menus--featured {
+  background-color: #fff;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.foods--featured {
+  background-color: scale-color($body-color, $lightness: +95%);
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.menus__footer,
+.foods__footer {
+  text-align: center;
+}
+
+.opening-hours {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+  @include media-query($min, $medium) {
+    float: left;
+  }
+}
+  .opening-days {
+    @include clearfix();
+    margin-bottom: 1em;
+  }
+    .opening-day {
+      color: $body-color;
+      clear: left;
+      float: left;
+      font-size: 1em;
+      width: 25%;
+    }
+    .opening-shifts {
+      color: scale-color($accent-color, $saturation: -75%);
+      font-size: 1em;
+      margin-left: 30%;
+    }
+  .opening-hours__information {
+    margin-bottom: 1em;
+  }
+
+.directions, .business-view {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: 1em;
+  }
+}
+
+.opening-hours,
+.directions {
+  @include media-query($min, $medium) {
+    width: 48%;
+  }
+}
+.directions {
+  @include media-query($min, $medium) {
+    float: right;
+  }
+}
+
+  .map {
+    margin-bottom: 1em;
+  }
+    .map__image {
+      max-width: 100%;
+      height: auto;
+    }
+  .address {
+    color: $body-color;
+    font-size: 1.2em;
+  }
+  .directions__footer {
+    text-align: center;
+  }

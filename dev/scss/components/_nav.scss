@@ -1,0 +1,182 @@
+// ===========================================================================
+// #Nav
+// ===========================================================================
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  @include media-query($min, $siteWidth) {
+    position: relative;
+    text-align: center;
+  }
+}
+.main-nav__toggle {
+  display: none;
+  float: right;
+  width: 7em;
+  height: 3.9em;
+  text-align: left;
+  text-indent: -9999px;
+  background-color: $accent-color;
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    left: 10%;
+    right: 60%;
+    content: '';
+  }
+  &:before {
+    top: 25%;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    height: 13px;
+  }
+  &:after {
+    border: 2px solid #fff;
+    top: 60%;
+  }
+  @include media-query($min, $small) {
+    width: 5.5em;
+    height: 3.1em;
+  }
+  @include media-query($min, $siteWidth) {
+    display: none !important;
+  }
+}
+.main-nav__toggle-link {
+  position: absolute;
+  right: 7px;
+  top: 1em;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  @include media-query($min, $small) {
+    font-size: .75em;
+  }
+  @include media-query($min, $siteWidth) {
+    display: none;
+  }
+}
+  .toggle--close {
+    background-color: $body-color;
+  }
+.main-nav:not(:target) .toggle--open,
+.main-nav:target .toggle--close {
+  display: block;
+}
+.main-nav__items {
+  background-color: $accent-color;
+  display: none;
+  height: auto;
+  margin-bottom: 0;
+  @include media-query($min, $siteWidth) {
+    display: block;
+  }
+}
+  .main-nav:target .main-nav__items {
+    display: block;
+    width: 100%;
+  }
+  .main-nav__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid scale-color($accent-color, $lightness: +25%);
+    }
+    display: block;
+    margin: 0;
+    @include media-query($min, $siteWidth) {
+      display: inline-block;
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+    }
+  }
+  .main-nav__item--current {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+    .main-nav__link {
+      color: #fff;
+      display: block;
+      height: auto;
+      padding: 0.75em 1em;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover, &:focus {
+        background-color: scale-color($accent-color, $lightness: -15%);
+      }
+      &:active {
+        background-color: scale-color($accent-color, $lightness: -30%);
+      }
+      @include media-query($min, $small) {
+        font-size: 1em;
+      }
+      @include media-query($min, $siteWidth) {
+        display: inline-block;
+      }
+    }
+
+  .has-sub-nav {
+    span:after {
+      width: 0;
+      height: 0;
+      border: 0.313em solid transparent;
+      border-bottom: none;
+      border-top-color: scale-color($accent-color, $lightness: +50%);
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      position: relative;
+      right: -0.313em;
+    }
+    &:hover > .main-sub-nav__items {
+      display: block;
+    }
+  }
+
+.main-sub-nav__items {
+  background-color: scale-color($accent-color, $lightness: -10%);
+  display: none;
+  margin-bottom: 0;
+  @include media-query($min, $siteWidth) {
+    position: absolute;
+  }
+}
+  .main-sub-nav__item {
+    display: block;
+    margin: 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid scale-color($accent-color, $lightness: +5%);
+    }
+    @include media-query($min, $siteWidth) {
+      display: block;
+      text-align: left;
+    }
+  }
+  .main-sub-nav__item--current {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+    .main-sub-nav__link {
+      color: #fff;
+      display: block;
+      height: auto;
+      padding: 0.75em 1em;
+      font-size: 1.3em;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover, &:focus {
+        background-color: scale-color($accent-color, $lightness: -15%);
+      }
+      &:active {
+        background-color: scale-color($accent-color, $lightness: -30%);
+      }
+      font-weight: 400;
+      padding-left: 1.5em;
+      @include media-query($min, $siteWidth) {
+        display: block;
+        padding-left: 1em;
+      }
+    }

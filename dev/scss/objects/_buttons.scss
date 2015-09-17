@@ -1,0 +1,37 @@
+// ===========================================================================
+// #Buttons
+// ===========================================================================
+.button {
+  background-color: $accent-color;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-appearance: none;
+
+  &.button--small {
+    font-size: 0.75em;
+    padding: .25em .5em;
+  }
+
+  &.button--full {
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+  }
+}

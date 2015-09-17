@@ -4,6 +4,7 @@
   "description": "workflow front theme RestoReady",
   "main": "index.js",
   "scripts": {
+    "dev": "./node_modules/.bin/gulp",
     "shrinkwrap": "npm shrinkwrap --dev"
   },
   "keywords": [

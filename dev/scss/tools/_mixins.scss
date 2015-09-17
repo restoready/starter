@@ -1,0 +1,44 @@
+// ===========================================================================
+// #Sass Mixins
+// ===========================================================================
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+// @see http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+@mixin media() {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+  @mixin media-aside($side: left) {
+    float: $side;
+  }
+
+  @mixin media-body() {
+    @include media;
+  }
+
+// http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+$min: min-width;
+$max: max-width;
+@mixin media-query($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}

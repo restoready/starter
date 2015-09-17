@@ -12,28 +12,16 @@
     - The file is prepped with a CSS reset
 */
 
-/* Table of Contents
-==============================================================================
-  Colors
-  Box Model
-  Breakpoint and Grid Variables
-  General Variables
-  Sass Mixins
-  Dependency-free breakpoint mixin
-  Reset
-  Grid Setup
-  Basic Styles
-  Helper classes
-  Typography
-  Lists
-  Images and Iframes
-  Forms
-  Links and buttons
-  Layout
-  Modules
-  Icomoon Font
-  Breakpoints
-=========================================================================== */
+// ===========================================================================
+// #General Variables
+// ===========================================================================
+/* Width variables */
+$siteWidth: 960px;
+$gutter: 24px;
+
+/* Typography */
+$headerFontStack: {{ theme_settings.header-font }};
+$bodyFontStack: {{ theme_settings.body-font }};
 
 // ===========================================================================
 // #Colors
@@ -45,69 +33,17 @@ $accent-color: {{ theme_settings.accent-color }};
 // Foods
 $food-separator-color: #f0f0f0;
 $separator-color: #f0f0f0;
-// ===========================================================================
-// #Box model
-// ===========================================================================
-*, input, :before, :after {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-}
 
 // ===========================================================================
-// #Breakpoint and Grid Variables
+// #Breakpoints
 // ===========================================================================
-$viewportIncrement: 1px;
-
 $small: 480px;
 $medium: 768px;
 $large: 769px;
 
-$postSmall: $small + $viewportIncrement;
-$preMedium: $medium - $viewportIncrement;
-$preLarge: $large - $viewportIncrement;
-
-/* The following are dependencies of csswizardry grid */
-$breakpoints: (
-  'small' '(max-width: #{$small})',
-  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
-  'medium-down' '(max-width: #{$medium})',
-  'large' '(min-width: #{$large})'
-);
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
-
-// ===========================================================================
-// #General Variables
-// ===========================================================================
-
-
-/* Width variables */
-$siteWidth: 960px;
-$gutter: 24px;
-$gridGutter: 24px; // can be a %, but nested grids will have smaller margins because of it
-
-/* Radius */
-$radius: .25em;
-
-/* Typography */
-$headerFontStack: {{ theme_settings.header-font }};
-$bodyFontStack: {{ theme_settings.body-font }};
-
-
-
 // ===========================================================================
 // #Sass Mixins
 // ===========================================================================
-.clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  *zoom: 1;
-}
 @mixin clearfix() {
   &:after {
     content: "";
@@ -115,36 +51,6 @@ $bodyFontStack: {{ theme_settings.body-font }};
     clear: both;
   }
   *zoom: 1;
-}
-
-@mixin box-shadow($shadow) {
-  -webkit-box-shadow: #{$shadow};
-  -moz-box-shadow:    #{$shadow};
-  box-shadow:         #{$shadow};
-}
-
-@mixin transition($transition:0.1s all) {
-  -webkit-transition: #{$transition};
-  -moz-transition: #{$transition};
-  -o-transition: #{$transition};
-  transition: #{$transition};
-}
-
-@mixin gradient($from, $to, $fallback) {
-  background: $fallback;
-  background: -moz-linear-gradient(top, $from 0%, $to 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
-  background: -webkit-linear-gradient(top, $from 0%,$to 100%);
-  background: -o-linear-gradient(top, $from 0%,$to 100%);
-  background: -ms-linear-gradient(top, $from 0%,$to 100%);
-  background: linear-gradient(top bottom, $from 0%,$to 100%);
-}
-
-@mixin backface($visibility: hidden) {
-  -moz-backface-visibility: $visibility;
-  -webkit-backface-visibility: $visibility;
-  -o-backface-visibility: $visibility;
-  backface-visibility: $visibility;
 }
 
 // @see http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
@@ -161,14 +67,10 @@ $bodyFontStack: {{ theme_settings.body-font }};
     @include media;
   }
 
-
-// ===========================================================================
-// Dependency-free breakpoint mixin
 // http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
-// ===========================================================================
 $min: min-width;
 $max: max-width;
-@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+@mixin media-query($constraint, $viewport1, $viewport2:null) {
   @if $constraint == $min {
     @media screen and ($min: $viewport1) {
       @content;
@@ -189,77 +91,14 @@ $max: max-width;
 // ===========================================================================
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}code,pre{background-color:#faf7f5;font-family:Consolas,monospace;border:0 none;padding:0 2px;color:#51ab62;}pre{overflow:auto;padding:0.5em;margin:0 0 1em;}
 
-
-// ==============================================================================
-// #Grid Setup
-//
-// - Based on csswizardry grid, but with floated columns and a fixed gutter size
-// - Breakpoints defined above, under #Breakpoint and Grid Variables
-// - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid-items
-// ==============================================================================
-$responsive:         true;
-$mobile-first:       true;
-$use-silent-classes: false;
-$push:               true;
-$pull:               false;
-
-$class-type: unquote(".");
-
-@mixin grid-media-query($media-query) {
-  $breakpoint-found: false;
-
-  @each $breakpoint in $breakpoints {
-    $name: nth($breakpoint, 1);
-    $declaration: nth($breakpoint, 2);
-
-    @if $media-query == $name and $declaration {
-      $breakpoint-found: true;
-
-      @media only screen and #{$declaration} {
-        @content;
-      }
-    }
-  }
-
-  @if $breakpoint-found == false{
-    @warn "Breakpoint '#{$media-query}' does not exist";
-  }
+// ===========================================================================
+// #Box model
+// ===========================================================================
+*, input, :before, :after {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
 }
-
-/*------------------------------------*\
-  $HELPERS
-\*------------------------------------*/
-/**
- * Create helper show/hide classes around our breakpoints.
- */
-@mixin device-helper($namespace:"") {
-
-  #{$class-type}#{$namespace}show        { display:block!important; }
-  #{$class-type}#{$namespace}hide        { display:none!important; }
-
-  #{$class-type}#{$namespace}text-left   { text-align:left!important; }
-  #{$class-type}#{$namespace}text-right  { text-align:right!important; }
-  #{$class-type}#{$namespace}text-center { text-align:center!important; }
-
-  #{$class-type}#{$namespace}left        { float:left!important; }
-  #{$class-type}#{$namespace}right       { float:right!important; }
-
-}
-
-/* Our regular, non-responsive width and helper classes. */
-@include device-helper();
-
-/* Our responsive classes, if we have enabled them. */
-@if $responsive == true {
-
-  @each $name in $breakpoint-has-widths {
-    @include grid-media-query($name) {
-      @include device-helper('#{$name}--');
-    }
-  }
-
-}
-
 
 // ===========================================================================
 // #Basic Styles
@@ -269,31 +108,6 @@ $class-type: unquote(".");
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 $gutter;
-}
-
-
-// ===========================================================================
-// #Helper Classes
-// ===========================================================================
-.left { float: left; }
-.right { float: right; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.hidden { display: none; }
-.hide-text {
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  overflow: hidden;
-  top: -10px;
-}
-.display-table {
-  display: table;
-}
-
-.display-table-cell {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 // ===========================================================================
@@ -310,6 +124,12 @@ select {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  @include media-query($min, $small) {
+    font-size: 112.5%;
+  }
+  @include media-query($min, $medium) {
+    font-size: 125%;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -343,43 +163,25 @@ sup {
   font-size: 60%;
 }
 
-
 // ===========================================================================
 // #Lists
 // ===========================================================================
-ul, ol { margin-bottom: 1em; }
-ul { list-style: none outside; }
-ol { list-style: decimal; }
-ol, ul.square, ul.disc { margin-left: 1em; }
-ul.square { list-style: square outside; }
-ul.disc { list-style: disc outside; }
-ol.alpha { list-style: lower-alpha outside; }
-li { margin-bottom: 0.25em; }
-.inline-list li {
-  display: inline-block;
-  margin-bottom: 0;
+ul, ol {
+  margin-bottom: 1em;
 }
-
-
-// ===========================================================================
-// #Images and Iframes
-// ===========================================================================
-img.auto,
-.grid-item img,
-.grid-item iframe {
-  max-width: 100%;
-  height: auto;
+ul {
+  list-style: none outside;
 }
-
-img.circle {
-  border-radius: 50%;
+ol {
+  list-style: decimal;
+  margin-left: 1em;
 }
-
-
+li {
+  margin-bottom: 0.25em;
+}
 // ===========================================================================
 // #Forms
 // ===========================================================================
-.button,
 button,
 input[type="text"],
 input[type="search"],
@@ -495,6 +297,120 @@ legend {
   color: #444;
 }
 
+// ===========================================================================
+// #Icon Font: fontcustom
+// ===========================================================================
+@font-face {
+  font-family: "fontcustom";
+  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot' |asset_url }}");
+  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot?#iefix' |asset_url }}") format("embedded-opentype"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff' |asset_url }}") format("woff"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf' |asset_url }}") format("truetype"),
+       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-down:before,
+.icon-check:before,
+.icon-envelop:before,
+.icon-facebook:before,
+.icon-google:before,
+.icon-phone:before,
+.icon-star:before,
+.icon-tripadvisor:before,
+.icon-twitter:before,
+.icon-warning:before {
+  display: inline-block;
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow-down:before { content: "\f100"; }
+.icon-check:before { content: "\f103"; }
+.icon-envelop:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-google:before { content: "\f10c"; }
+.icon-phone:before { content: "\f107"; }
+.icon-star:before { content: "\f108"; }
+.icon-tripadvisor:before { content: "\f109"; }
+.icon-twitter:before { content: "\f10a"; }
+.icon-warning:before { content: "\f10b"; }
+
+// ===========================================================================
+// #Images and Iframes
+// ===========================================================================
+img.auto,
+.grid-item img,
+.grid-item iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+img.circle {
+  border-radius: 50%;
+}
+
+// ===========================================================================
+// #Buttons
+// ===========================================================================
+.button {
+  background-color: $accent-color;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-appearance: none;
+
+  &.button--small {
+    font-size: 0.75em;
+    padding: .25em .5em;
+  }
+
+  &.button--full {
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+  }
+}
+
+// ===========================================================================
+// #Form
+// ===========================================================================
 .field-group {
   margin-bottom: .5em;
 }
@@ -549,63 +465,41 @@ legend {
 }
 
 // ===========================================================================
-// #Links and Buttons
-// ===========================================================================
-.button {
-  background-color: $accent-color;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0;
-  padding: .5em 2em;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  -webkit-appearance: none;
-
-  &.button--small {
-    font-size: 0.75em;
-    padding: .25em .5em;
-  }
-
-  &.button--full {
-    width: 100%;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: scale-color($accent-color, $lightness: -15%);
-  }
-
-  &[disabled],
-  &.disabled {
-    cursor: default;
-  }
-}
-
-
-// ===========================================================================
 // #Layout
 // ===========================================================================
 body {
   color: $body-color;
   background-color: $body-background;
 }
-
 .page {
   @include clearfix();
 }
+.main-content {
+  margin-bottom: 1em;
+}
 
+// ===========================================================================
+// #Header
+// ===========================================================================
 .main-header {
   .wrapper {
     position: relative;
   }
 }
+  .identity {
+    @include media-query($min, $small) {
+      @include media;
+    }
+    @include media-query($min, $medium) {
+      float: left;
+      width: 65%;
+    }
+  }
   .logo {
     text-align: center;
+    @include media-query($min, $small) {
+      @include media-aside;
+    }
   }
     .logo__link {
       display: block;
@@ -615,9 +509,18 @@ body {
         padding: 1em 0;
         vertical-align: middle;
         width: 180px;
+        @include media-query($min, $small) {
+          width: 120px;
+          margin-right: 1.5em;
+        }
       }
   .restaurant-name {
     text-align: center;
+    @include media-query($min, $small) {
+      @include media-body;
+      padding: 1em 0;
+      text-align: left;
+    }
   }
     .slogan {
       color: scale-color($body-color, $lightness: +25%);
@@ -634,6 +537,15 @@ body {
   .phone-number {
     margin: .5em 0;
     text-align: center;
+    @include media-query($min, $medium) {
+      position: absolute;
+      right: 104px;
+      bottom: 2px;
+    }
+    @include media-query($min, $siteWidth) {
+      bottom: auto;
+      top: 32px;
+    }
   }
     .phone-number__link {
       color: $accent-color;
@@ -645,6 +557,9 @@ body {
           color: #000;
         }
       }
+      @include media-query($min, $medium) {
+        font-size: 1em;
+      }
     }
       .phone-number__label {
         color: $body-color;
@@ -655,6 +570,15 @@ body {
     z-index: 10;
     display: inline-block;
     margin: .5em auto 0 auto;
+    @include media-query($min, $medium) {
+      position: absolute;
+      bottom: .75em;
+      right: 1.25em;
+    }
+    @include media-query($min, $siteWidth) {
+      bottom: auto;
+      top: 32px;
+    }
   }
   .local-choice {
     cursor: pointer;
@@ -681,13 +605,24 @@ body {
     right: .5em;
     z-index: 0;
     color: $body-color;
+    @include media-query($min, $small) {
+      top:0;
+    }
   }
+
+// ===========================================================================
+// #Nav
+// ===========================================================================
 .main-nav {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 3;
+  @include media-query($min, $siteWidth) {
+    position: relative;
+    text-align: center;
+  }
 }
 .main-nav__toggle {
   display: none;
@@ -715,6 +650,13 @@ body {
     border: 2px solid #fff;
     top: 60%;
   }
+  @include media-query($min, $small) {
+    width: 5.5em;
+    height: 3.1em;
+  }
+  @include media-query($min, $siteWidth) {
+    display: none !important;
+  }
 }
 .main-nav__toggle-link {
   position: absolute;
@@ -724,6 +666,12 @@ body {
   color: white;
   font-weight: bold;
   font-size: 1em;
+  @include media-query($min, $small) {
+    font-size: .75em;
+  }
+  @include media-query($min, $siteWidth) {
+    display: none;
+  }
 }
   .toggle--close {
     background-color: $body-color;
@@ -737,6 +685,9 @@ body {
   display: none;
   height: auto;
   margin-bottom: 0;
+  @include media-query($min, $siteWidth) {
+    display: block;
+  }
 }
   .main-nav:target .main-nav__items {
     display: block;
@@ -748,6 +699,12 @@ body {
     }
     display: block;
     margin: 0;
+    @include media-query($min, $siteWidth) {
+      display: inline-block;
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+    }
   }
   .main-nav__item--current {
     background-color: scale-color($accent-color, $lightness: -15%);
@@ -765,6 +722,12 @@ body {
       }
       &:active {
         background-color: scale-color($accent-color, $lightness: -30%);
+      }
+      @include media-query($min, $small) {
+        font-size: 1em;
+      }
+      @include media-query($min, $siteWidth) {
+        display: inline-block;
       }
     }
 
@@ -790,12 +753,19 @@ body {
   background-color: scale-color($accent-color, $lightness: -10%);
   display: none;
   margin-bottom: 0;
+  @include media-query($min, $siteWidth) {
+    position: absolute;
+  }
 }
   .main-sub-nav__item {
     display: block;
     margin: 0;
     &:not(:last-child) {
       border-bottom: 1px solid scale-color($accent-color, $lightness: +5%);
+    }
+    @include media-query($min, $siteWidth) {
+      display: block;
+      text-align: left;
     }
   }
   .main-sub-nav__item--current {
@@ -817,17 +787,15 @@ body {
       }
       font-weight: 400;
       padding-left: 1.5em;
+      @include media-query($min, $siteWidth) {
+        display: block;
+        padding-left: 1em;
+      }
     }
 
-
-.main-content {
-  margin-bottom: 1em;
-}
-  .section__header {
-  }
-  .section__footer {
-  }
-
+// ===========================================================================
+// #Footer
+// ===========================================================================
 .main-footer {
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
@@ -850,6 +818,22 @@ body {
       .back-to-top__label {
       }
   .footer__subscribe {
+    @include media-query($min, $siteWidth) {
+      margin: 0 auto;
+      width: 75%;
+    }
+    @include media-query($min, $medium) {
+      .input {
+        display: inline-block;
+        width: 70%;
+      }
+      .submit {
+        display: inline-block;
+        width: 20%;
+        vertical-align: top;
+        margin-top: 1.65em;
+      }
+    }
   }
   .footer__social {
   }
@@ -914,10 +898,8 @@ body {
       }
 
 // ===========================================================================
-// #Modules
+// #Custom page
 // ===========================================================================
-
-// Default page
 .page-header {
   padding: 1em 0;
 }
@@ -941,109 +923,9 @@ body {
   }
 }
 
-// Home page
-.restaurant-main-image {
-  {% if restaurant.main_image? %}
-    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
-  {% endif %}
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: $accent-color;
-}
-  .restaurant-main-image__overlay {
-    background-color: rgba(0,0,0, .5);
-  }
-.restaurant-summary {
-  color: #fff;
-  padding-top: 4em;
-  padding-bottom: 3em;
-  text-align: center;
-  p {
-    font-size: 1.2em;
-  }
-}
-.menus--featured {
-  background-color: #fff;
-  margin-bottom: 1em;
-  padding: 1em 0;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
-  }
-}
-
-.foods--featured {
-  background-color: scale-color($body-color, $lightness: +95%);
-  margin-bottom: 1em;
-  padding: 1em 0;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
-  }
-}
-
-.menus__footer,
-.foods__footer {
-  text-align: center;
-}
-
-.opening-hours {
-  background-color: #fff;
-  margin-bottom: 1em;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
-  }
-}
-  .opening-days {
-    @include clearfix();
-    margin-bottom: 1em;
-  }
-    .opening-day {
-      color: $body-color;
-      clear: left;
-      float: left;
-      font-size: 1em;
-      width: 25%;
-    }
-    .opening-shifts {
-      color: scale-color($accent-color, $saturation: -75%);
-      font-size: 1em;
-      margin-left: 30%;
-    }
-  .opening-hours__information {
-    margin-bottom: 1em;
-  }
-
-.directions, .business-view {
-  background-color: #fff;
-  margin-bottom: 1em;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: 1em;
-  }
-}
-  .map {
-    margin-bottom: 1em;
-  }
-    .map__image {
-      max-width: 100%;
-      height: auto;
-    }
-  .address {
-    color: $body-color;
-    font-size: 1.2em;
-  }
-  .directions__footer {
-    text-align: center;
-  }
-
-// Menu item
+// ===========================================================================
+// #Menu
+// ===========================================================================
 .menu {
   padding-bottom: 1em;
 }
@@ -1089,6 +971,12 @@ body {
     text-align: center;
     vertical-align: top;
     width: 49%;
+    @include media-query($min, $small) {
+      width: 32%;
+    }
+    @include media-query($min, $medium) {
+      width: 19%;
+    }
   }
     .menu-child__link {
       display: block;
@@ -1116,7 +1004,58 @@ body {
         display: block;
       }
 
-// Food item
+// ===========================================================================
+// #Food
+// ===========================================================================
+.food {
+  @include media;
+  padding: 0;
+}
+  .food__image {
+    @include media-aside;
+    margin-right: $gutter / 2;
+    vertical-align: middle;
+  }
+  .food__body {
+    @include media-body;
+  }
+    .food__title {
+      color: #000;
+      font-family: $bodyFontStack;
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: .25em;
+    }
+    .food__summary {
+      font-size: 1em;
+    }
+  .food__separator {
+    border: none;
+    border-top: 1px solid $food-separator-color;
+    color: $food-separator-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+.food--featured {
+  .icon-star {
+    color: $accent-color;
+  }
+}
+
+// Food prices
+.prices {
+}
+  .price {
+    @include clearfix;
+  }
+  .price__label {
+    color: scale-color($body-color, $lightness: +25%);
+    float: left;
+  }
+  .price__value {
+    font-weight: 700;
+    float: right;
+  }// Food item
 .food {
   @include media;
   padding: 0;
@@ -1167,7 +1106,9 @@ body {
     float: right;
   }
 
-// Back to menu
+// ===========================================================================
+// #Back to menu
+// ===========================================================================
 .back-to-menu {
     text-align: center;
     &:before {
@@ -1184,35 +1125,131 @@ body {
       }
     }
 
-
-// Tags
+// ===========================================================================
+// #Tags
+// ===========================================================================
 .food__tags {
 }
-  .tag {
-    font-size: .95em;
-    border-radius: $radius;
-    padding: .2em .4em;
-    background-color: #AAAAAA;
-    color: #FFFFFF;
+.tag {
+  font-size: .95em;
+  border-radius: .25em;
+  padding: .2em .4em;
+  background-color: #AAAAAA;
+  color: #FFFFFF;
+}
+{% for tag in tags %}
+  .tag--{{tag.css_class}} {
+    {% if tag.background_value != "" %}
+      background-color: {{ tag.background_value }};
+    {% endif %}
+    {% if tag.color_value != "" %}
+      color: {{ tag.color_value }};
+    {% endif %}
   }
-    {% for tag in tags %}
-      .tag--{{tag.css_class}} {
-        {% if tag.background_value != "" %}
-          background-color: {{ tag.background_value }};
-        {% endif %}
-        {% if tag.color_value != "" %}
-          color: {{ tag.color_value }};
-        {% endif %}
-      }
-    {% endfor %}
+{% endfor %}
 
-// Gallery
+// ===========================================================================
+// #News
+// ===========================================================================
+.news {
+    margin: 1em auto 2em auto;
+  }
+.news__header {
+  margin-bottom: 1em;
+}
+.home-news-title__link {
+  text-decoration: none;
+  color: $body-color;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: inline-block;
+  transition: color .25s;
+  &:hover {
+    color: $accent-color;
+  }
+}
+.news__one-news {
+  @include media-query($min, $medium) {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+.news__one-news-link {
+  color: $body-color;
+  text-decoration: none;
+}
+.news__one-news-image {
+  width: 100%;
+  display: block;
+  height: 300px;
+  background-position: center center;
+  @include media-query($min, $medium) {
+    position: absolute;
+    width: 30%;
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+.news__one-news-content-wrapper {
+  width: 100%;
+  padding: 0;
+  @include media-query($min, $medium) {
+    width: 70%;
+    float: right;
+    padding: 1em 2em;
+  }
+}
+.news__one-news-date {
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: .75em;
+}
+.news__one-news-content {
+}
+.news__one-news-title {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+.news__one-news-summary {
+  margin-bottom: 0;
+  padding-top: .75em;
+}
+.news__separator {
+  border: 1px solid $separator-color;
+  margin: 1.5em 0;
+}
+.news__separator--last {
+  display: none;
+}
+
+.news__one-news-content-wrapper--no-image {
+  @include media-query($min, $medium) {
+    width: 100%;
+  }
+}
+// ===========================================================================
+// #Gallery
+// ===========================================================================
 .restaurant-gallery {
   margin-bottom: 1em;
 }
   .gallery__item {
     position: relative;
     margin-bottom: 1em;
+    @include media-query($min, $small) {
+      display: inline-block;
+      vertical-align: top;
+      width: 45%;
+      margin: 2%;
+    }
+    @include media-query($min, $medium) {
+      width: 30%;
+      margin: 1%;
+    }
   }
     .gallery__img {
       img {
@@ -1241,9 +1278,9 @@ body {
           background-color: rgba($body-color, .75);
         }
 
-/*
- * Venobox css
- */
+// ===========================================================================
+// #Venobox
+// ===========================================================================
 .vbox-overlay *, .vbox-overlay *:before, .vbox-overlay *:after{
     -webkit-backface-visibility: hidden;
     -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
@@ -1582,7 +1619,129 @@ body{
     z-index: 1;
 }
 
-// Contact page
+// ===========================================================================
+// #Home
+// ===========================================================================
+.restaurant-main-image {
+  {% if restaurant.main_image? %}
+    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
+  {% endif %}
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $accent-color;
+}
+  .restaurant-main-image__overlay {
+    background-color: rgba(0,0,0, .5);
+  }
+.restaurant-summary {
+  color: #fff;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  text-align: center;
+  p {
+    font-size: 1.2em;
+  }
+}
+.menus--featured {
+  background-color: #fff;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.foods--featured {
+  background-color: scale-color($body-color, $lightness: +95%);
+  margin-bottom: 1em;
+  padding: 1em 0;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+}
+
+.menus__footer,
+.foods__footer {
+  text-align: center;
+}
+
+.opening-hours {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: .5em;
+  }
+  @include media-query($min, $medium) {
+    float: left;
+  }
+}
+  .opening-days {
+    @include clearfix();
+    margin-bottom: 1em;
+  }
+    .opening-day {
+      color: $body-color;
+      clear: left;
+      float: left;
+      font-size: 1em;
+      width: 25%;
+    }
+    .opening-shifts {
+      color: scale-color($accent-color, $saturation: -75%);
+      font-size: 1em;
+      margin-left: 30%;
+    }
+  .opening-hours__information {
+    margin-bottom: 1em;
+  }
+
+.directions, .business-view {
+  background-color: #fff;
+  margin-bottom: 1em;
+  .section__title {
+    color: #444;
+    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+    margin-bottom: 1em;
+  }
+}
+
+.opening-hours,
+.directions {
+  @include media-query($min, $medium) {
+    width: 48%;
+  }
+}
+.directions {
+  @include media-query($min, $medium) {
+    float: right;
+  }
+}
+
+  .map {
+    margin-bottom: 1em;
+  }
+    .map__image {
+      max-width: 100%;
+      height: auto;
+    }
+  .address {
+    color: $body-color;
+    font-size: 1.2em;
+  }
+  .directions__footer {
+    text-align: center;
+  }
+
+// ===========================================================================
+// #Contact
+// ===========================================================================
 .contact-item {
   a {
     color: $accent-color;
@@ -1592,329 +1751,29 @@ body{
     }
   }
 }
+.aside--contact {
+  @include media-query($min, $medium) {
+    float: left;
+    font-size: 75%;
+    width: floor($siteWidth / 3);
+  }
+}
   .contact-item__name {
     border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
     color: #444;
     margin-bottom: .5em;
+    @include media-query($min, $medium) {
+      margin-top: 2.15em;
+    }
   }
   .contact-item__label {
     font-weight: 700;
   }
 
-// news
-.news {
-    margin: 1em auto 2em auto;
-  }
-.news__header {
-  margin-bottom: 1em;
-}
-.home-news-title__link {
-  text-decoration: none;
-  color: $body-color;
-  font-weight: bold;
-  font-size: 1.5em;
-  display: inline-block;
-  transition: color .25s;
-  &:hover {
-    color: $accent-color;
-  }
-}
-.news__one-news {
-}
-.news__one-news-link {
-  color: $body-color;
-  text-decoration: none;
-}
-.news__one-news-image {
-  width: 100%;
-  display: block;
-  height: 300px;
-  background-position: center center;
-}
-.news__one-news-content-wrapper {
-  width: 100%;
-  padding: 0;
-}
-.news__one-news-date {
-  font-weight: bold;
-  margin-bottom: .5em;
-  font-size: .75em;
-}
-.news__one-news-content {
-}
-.news__one-news-title {
-  font-size: 1.75em;
-  font-weight: bold;
-}
-.news__one-news-summary {
-  margin-bottom: 0;
-  padding-top: .75em;
-}
-.news__separator {
-  border: 1px solid $separator-color;
-  margin: 1.5em 0;
-}
-.news__separator--last {
-  display: none;
-}
-
-/*
-  Icon Font: fontcustom
-*/
-
-/*
-  Icon Font: fontcustom
-*/
-
-@font-face {
-  font-family: "fontcustom";
-  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot' |asset_url }}");
-  src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot?#iefix' |asset_url }}") format("embedded-opentype"),
-       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff' |asset_url }}") format("woff"),
-       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf' |asset_url }}") format("truetype"),
-       url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: "fontcustom";
-    src: url("{{ 'fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom' |asset_url }}") format("svg");
-  }
-}
-
-[data-icon]:before { content: attr(data-icon); }
-
-[data-icon]:before,
-.icon-arrow-down:before,
-.icon-check:before,
-.icon-envelop:before,
-.icon-facebook:before,
-.icon-google:before,
-.icon-phone:before,
-.icon-star:before,
-.icon-tripadvisor:before,
-.icon-twitter:before,
-.icon-warning:before {
-  display: inline-block;
-  font-family: "fontcustom";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-decoration: inherit;
-  text-rendering: optimizeLegibility;
-  text-transform: none;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
-
-.icon-arrow-down:before { content: "\f100"; }
-.icon-check:before { content: "\f103"; }
-.icon-envelop:before { content: "\f105"; }
-.icon-facebook:before { content: "\f106"; }
-.icon-google:before { content: "\f10c"; }
-.icon-phone:before { content: "\f107"; }
-.icon-star:before { content: "\f108"; }
-.icon-tripadvisor:before { content: "\f109"; }
-.icon-twitter:before { content: "\f10a"; }
-.icon-warning:before { content: "\f10b"; }
-
-
-// ===========================================================================
-// #Breakpoints
-// ===========================================================================
-
-// Medium
-@include at-query($min, $small) {
-  body,
-  input,
-  textarea,
-  select {
-    font-size: 112.5%;
-  }
-  .identity {
-    @include media;
-  }
-  .logo {
-    @include media-aside;
-  }
-    .logo__image {
-      width: 120px;
-      margin-right: 1.5em;
-    }
-  .restaurant-name {
-    @include media-body;
-    padding: 1em 0;
-    text-align: left;
-  }
-  .local-choice__icon {
-    top:0;
-  }
-  .main-nav__toggle {
-    width: 5.5em;
-    height: 3.1em;
-  }
-  .main-nav__toggle-link {
-    font-size: .75em;
-  }
-  .main-nav__link {
-    font-size: 1em;
-  }
-  .menu-child {
-    width: 32%;
-  }
-
-  .gallery__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
-    margin: 2%;
-  }
-}
-
-// Large
-@include at-query($min, $medium) {
-  body,
-  input,
-  textarea,
-  select {
-    font-size: 125%;
-  }
-
-  .identity {
-    float: left;
-    width: 65%;
-  }
-  .phone-number {
-    float: right;
-    text-align: right;
-    width: 35%;
-  }
-  .local-choice-wrapper {
-    position: absolute;
-    bottom: 1em; right: 1.25em;
-  }
-
-  .main-nav {
-    position: relative;
-    text-align: center;
-  }
-    .main-nav__toggle {
-      display: none !important;
-    }
-    .main-nav__toggle-link {
-      display: none;
-    }
-    .main-nav__items {
-      display: block;
-    }
-      .main-nav__item {
-        display: inline-block;
-        &:not(:last-child) {
-          border-bottom: none;
-        }
-      }
-        .main-nav__link {
-          display: inline-block;
-        }
-      .main-sub-nav__items {
-        position: absolute;
-      }
-        .main-sub-nav__item {
-          display: block;
-          text-align: left;
-        }
-          .main-sub-nav__link {
-            display: block;
-            padding-left: 1em;
-          }
-
-
-  .footer__subscribe {
-    .input {
-      display: inline-block;
-      width: 70%;
-    }
-    .submit {
-      display: inline-block;
-      width: 20%;
-      vertical-align: top;
-      margin-top: 1.65em;
-    }
-  }
-
-  .opening-hours,
-  .directions {
-    width: 48%;
-  }
-  .opening-hours {
-    float: left;
-  }
-  .directions {
-    float: right;
-  }
-
-  .menu-child {
-    width: 19%;
-  }
-
-  .gallery__item {
-    width: 30%;
-    margin: 1%;
-  }
-  .lb-overlay a.lb-close{
-    top: 45px;
-  }
-  .lb-overlay:target {
-    width: auto;
-    padding: 80px 100px 120px 100px;
-  }
-
-  .aside--contact {
-    float: left;
-    font-size: 75%;
-    width: floor($siteWidth / 3);
-  }
-  .page-header--contact,
-  .page-body--contact {
+.page-header--contact,
+.page-body--contact {
+  @include media-query($min, $medium) {
     margin-left: ceil($siteWidth / 3) + $gutter;
   }
-    .contact-item__name {
-      margin-top: 2.15em;
-    }
-
-    // news
-  .news__one-news {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  .news__one-news-image {
-    position: absolute;
-    width: 30%;
-    display: block;
-    height: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  }
-  .news__one-news-content-wrapper {
-    width: 70%;
-    float: right;
-    padding: 1em 2em;
-  }
-  .news__one-news-content-wrapper--no-image {
-    width: 100%;
-  }
 }
 
-// > Large
-@include at-query($min, $siteWidth) {
-  .footer__subscribe {
-    margin: 0 auto;
-    width: 75%;
-  }
-}
