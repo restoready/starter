@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
-var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 
 gulp.task('dev:sass', function () {
