@@ -5,6 +5,7 @@ var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('dev:sass', function () {
   return gulp.src([
@@ -69,22 +70,14 @@ gulp.task('dev:js', function () {
     './js/init.js',
     './js/events.js'
   ])
+  .pipe(sourcemaps.init())
   .pipe(concat('app.js'))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('../assets/'));
 });
 
-gulp.task('prod:js', function () {
-  return gulp.src([
-    // Vendor
-    './js/vendor/jquery-2.1.1.min.js',
-    './js/vendor/doubletaptogo.min.js',
-    './js/vendor/venobox.min.js',
-
-    // Theme
-    './js/init.js',
-    './js/events.js'
-  ])
-  .pipe(concat('app.js'))
+gulp.task('prod:js', ['dev:js'], function () {
+  return gulp.src('../assets/app.js')
   .pipe(uglify())
   .pipe(gulp.dest('../assets/'));
 });
@@ -102,4 +95,5 @@ gulp.task('watch', function () {
 });
 
 gulp.task('build', ['dev:sass', 'prod:js'], function() {});
+gulp.task('dev', ['dev:sass', 'dev:js'], function() {});
 gulp.task('default', ['watch'], function() {});
