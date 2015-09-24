@@ -65,7 +65,7 @@ gulp.task('dev:sass', function () {
 gulp.task('dev:js', function () {
   return gulp.src([
     // Vendor
-    './js/vendor/jquery-2.1.1.min.js',
+    './node_modules/jquery/dist/jquery.js',
     './js/vendor/doubletaptogo.min.js',
     './js/vendor/venobox.js',
 
