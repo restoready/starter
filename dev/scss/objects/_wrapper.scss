@@ -1,5 +1,6 @@
 .o-wrapper {
   @include clearfix();
+  position: relative;
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 $gutter;

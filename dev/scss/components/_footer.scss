@@ -1,100 +1,98 @@
 // ===========================================================================
 // #Footer
 // ===========================================================================
-.main-footer {
+.c-footer {
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
+  @include media-query($min, $small) {
+    font-size: 87.5%;
+  }
 }
+.c-footer__back-to-top {
+  padding: $gutter;
+  text-align: center;
+}
+.c-footer__back-to-top-link {
+  color: scale-color($body-color, $lightness: +25%);
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $body-color;
   }
-  .back-to-top {
-    padding: $gutter;
-    text-align: center;
+}
+.c-footer__subscribe {
+  @include media-query($min, $siteWidth) {
+    margin: 0 auto;
+    width: 75%;
   }
-    .back-to-top__link {
-      color: scale-color($body-color, $lightness: +25%);
-      text-decoration: none;
-      &:hover, &:focus {
-        color: $body-color;
-      }
-    }
-      .back-to-top__label {
-      }
-  .footer__subscribe {
-    @include media-query($min, $siteWidth) {
-      margin: 0 auto;
-      width: 75%;
-    }
-    @include media-query($min, $medium) {
-      .input {
-        display: inline-block;
-        width: 70%;
-      }
-      .submit {
-        display: inline-block;
-        width: 20%;
-        vertical-align: top;
-        margin-top: 1.65em;
-      }
-    }
+}
+.c-footer__input {
+  @include media-query($min, $medium) {
+    display: inline-block;
+    width: 70%;
   }
-  .footer__social {
+}
+.c-footer__submit {
+  @include media-query($min, $medium) {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin-top: 1.6em;
   }
-    .social__items {
-      margin: .75em 0;
-      text-align: center;
-    }
-      .social__item {
-        display: inline-block;
-        vertical-align: middle;
-      }
-        .social__link {
-          color: $body-color;
-          display: inline-block;
-          font-size: 2em;
-          padding: .25em;
-          text-decoration: none;
-          vertical-align: middle;
-          &:hover, &:focus {
-            color: $accent-color;
-          }
-        }
-        .social__link .icon-phone,
-        .social__link .icon-envelope {
-          font-size: .7em;
-        }
-          .social__label {
-            height: 1px;
-            width: 1px;
-            position: absolute;
-            overflow: hidden;
-            top: -10px;
-          }
+}
+.c-footer__button {
+  font-size: 14px;
+}
 
-  .footer__legal {
-    margin-bottom: 1em;
-    text-align: center;
+.c-footer__social-items {
+  margin: .75em 0;
+  text-align: center;
+}
+.c-footer__social-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-footer__social-item-link {
+  color: $body-color;
+  display: inline-block;
+  font-size: 2em;
+  padding: .25em;
+  text-decoration: none;
+  vertical-align: middle;
+  &:hover, &:focus {
+    color: $accent-color;
   }
-    .legal__link {
-      color: scale-color($body-color, $lightness: +25%);
-      text-decoration: none;
-      &:hover, &:focus {
-        color: $body-color;
-      }
-    }
-    .footer__local-choice {
-      display: inline-block;
-    }
-      .footer__local-choice-item {
-        text-decoration: none;
-        color: scale-color($body-color, $lightness: +25%);
-        &:hover, &:focus {
-          color: $body-color;
-        }
-      }
-      .footer__local-choice-item--current {
-        color: $body-color;
-      }
-      .footer__local-separator {
-        color: scale-color($body-color, $lightness: +25%);
-        font-weight: normal;
-      }
+}
+.c-footer__social-item-link {
+  .icon-phone,
+  .icon-envelope {
+  font-size: .7em;
+  }
+}
+.c-footer__social-item-label {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+.c-footer__nav {
+  margin-bottom: 1em;
+  text-align: center;
+}
+.c-footer__item {
+  display: inline-block;
+}
+.c-footer__item--current {
+  color: $body-color;
+}
+.c-footer__item-link {
+  text-decoration: none;
+  color: scale-color($body-color, $lightness: +25%);
+  &:hover, &:focus {
+    color: $body-color;
+  }
+}
+.c-footer__item-separator {
+  color: scale-color($body-color, $lightness: +25%);
+  font-weight: normal;
+}

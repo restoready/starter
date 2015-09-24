@@ -5,22 +5,22 @@
     <iframe src='https://ib.guestonline.fr/instabook/bookings/DThKf1O' width='320px' height='450px' frameborder='0' allowTransparency='true' scrolling='yes' ></iframe>
   </div>
 
-  <div class="back-to-top">
-    <a class="back-to-top__link" href="#top">
+  <div class="c-footer__back-to-top">
+    <a class="c-footer__back-to-top-link" href="#top">
       <span class="back-to-top__label">{{ "Haut de la page" | t }}</span>
     </a>
   </div>
 
   {% if theme_settings.footer_display_newsletter %}
-    <div class="footer__subscribe">
+    <div class="c-footer__subscribe">
       {% newsletter_subscribe_form %}
         <fieldset class="field-group">
-          <div class="input">
+          <div class="input c-footer__input">
             <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
             <input id="subscriberEmail" name="subscriber[email]" type="email" required>
           </div>
-          <div class="submit">
-            <button class="button" type="submit">
+          <div class="submit c-footer__submit">
+            <button class="button c-footer__button" type="submit">
               <i class="icon icon-check"></i> {{ "Valider" | t }}
             </button>
           </div>
@@ -29,77 +29,91 @@
     </div>
   {% endif %}
 
-  <div class="footer__social">
-    <ul class="social__items">
+  <div class="c-footer__social">
+    <ul class="c-footer__social-items">
       {% if restaurant.phone? %}
-      <li class="social__item">
-        <a class="social__link" href="tel:{{ restaurant.phone_uri }}">
+      <li class="c-footer__social-item">
+        <a class="c-footer__social-item-link" href="tel:{{ restaurant.phone_uri }}">
           <i class="icon icon-phone"></i>
-          <span class="social__label">{{ restaurant.phone }}</span>
+          <span class="c-footer__social-item-label">{{ restaurant.phone }}</span>
         </a>
       </li>
       {% endif %}
       {% if restaurant.email? %}
-        <li class="social__item">
-          <a class="social__link" href="mailto:#{{restaurant.email}}">
+        <li class="c-footer__social-item">
+          <a class="c-footer__social-item-link" href="mailto:#{{restaurant.email}}">
             <i class="icon icon-envelop"></i>
-            <span class="social__label">{{ "Envoyer un email" | t }}</span>
+            <span class="c-footer__social-item-label">{{ "Envoyer un email" | t }}</span>
           </a>
         </li>
       {% endif %}
       {% if restaurant.facebook_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.facebook_url}}">
+        <li class="c-footer__social-item">
+          <a class="c-footer__social-item-link" href="{{restaurant.facebook_url}}">
             <i class="icon icon-facebook"></i>
-            <span class="social__label">{{ "Notre page Facebook" | t }}</span>
+            <span class="c-footer__social-item-label">{{ "Notre page Facebook" | t }}</span>
           </a>
         </li>
       {% endif %}
       {% if restaurant.twitter_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.twitter_url}}">
+        <li class="c-footer__social-item">
+          <a class="c-footer__social-item-link" href="{{restaurant.twitter_url}}">
             <i class="icon icon-twitter"></i>
-            <span class="social__label">{{ "Notre compte Twitter" | t }}</span>
+            <span class="c-footer__social-item-label">{{ "Notre compte Twitter" | t }}</span>
           </a>
         </li>
       {% endif %}
       {% if restaurant.google_plus_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.google_plus_url}}">
+        <li class="c-footer__social-item">
+          <a class="c-footer__social-item-link" href="{{restaurant.google_plus_url}}">
             <i class="icon icon-google"></i>
-            <span class="social__label">{{ "Notre page Google+" | t }}</span>
+            <span class="c-footer__social-item-label">{{ "Notre page Google+" | t }}</span>
           </a>
         </li>
       {% endif %}
       {% if restaurant.tripadvisor_url? %}
-        <li class="social__item">
-          <a class="social__link" href="{{restaurant.tripadvisor_url}}">
+        <li class="c-footer__social-item">
+          <a class="c-footer__social-item-link" href="{{restaurant.tripadvisor_url}}">
             <i class="icon icon-tripadvisor"></i>
-            <span class="social__label">{{ "Notre page TripAdvisor" | t }}</span>
+            <span class="c-footer__social-item-label">{{ "Notre page TripAdvisor" | t }}</span>
           </a>
         </li>
       {% endif %}
     </ul>
   </div>
 
-  <div class="footer__legal">
-    <a class="legal__link" href="{{ restaurant.terms_of_use_url }}">
-      {{ "Mentions légales |" | t }}
-    </a>
-    {% if localized_page_paths.size > 0 %}
-      <div class="footer__local-choice">
+  <div class="c-footer__nav">
+    <ul class="c-footer__items">
+      <li class="c-footer__item">
+        <a class="c-footer__item-link" href="{{ restaurant.terms_of_use_url }}">
+          {{ "Mentions légales |" | t }}
+        </a>
+      </li>
+      {% if localized_page_paths.size > 0 %}
         {% for path in localized_page_paths %}
           {% if path.current? %}
-            <strong class="footer__local-choice-item--current">
-              <span class="footer__local-choice">{% if forloop.last %}{{ path.locale_name }}{% else %}{{ path.locale_name }}<span class="footer__local-separator">|</span>{% endif%}</span>
-            </strong>
+            <li class="c-footer__item c-footer__item--current">
+              {% if forloop.last %}
+                {{ path.locale_name }}
+              {% else %}
+                {{ path.locale_name }}
+                <span class="c-footer__item-separator">|</span>
+              {% endif%}
+            </li>
           {% else %}
-          <a href="{{ path.url }}" class="footer__local-choice-item">
-            <span class="footer__local-choice">{% if forloop.last %}{{ path.locale_name }}{% else %}{{ path.locale_name }}<span class="footer__local-separator">|</span>{% endif%}</span>
-          </a>
+            <li class="c-footer__item">
+              <a href="{{ path.url }}" class="c-footer__item-link">
+                {% if forloop.last %}
+                  {{ path.locale_name }}
+                {% else %}
+                  {{ path.locale_name }}
+                  <span class="c-footer__item-separator">|</span>
+                {% endif%}
+              </a>
+            </li>
           {% endif %}
         {% endfor %}
-      </div>
-    {% endif %}
+      {% endif %}
+    </ul>
   </div>
 </div>
