@@ -29,6 +29,9 @@ gulp.task('dev:sass', function () {
     './scss/base/_forms.scss',
     './scss/base/_fontcustom.scss',
 
+    // Vendor
+    './scss/vendors/_venobox.scss',
+
     // Object
     './scss/objects/_wrapper.scss',
     './scss/objects/_images-iframes.scss',
@@ -64,7 +67,7 @@ gulp.task('dev:js', function () {
     // Vendor
     './js/vendor/jquery-2.1.1.min.js',
     './js/vendor/doubletaptogo.min.js',
-    './js/vendor/venobox.min.js',
+    './js/vendor/venobox.js',
 
     // Theme
     './js/init.js',
