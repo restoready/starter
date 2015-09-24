@@ -36,9 +36,9 @@ gulp.task('dev:sass', function () {
     './scss/objects/_wrapper.scss',
     './scss/objects/_images-iframes.scss',
     './scss/objects/_buttons.scss',
+    './scss/objects/_forms.scss',
 
     // Components
-    './scss/components/_form.scss',
     './scss/components/_header.scss',
     './scss/components/_nav.scss',
     './scss/components/_footer.scss',
