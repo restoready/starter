@@ -49,7 +49,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_tags.scss',
     './scss/components/_news.scss',
     './scss/components/_gallery.scss',
-    './scss/components/_venobox.scss',
+    './scss/components/_booking.scss',
 
     // Pages
     './scss/pages/_home.scss',
