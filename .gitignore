@@ -1,2 +1,4 @@
 config.yml
+assets/app.js
+assets/application.scss.liquid
 dev/node_modules
