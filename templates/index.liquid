@@ -1,7 +1,7 @@
 <div class="restaurant-main-image">
   {% if restaurant.summary? %}
     <div class="restaurant-main-image__overlay">
-      <div class="wrapper">
+      <div class="o-wrapper">
         <div class="restaurant-summary">
           {{ restaurant.summary }}
         </div>
@@ -12,7 +12,7 @@
 
 {% if home_menus.size > 0 %}
   <section class="menus menus--featured">
-    <div class="wrapper">
+    <div class="o-wrapper">
       <header class="section__header">
         <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
       </header>
@@ -43,7 +43,7 @@
 
 {% if home_foods.size > 0 %}
   <section class="foods foods--featured">
-    <div class="wrapper">
+    <div class="o-wrapper">
       <header class="section__header">
         <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
       </header>
@@ -65,7 +65,7 @@
 
 {% if theme_settings.home_display_news %}
   {% if ten_latest_news.size > 0 %}
-    <section class="news wrapper">
+    <section class="news o-wrapper">
       <main class="section__main news__body">
         <header class="section__header news__header">
           <a href="{{ localized_root_path }}/news" class="home-news-title__link">
@@ -102,7 +102,7 @@
   {% endif %}
 {% endif %}
 
-<div class="wrapper">
+<div class="o-wrapper">
   <section class="opening-hours">
     <header class="section__header">
       <h2 class="section__title">{{ "Horaires" | t }}</h2>

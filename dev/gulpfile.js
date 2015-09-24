@@ -23,13 +23,13 @@ gulp.task('dev:sass', function () {
     './scss/generic/_box-model.scss',
 
     // Base
-    './scss/base/_basic-styles.scss',
     './scss/base/_typography.scss',
     './scss/base/_lists.scss',
     './scss/base/_forms.scss',
     './scss/base/_fontcustom.scss',
 
     // Object
+    './scss/objects/_wrapper.scss',
     './scss/objects/_images-iframes.scss',
     './scss/objects/_buttons.scss',
 

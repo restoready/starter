@@ -1,6 +1,6 @@
 {% if restaurant.summary? %}
   <section class="page-header page-header--restaurant">
-    <div class="wrapper">
+    <div class="o-wrapper">
       <header class="section__header page-header__header">
         <h1 class="section__title page-header__title">{{ "Le restaurant" | t }}</h1>
       </header>
@@ -13,7 +13,7 @@
 
 {% if photos.size > 0 %}
   <section class="restaurant-gallery">
-    <div class="wrapper">
+    <div class="o-wrapper">
       <div class="section__main gallery">
         {% for photo in photos %}
           {% include 'photo' with photo:photo %}
@@ -25,7 +25,7 @@
 
 {% if theme_settings.display_google_business_view_embed %}
   <section class="business-view">
-    <div class="wrapper">
+    <div class="o-wrapper">
       <header class="section__header">
         <h2 class="section__title">{{ "Visite virtuelle" | t }}</h2>
       </header>
@@ -44,7 +44,7 @@
 
 {% if theme_settings.restaurant_display_news %}
   {% if ten_latest_news.size > 0 %}
-    <section class="news wrapper">
+    <section class="news o-wrapper">
       <main class="section__main news__body">
         <header class="section__header news__header">
           <a href="{{ localized_root_path }}/news" class="home-news-title__link">
