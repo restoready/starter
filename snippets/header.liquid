@@ -1,0 +1,38 @@
+<div class="wrapper">
+  {% if localized_page_paths.size > 0 %}
+    <div class="c-header__local-choice-wrapper">
+      <select class="c-header__local-choice" name="language" id="language" onChange="location = this.options[this.selectedIndex].value;">
+        {% for path in localized_page_paths %}
+          <option value="{{ path.url }}" class="c-header__local-choice-item" {% if path.current? %}selected{%endif%}>{{ path.locale_code }}</option>
+        {% endfor %}
+      </select>
+      <i class="icon icon-arrow-down c-header__local-choice-icon"></i>
+    </div>
+  {% endif %}
+  <div class="c-header__identity">
+    {% if restaurant.logo? %}
+      <div class="c-header__logo">
+        <a class="c-header__logo-link" href="{{ localized_root_path }}">
+          {{ restaurant.logo_url | image_tag:'class: c-header__logo-image' }}
+        </a>
+      </div>
+    {% endif %}
+    <div class="c-header__restaurant-name">
+      <a class="c-header__restaurant-name-link" href="{{ localized_root_path }}">
+        {{ restaurant.name }}
+      </a>
+      {% if restaurant.slogan? %}
+        <div class="c-header__slogan">
+          {{ restaurant.slogan }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if restaurant.phone? %}
+    <div class="c-header__phone-number">
+      <a class="c-header__phone-number-link" href="tel:{{ restaurant.phone_uri }}">
+        <i class="icon c-header__icon-phone"></i> <span class="c-header__phone-number-label">{{ restaurant.phone }}</span>
+      </a>
+    </div>
+  {% endif %}
+</div>
