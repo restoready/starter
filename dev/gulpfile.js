@@ -23,6 +23,7 @@ gulp.task('dev:sass', function () {
     './scss/generic/_box-model.scss',
 
     // Base
+    './scss/base/_document.scss',
     './scss/base/_typography.scss',
     './scss/base/_lists.scss',
     './scss/base/_forms.scss',
@@ -35,7 +36,6 @@ gulp.task('dev:sass', function () {
 
     // Components
     './scss/components/_form.scss',
-    './scss/components/_layout.scss',
     './scss/components/_header.scss',
     './scss/components/_nav.scss',
     './scss/components/_footer.scss',
