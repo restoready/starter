@@ -152,11 +152,11 @@
       <fieldset>
         <legend>Carte Google</legend>
         <div class="columns">
-          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
-          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
-          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
         </div>
       </fieldset>
