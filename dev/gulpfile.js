@@ -51,6 +51,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_gallery.scss',
     './scss/components/_booking.scss',
     './scss/components/_newsletter-form.scss',
+    './scss/components/_messages.scss',
 
     // Pages
     './scss/pages/_home.scss',

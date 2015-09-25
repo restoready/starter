@@ -1,17 +1,14 @@
 {% newsletter_subscribe_form %}
-          <div class="message message--error">
-            <div class="message__description">
-              <p>
-                <i class="icon icon-warning"></i>
-                {{ "Veuillez corriger les erreurs mentionnées ci-dessous :" | t }}
-              </p>
-            </div>
-          </div>
-
   <div class="o-wrapper">
     <section class="o-form c-newsletter-form">
       <h1 class="o-form__title">{{ "Inscription à la newsletter" | t }}</h1>
       {% unless form.created_successfully? %}
+        <div class="c-message c-message--error">
+          <p class="c-message__description">
+            <i class="icon icon-warning"></i>
+            {{ "Veuillez corriger les erreurs mentionnées ci-dessous :" | t }}
+          </p>
+        </div>
       {% endunless %}
       <fieldset class="o-form__field-group">
         <div class="o-form__input">

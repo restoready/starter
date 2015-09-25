@@ -1,0 +1,27 @@
+// Colors
+$color__message-success-background: {{ theme_settings.color-message-success-background }};
+$color__message-success-text: {{ theme_settings.color-message-success-text }};
+$color__message-notice-background: {{ theme_settings.color-message-notice-background }};
+$color__message-notice-text: {{ theme_settings.color-message-notice-text }};
+$color__message-error-background: {{ theme_settings.color-message-error-background }};
+$color__message-error-text: {{ theme_settings.color-message-error-text }};
+
+.c-message {
+  margin-bottom: 1em;
+  padding: .5em 1em;
+}
+.c-message--success {
+  background-color: $color__message-success-background;
+  color: $color__message-success-text;
+}
+.c-message--notice {
+  background-color: $color__message-notice-background;
+  color: $color__message-notice-text;
+}
+.c-message--error {
+  background-color: $color__message-error-background;
+  color: $color__message-error-text;
+}
+.c-message__description {
+  margin-bottom: 0;
+}

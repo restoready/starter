@@ -36,26 +36,3 @@ $color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
 .submit {
   text-align: center;
 }
-
-// Messages
-.message {
-  margin-bottom: 1em;
-  padding: .5em 1em;
-}
-.message__description {
-  p {
-    margin-bottom: 0;
-  }
-}
-.message--success {
-  background-color: #4E6F25;
-  color: #fff;
-}
-.message--notice {
-  background-color: #DF5900;
-  color: #fff;
-}
-.message--error {
-  background-color: #811515;
-  color: #fff;
-}
