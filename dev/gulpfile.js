@@ -53,6 +53,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_newsletter-form.scss',
     './scss/components/_contact-form.scss',
     './scss/components/_messages.scss',
+    './scss/components/_thanks-form.scss',
 
     // Pages
     './scss/pages/_home.scss',

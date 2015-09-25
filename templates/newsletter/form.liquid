@@ -13,7 +13,7 @@
       <fieldset class="o-form__field-group">
         <div class="o-form__input">
           <label class="o-form__label" for="subscriberEmail">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant&nbsp;:" | t }}</label>
-          <input id="subscriberEmail" name="subscriber[email]" type="text">
+          <input id="subscriberEmail" name="subscriber[email]" type="text" required="required">
           {% unless form.created_successfully? %}
             <div class="o-form__input-hint o-form__input-hint--error">
               {{ form.error }}
