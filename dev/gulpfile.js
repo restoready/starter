@@ -56,6 +56,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_thanks-form.scss',
     './scss/components/_aside-info.scss',
     './scss/components/_opening-info.scss',
+    './scss/components/_location.scss',
 
     // Pages
     './scss/pages/_home.scss'
@@ -76,7 +77,7 @@ gulp.task('dev:js', function () {
 
     // Theme
     './js/init.js',
-    './js/events.js'
+    './js/map.js'
   ])
   .pipe(sourcemaps.init())
   .pipe(concat('app.js'))

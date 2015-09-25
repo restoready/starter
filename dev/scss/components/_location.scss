@@ -1,0 +1,54 @@
+.c-location {
+  background-color: #fff;
+  margin-bottom: 1em;
+  @include media-query($min, $medium) {
+    width: 48%;
+    float: right;
+  }
+}
+.c-location__title {
+  color: #444;
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  margin-bottom: 1em;
+}
+
+.c-location__map {
+  position: relative;
+  margin-bottom: 1em;
+}
+.c-location__map-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(50, 50, 50, .75);
+}
+.c-location__map-activation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  @include media-query($min, $medium) {
+    font-size: 18px;
+  }
+}
+.c-location__map-image {
+  max-width: 100%;
+  height: auto;
+}
+.c-location__address {
+  color: $body-color;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+.c-location__button {
+  text-align: center;
+}

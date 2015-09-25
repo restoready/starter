@@ -48,39 +48,3 @@
 .foods__footer {
   text-align: center;
 }
-
-.directions, .business-view {
-  background-color: #fff;
-  margin-bottom: 1em;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: 1em;
-  }
-}
-
-.directions {
-  @include media-query($min, $medium) {
-    width: 48%;
-  }
-}
-.directions {
-  @include media-query($min, $medium) {
-    float: right;
-  }
-}
-
-  .map {
-    margin-bottom: 1em;
-  }
-    .map__image {
-      max-width: 100%;
-      height: auto;
-    }
-  .address {
-    color: $body-color;
-    font-size: 1.2em;
-  }
-  .directions__footer {
-    text-align: center;
-  }
