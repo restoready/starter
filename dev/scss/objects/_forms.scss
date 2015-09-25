@@ -8,15 +8,15 @@ $color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
 .o-form__title {
   font-size: 2em;
 }
+.o-form__description {
+  margin-bottom: 1em;
+}
 .o-form__field-group {
   margin-bottom: .5em;
 }
 .o-form__input,
 .o-form__select,
-.o-form__textarea,
-.input,
-.select,
-.textarea {
+.o-form__textarea {
   margin-bottom: .5em;
 }
 .o-form__label {
@@ -31,8 +31,4 @@ $color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
 .o-form__input-hint--error {
   background: $color__input-hint-error-background;
   color: $color__input-hint-error-text;
-}
-
-.submit {
-  text-align: center;
 }

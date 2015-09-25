@@ -2,6 +2,7 @@
 // #Footer
 // =============================================================
 .c-footer {
+  margin-top: 1em;
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
 }
