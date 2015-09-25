@@ -54,10 +54,11 @@ gulp.task('dev:sass', function () {
     './scss/components/_contact-form.scss',
     './scss/components/_messages.scss',
     './scss/components/_thanks-form.scss',
+    './scss/components/_aside-info.scss',
+    './scss/components/_opening-info.scss',
 
     // Pages
-    './scss/pages/_home.scss',
-    './scss/pages/_contact.scss'
+    './scss/pages/_home.scss'
 
     // Hacks
 

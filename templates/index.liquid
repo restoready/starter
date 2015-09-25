@@ -103,27 +103,23 @@
 {% endif %}
 
 <div class="o-wrapper">
-  <section class="opening-hours">
-    <header class="section__header">
-      <h2 class="section__title">{{ "Horaires" | t }}</h2>
-    </header>
-    <div class="section__main">
-      <dl class="opening-days">
-      {% for day in opening_hours %}
-        <dt class="opening-day">
-          {{ day.name }}
-        </dt>
-        <dd class="opening-shifts">
-          {{ day.shifts }}
-        </dd>
-      {% endfor %}
-      </dl>
+  <section class="c-opening-info c-opening-info--half-width">
+    <h2 class="c-opening-info__title">{{ "Horaires" | t }}</h2>
+    <dl class="c-opening-info__days">
+    {% for day in opening_hours %}
+      <dt class="c-opening-info__day">
+        {{ day.name }}
+      </dt>
+      <dd class="c-opening-info__shifts">
+        {{ day.shifts }}
+      </dd>
+    {% endfor %}
+    </dl>
     {% if restaurant.opening_hours_information? %}
-      <div class="opening-hours__information">
+      <div class="c-opening-info__precision">
         <p>{{ restaurant.opening_hours_information }}</p>
       </div>
     {% endif %}
-    </div>
   </section>
 
   <section class="directions">

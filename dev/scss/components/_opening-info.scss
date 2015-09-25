@@ -1,0 +1,35 @@
+.c-opening-info {
+  background-color: #FFFFFF;
+  margin-bottom: 1em;
+  @include media-query($min, $medium) {
+    &.c-opening-info--half-width {
+      float: left;
+      width: 48%;
+    }
+  }
+}
+.c-opening-info__title {
+  color: #444444;
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  margin-bottom: .5em;
+}
+.c-opening-info__days {
+  @include clearfix();
+  margin-bottom: 1em;
+}
+
+.c-opening-info__day {
+  color: $body-color;
+  clear: left;
+  float: left;
+  font-size: 1em;
+  width: 25%;
+}
+.c-opening-info__shifts {
+  color: scale-color($accent-color, $saturation: -75%);
+  font-size: 1em;
+  margin-left: 30%;
+}
+.c-opening-info__precision {
+  margin-bottom: 1em;
+}

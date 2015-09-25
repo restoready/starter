@@ -1,0 +1,29 @@
+.c-aside-info {
+  @include media-query($min, $medium) {
+    float: left;
+    font-size: 75%;
+    width: floor($siteWidth / 3);
+  }
+}
+.c-aside-info__name {
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  color: #444444;
+  margin-bottom: .5em;
+  @include media-query($min, $medium) {
+    margin-top: 2.15em;
+  }
+}
+.c-aside-info__item {
+  margin-bottom: .5em;
+}
+.c-aside-info__label {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.c-aside-info__link {
+  color: $accent-color;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #999;
+  }
+}

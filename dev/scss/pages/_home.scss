@@ -49,38 +49,6 @@
   text-align: center;
 }
 
-.opening-hours {
-  background-color: #fff;
-  margin-bottom: 1em;
-  .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
-  }
-  @include media-query($min, $medium) {
-    float: left;
-  }
-}
-  .opening-days {
-    @include clearfix();
-    margin-bottom: 1em;
-  }
-    .opening-day {
-      color: $body-color;
-      clear: left;
-      float: left;
-      font-size: 1em;
-      width: 25%;
-    }
-    .opening-shifts {
-      color: scale-color($accent-color, $saturation: -75%);
-      font-size: 1em;
-      margin-left: 30%;
-    }
-  .opening-hours__information {
-    margin-bottom: 1em;
-  }
-
 .directions, .business-view {
   background-color: #fff;
   margin-bottom: 1em;
@@ -91,7 +59,6 @@
   }
 }
 
-.opening-hours,
 .directions {
   @include media-query($min, $medium) {
     width: 48%;
