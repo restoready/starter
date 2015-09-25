@@ -1,37 +1,34 @@
 // ===========================================================================
 // #Buttons
 // ===========================================================================
-.button {
-  background-color: $accent-color;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
+.o-button {
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
   padding: .5em 2em;
-  text-align: center;
+  border: 0;
   text-decoration: none;
-  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
   white-space: nowrap;
   -webkit-appearance: none;
 
-  &.button--small {
+  &.o-button--small {
     font-size: 0.75em;
     padding: .25em .5em;
   }
 
-  &.button--full {
+  &.o-button--full {
     width: 100%;
   }
 
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: scale-color($accent-color, $lightness: -15%);
-  }
-
-  &[disabled],
-  &.disabled {
-    cursor: default;
+  &.o-button--red {
+    background-color: $accent-color;
+    color: #FFFFFF;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: scale-color($accent-color, $lightness: -15%);
+    }
   }
 }
