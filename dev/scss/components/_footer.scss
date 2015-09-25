@@ -4,9 +4,6 @@
 .c-footer {
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
-  @include media-query($min, $small) {
-    font-size: 87.5%;
-  }
 }
 .c-footer__back-to-top {
   padding: $gutter;
