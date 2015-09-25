@@ -25,13 +25,15 @@
     width: 75%;
   }
 }
-.c-footer__input {
+.c-footer__subscribe-input {
+  margin: 0 0 .5em 0;
   @include media-query($min, $medium) {
     display: inline-block;
     width: 70%;
   }
 }
-.c-footer__submit {
+.c-footer__subscribe-submit {
+  text-align: center;
   @include media-query($min, $medium) {
     display: inline-block;
     width: 20%;

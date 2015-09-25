@@ -15,12 +15,11 @@
     <div class="c-footer__subscribe">
       {% newsletter_subscribe_form %}
         <fieldset class="field-group">
-          <div class="input c-footer__input">
-            <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
+          <div class="c-footer__subscribe-input">
+            <label class="c-footer__subscribe-label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
             <input id="subscriberEmail" name="subscriber[email]" type="email" required>
           </div>
-          <div class="submit c-footer__submit">
-            <button class="button c-footer__button" type="submit">
+          <div class="c-footer__subscribe-submit">
             <button class="o-button o-button--red c-footer__button" type="submit">
               <i class="icon icon-check"></i> {{ "Valider" | t }}
             </button>
