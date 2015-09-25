@@ -1,33 +1,36 @@
-// ===========================================================================
-// #Form
-// ===========================================================================
+// Colors
+$color__input-hint-error-background: {{ theme_settings.color-input-hint-error-background }};
+$color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
+
 .o-form {
+  padding: 1em 0;
 }
-
-.field-group {
+.o-form__title {
+  font-size: 2em;
+}
+.o-form__field-group {
   margin-bottom: .5em;
 }
-.field-group__legend {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: .5em;
-}
-
+.o-form__input,
+.o-form__select,
+.o-form__textarea,
 .input,
 .select,
 .textarea {
-  margin: 0 0 .5em 0;
+  margin-bottom: .5em;
 }
-.input-hint {
+.o-form__label {
+}
+.o-form__submit {
+  text-align: center;
+}
+
+.o-form__input-hint {
   padding: .15em .4em;
 }
-.input-hint--info {
-  background: #68708A;
-  color: #fff;
-}
-.input-hint--error {
-  background: #DF5900;
-  color: #fff;
+.o-form__input-hint--error {
+  background: $color__input-hint-error-background;
+  color: $color__input-hint-error-text;
 }
 
 .submit {

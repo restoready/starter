@@ -36,6 +36,18 @@
         </div>
       </fieldset>
       <fieldset>
+        <legend>Formulaires</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="color-input-hint-error-background">Fond erreur d'un champ</label>
+            <input name="admin_theme_settings[color-input-hint-error-background]" id="color-input-hint-error-background" value="{{ theme_settings.color-input-hint-error-background }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="color-input-hint-error-text">Texte erreur d'un champ</label>
+            <input name="admin_theme_settings[color-input-hint-error-text]" id="color-input-hint-error-text" value="{{ theme_settings.color-input-hint-error-text }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
         <legend>Etiquettes</legend>
         <div class="row">
           {% for tag in tags %}

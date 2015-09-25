@@ -31,4 +31,9 @@
       background-color: scale-color($accent-color, $lightness: -15%);
     }
   }
+  &.has-icon {
+    .icon {
+      margin-right: .5em;
+    }
+  }
 }

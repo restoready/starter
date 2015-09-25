@@ -50,6 +50,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_news.scss',
     './scss/components/_gallery.scss',
     './scss/components/_booking.scss',
+    './scss/components/_newsletter-form.scss',
 
     // Pages
     './scss/pages/_home.scss',

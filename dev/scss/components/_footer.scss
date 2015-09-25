@@ -1,6 +1,6 @@
-// ===========================================================================
+// =============================================================
 // #Footer
-// ===========================================================================
+// =============================================================
 .c-footer {
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
@@ -15,31 +15,6 @@
   &:hover, &:focus {
     color: $body-color;
   }
-}
-.c-footer__subscribe {
-  @include media-query($min, $siteWidth) {
-    margin: 0 auto;
-    width: 75%;
-  }
-}
-.c-footer__subscribe-input {
-  margin: 0 0 .5em 0;
-  @include media-query($min, $medium) {
-    display: inline-block;
-    width: 70%;
-  }
-}
-.c-footer__subscribe-submit {
-  text-align: center;
-  @include media-query($min, $medium) {
-    display: inline-block;
-    width: 20%;
-    vertical-align: top;
-    margin-top: 1.6em;
-  }
-}
-.c-footer__button {
-  font-size: 14px;
 }
 
 .c-footer__social-items {

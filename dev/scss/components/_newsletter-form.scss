@@ -1,0 +1,6 @@
+.c-newsletter-form {
+  @include media-query($min, $siteWidth) {
+    margin: 0 auto;
+    width: 85%;
+  }
+}

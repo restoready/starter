@@ -12,15 +12,15 @@
   </div>
 
   {% if theme_settings.footer_display_newsletter %}
-    <div class="c-footer__subscribe">
+    <div class="o-form c-newsletter-form">
       {% newsletter_subscribe_form %}
-        <fieldset class="field-group">
-          <div class="c-footer__subscribe-input">
-            <label class="c-footer__subscribe-label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
-            <input id="subscriberEmail" name="subscriber[email]" type="email" required>
+        <fieldset class="o-form__field-group">
+          <div class="o-form__input">
+            <label class="o-form__label" for="subscriberEmail">{{ "Abonnez-vous à notre newsletter pour recevoir les dernières nouveautés du restaurant&nbsp;:" | t }}</label>
+            <input id="subscriberEmail" name="subscriber[email]" type="email" required="required">
           </div>
-          <div class="c-footer__subscribe-submit">
-            <button class="o-button o-button--red c-footer__button" type="submit">
+          <div class="o-form__submit">
+            <button class="o-button o-button--red has-icon" type="submit">
               <i class="icon icon-check"></i> {{ "Valider" | t }}
             </button>
           </div>
