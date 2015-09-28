@@ -19,8 +19,24 @@ $color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
 .o-form__select,
 .o-form__textarea {
   margin-bottom: .5em;
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    padding: .2rem;
+  }
+  input {
+    min-height: 35px;
+  }
+  textarea {
+    min-height: 100px;
+  }
 }
 .o-form__label {
+  display: block;
 }
 .o-form__submit {
   text-align: center;

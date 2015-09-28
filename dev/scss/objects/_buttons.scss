@@ -12,10 +12,15 @@
   cursor: pointer;
   white-space: nowrap;
   -webkit-appearance: none;
+  font-size: 16px;
 
   &.o-button--small {
     font-size: 0.75em;
     padding: .25em .5em;
+  }
+
+  &.o-button--large {
+    font-size: 21px;
   }
 
   &.o-button--full {
