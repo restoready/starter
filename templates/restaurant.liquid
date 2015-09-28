@@ -1,12 +1,12 @@
 {% if restaurant.summary? %}
-  <section class="c-restaurant-summary">
-    <div class="o-wrapper">
-      <h1 class="c-restaurant-summary__title">{{ "Le restaurant" | t }}</h1>
-      <div class="c-restaurant-summary__description">
+  <div class="o-wrapper">
+    <section class="c-simple-bloc">
+      <h1 class="c-simple-bloc__title">{{ "Le restaurant" | t }}</h1>
+      <div class="c-simple-bloc__text">
         {{ restaurant.summary }}
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 {% endif %}
 
 {% if photos.size > 0 %}

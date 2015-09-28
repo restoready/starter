@@ -1,23 +1,16 @@
-<section class="page-header page-header--error">
-  <div class="o-wrapper">
-    <header class="section__header page-header__header">
-      <h1 class="page-header__title">{{ "Page introuvable" | t }}</h1>
-    </header>
-    <div class="section__main page-header__description">
-      <div class="message message--notice">
-        <div class="message__description">
-          <p>
-            <i class="icon icon-warning"></i> {{ "La page que vous avez demandée n'existe pas." | t }}
-          </p>
-        </div>
+<div class="o-wrapper">
+  <section class="c-simple-bloc">
+    <h1 class="c-simple-bloc__title">{{ "Page introuvable" | t }}</h1>
+    <div class="c-message c-message--notice">
+      <div class="c-message__description">
+        <i class="icon icon-warning"></i> {{ "La page que vous avez demandée n'existe pas." | t }}
       </div>
     </div>
-    <footer class="section__footer">
-      <p>
-        <a class="o-button o-button--red" href="{{ restaurant.root_path }}">
-          {{ "Retour à l'accueil" | t }}
-        </a>
-      </p>
-    </footer>
-  </div>
-</section>
+
+    <div class="c-simple-bloc__button">
+      <a class="o-button o-button--red" href="{{ restaurant.root_path }}">
+        {{ "Retour à l'accueil" | t }}
+      </a>
+    </div>
+  </section>
+</div>
