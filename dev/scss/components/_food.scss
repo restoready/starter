@@ -1,102 +1,80 @@
-// ===========================================================================
-// #Food
-// ===========================================================================
-.food {
+// Colors
+$color__food-featured-background: {{ theme_settings.color-food-featured-background }};
+$color__default-tag-background: {{ theme_settings.color-default-tag-background }};
+$color__default-tag-text: {{ theme_settings.color-default-tag-text }};
+
+.c-food {
   @include media;
   padding: 0;
 }
-  .food__image {
-    @include media-aside;
-    margin-right: $gutter / 2;
-    vertical-align: middle;
-    border-radius: 50%;
-  }
-  .food__body {
-    @include media-body;
-  }
-    .food__title {
-      color: #000;
-      font-family: $bodyFontStack;
-      font-size: 1.25em;
-      font-weight: 700;
-      margin-bottom: .25em;
-    }
-    .food__summary {
-      font-size: 1em;
-    }
-  .food__separator {
-    border: none;
-    border-top: 1px solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
-.food--featured {
+.c-food--featured {
+  background-color: $color__food-featured-background;
+  padding: 1em;
   .icon-star {
     color: $accent-color;
   }
 }
-
-// Food prices
-.prices {
+.c-food__img {
+  @include media-aside;
+  margin-right: $gutter / 2;
+  vertical-align: middle;
+  border-radius: 50%;
 }
-  .price {
-    @include clearfix;
-  }
-  .price__label {
-    color: scale-color($body-color, $lightness: +25%);
-    float: left;
-  }
-  .price__value {
-    font-weight: 700;
-    float: right;
-  }// Food item
-.food {
-  @include media;
+.c-food__body {
+  @include media-body;
+}
+.c-food__title {
+  color: scale-color($body-color, $lightness: -50%);
+  font-family: $bodyFontStack;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: .25em;
+}
+.c-food__summary {
+  font-size: 1em;
+}
+.c-food__separator {
+  border: none;
+  border-top: 1px solid $food-separator-color;
+  color: $food-separator-color;
+  margin: 1em 0;
   padding: 0;
 }
-  .food__image {
-    @include media-aside;
-    margin-right: $gutter / 2;
-    vertical-align: middle;
-  }
-  .food__body {
-    @include media-body;
-  }
-    .food__title {
-      color: #000;
-      font-family: $bodyFontStack;
-      font-size: 1.25em;
-      font-weight: 700;
-      margin-bottom: .25em;
-    }
-    .food__summary {
-      font-size: 1em;
-    }
-  .food__separator {
-    border: none;
-    border-top: 1px solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
-.food--featured {
-  .icon-star {
-    color: $accent-color;
-  }
-}
 
 // Food prices
-.prices {
+.c-food__prices {
 }
-  .price {
-    @include clearfix;
+.c-food__prices-items {
+}
+.c-food__prices-item {
+  @include clearfix;
+}
+.c-food__prices-label {
+  color: scale-color($body-color, $lightness: +25%);
+  float: left;
+}
+.c-food__prices-value {
+  font-weight: 700;
+  float: right;
+}
+
+// Tags
+.c-food__tags {
+}
+.c-food__tag {
+  font-size: .95em;
+  border-radius: .25em;
+  padding: .2em .4em;
+  background-color: $color__default-tag-background;
+  color: $color__default-tag-text;
+}
+{% for tag in tags %}
+  .tag--{{tag.css_class}} {
+    {% if tag.background_value != "" %}
+    background-color: {{ tag.background_value }};
+    {% endif %}
+    {% if tag.color_value != "" %}
+    color: {{ tag.color_value }};
+    {% endif %}
   }
-  .price__label {
-    color: scale-color($body-color, $lightness: +25%);
-    float: left;
-  }
-  .price__value {
-    font-weight: 700;
-    float: right;
-  }
+{% endfor %}

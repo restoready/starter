@@ -48,7 +48,6 @@ gulp.task('dev:sass', function () {
     './scss/components/_menu.scss',
     './scss/components/_food.scss',
     './scss/components/_back-to-top.scss',
-    './scss/components/_tags.scss',
     './scss/components/_news.scss',
     './scss/components/_gallery.scss',
     './scss/components/_booking.scss',
@@ -60,10 +59,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_opening-info.scss',
     './scss/components/_location.scss',
     './scss/components/_business-view.scss',
-    './scss/components/_simple-bloc.scss',
-
-    // Pages
-    './scss/pages/_home.scss'
+    './scss/components/_simple-bloc.scss'
 
     // Hacks
 
