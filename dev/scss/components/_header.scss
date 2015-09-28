@@ -1,128 +1,126 @@
-// ===========================================================================
-// #Header
-// ===========================================================================
 .c-header {
 }
-  .c-header__identity {
-    @include media-query($min, $small) {
-      @include media;
-    }
-    @include media-query($min, $medium) {
-      float: left;
-      width: 65%;
-    }
+.c-header__identity {
+  @include media-query($min, $small) {
+    @include media;
   }
-  .c-header__logo {
-    text-align: center;
-    @include media-query($min, $small) {
-      @include media-aside;
-    }
+  @include media-query($min, $medium) {
+    float: left;
+    width: 65%;
   }
-    .c-header__logo-link {
-      display: block;
-      text-decoration: none;
-    }
-      .c-header__logo-image {
-        padding: 1em 0;
-        vertical-align: middle;
-        width: 180px;
-        @include media-query($min, $small) {
-          width: 120px;
-          margin-right: 1.5em;
-        }
-      }
-  .c-header__restaurant-name {
-    text-align: center;
-    @include media-query($min, $small) {
-      @include media-body;
-      padding: 1em 0;
-      text-align: left;
-    }
+}
+.c-header__logo {
+  text-align: center;
+  @include media-query($min, $small) {
+    @include media-aside;
   }
-    .c-header__slogan {
-      color: scale-color($body-color, $lightness: +25%);
-      font-size: .9em;
-      font-style: italic;
-    }
-    .c-header__restaurant-name-link {
-      color: scale-color($body-color, $lightness: -25%);
-      font-family: {{ theme_settings.header-font }};
-      font-size: 2em;
-      line-height: 1;
-      text-decoration: none;
-    }
-  .c-header__phone-number {
-    margin: .5em 0;
-    text-align: center;
-    @include media-query($min, $medium) {
-      position: absolute;
-      right: 104px;
-      bottom: 2px;
-    }
-    @include media-query($min, $siteWidth) {
-      bottom: auto;
-      top: 32px;
-    }
+}
+.c-header__logo-link {
+  display: block;
+  text-decoration: none;
+}
+.c-header__logo-image {
+  padding: 1em 0;
+  vertical-align: middle;
+  width: 180px;
+  @include media-query($min, $small) {
+    width: 120px;
+    margin-right: 1.5em;
   }
-    .c-header__phone-number-link {
-      color: $accent-color;
-      font-size: 1.5em;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: #000;
-        .phone-number__label {
-          color: #000;
-        }
-      }
-      @include media-query($min, $medium) {
-        font-size: 1em;
-      }
-    }
-      .phone-number__label {
-        color: $body-color;
-      }
-
-  .c-header__local-choice-wrapper {
-    position: relative;
-    z-index: 10;
-    display: inline-block;
-    margin: .5em auto 0 auto;
-    @include media-query($min, $medium) {
-      position: absolute;
-      bottom: .75em;
-      right: 1.25em;
-    }
-    @include media-query($min, $siteWidth) {
-      bottom: auto;
-      top: 32px;
-    }
+}
+.c-header__restaurant-name {
+  text-align: center;
+  @include media-query($min, $small) {
+    @include media-body;
+    padding: 1em 0;
+    text-align: left;
   }
-  .c-header__local-choice {
-    cursor: pointer;
-    width: 65px;
-    height: 30px;
-    margin: 0 auto;
-    background: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: window;
-    appearance: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: $body-color;
-    border: 2px solid $body-color;
-    text-transform: uppercase;
-    border-radius: 0;
-    outline: none;
-    position: relative;
-    z-index: 1;
-  }
-  .c-header__local-choice-icon {
+}
+.c-header__slogan {
+  color: scale-color($body-color, $lightness: +25%);
+  font-size: .9em;
+  font-style: italic;
+}
+.c-header__restaurant-name-link {
+  color: scale-color($body-color, $lightness: -25%);
+  font-family: {{ theme_settings.header-font }};
+  font-size: 2em;
+  line-height: 1;
+  text-decoration: none;
+}
+.c-header__phone-number {
+  margin: .5em 0;
+  text-align: center;
+  @include media-query($min, $medium) {
     position: absolute;
-    top: .25em;
-    right: .5em;
-    z-index: 0;
-    color: $body-color;
-    @include media-query($min, $small) {
-      top:0;
+    right: 104px;
+    bottom: 2px;
+  }
+  @include media-query($min, $siteWidth) {
+    bottom: auto;
+    top: 32px;
+  }
+}
+.c-header__phone-number-link {
+  color: $accent-color;
+  font-size: 1.5em;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #000;
+    .phone-number__label {
+      color: #000;
     }
   }
+  @include media-query($min, $medium) {
+    font-size: 1em;
+  }
+}
+.phone-number__label {
+  color: $body-color;
+}
+
+.c-header__local-choice-wrapper {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  margin: .5em auto 0 auto;
+  @include media-query($min, $medium) {
+    position: absolute;
+    bottom: .75em;
+    right: 1.25em;
+  }
+  @include media-query($min, $siteWidth) {
+    bottom: auto;
+    top: 32px;
+  }
+}
+.c-header__local-choice {
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  margin: 0 auto;
+  padding: .2em;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: window;
+  appearance: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: $body-color;
+  border: 2px solid $body-color;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.c-header__local-choice-icon {
+  position: absolute;
+  top: .25em;
+  right: .5em;
+  z-index: 0;
+  color: $body-color;
+  @include media-query($min, $small) {
+    top:0;
+  }
+}
