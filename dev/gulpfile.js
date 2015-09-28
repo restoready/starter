@@ -25,8 +25,9 @@ gulp.task('dev:sass', function () {
     "./node_modules/inuit-responsive-tools/_tools.responsive.scss",
 
     // Generic
-    './scss/generic/_reset.scss',
-    './scss/generic/_box-model.scss',
+    "./node_modules/inuit-normalize/_generic.normalize.scss",
+    "./node_modules/inuit-reset/_generic.reset.scss",
+    "./node_modules/inuit-box-sizing/_generic.box-sizing.scss",
 
     // Base
     './scss/base/_document.scss',

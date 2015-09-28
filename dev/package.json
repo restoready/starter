@@ -25,9 +25,12 @@
     "gulp-watch": "^4.3.5"
   },
   "dependencies": {
+    "inuit-box-sizing": "^0.2.0",
     "inuit-defaults": "^0.2.3",
     "inuit-functions": "^0.2.0",
     "inuit-mixins": "^0.2.3",
+    "inuit-normalize": "^3.0.3",
+    "inuit-reset": "^0.1.1",
     "inuit-responsive-settings": "^0.1.5",
     "inuit-responsive-tools": "^0.1.3",
     "inuit-responsive-widths": "^0.2.2",
