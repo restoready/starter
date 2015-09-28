@@ -37,6 +37,7 @@ gulp.task('dev:sass', function () {
     './scss/vendors/_venobox.scss',
 
     // Object
+    "./node_modules/inuit-layout/_objects.layout.scss",
     './scss/objects/_wrapper.scss',
     './scss/objects/_buttons.scss',
     './scss/objects/_forms.scss',
