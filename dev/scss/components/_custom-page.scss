@@ -1,10 +1,5 @@
-// ===========================================================================
-// #Custom page
-// ===========================================================================
-.page-header {
+.c-custom-page {
   padding: 1em 0;
-}
-.page-body {
   ol, ul, dl {
     margin-left: 2em;
   }
@@ -12,14 +7,14 @@
     list-style: disc;
   }
   img {
-    max-width: 100% !important;
     height: auto !important;
   }
   a {
     color: $accent-color;
     text-decoration: none;
-    &:hover, &:focus {
-      color: #999;
-    }
   }
+}
+.c-custom-page__title {
+}
+.c-custom-page__body {
 }
