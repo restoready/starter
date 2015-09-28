@@ -25,6 +25,14 @@
     "gulp-watch": "^4.3.5"
   },
   "dependencies": {
+    "inuit-defaults": "^0.2.3",
+    "inuit-functions": "^0.2.0",
+    "inuit-mixins": "^0.2.3",
+    "inuit-responsive-settings": "^0.1.5",
+    "inuit-responsive-tools": "^0.1.3",
+    "inuit-responsive-widths": "^0.2.2",
+    "inuit-tools-widths": "^0.1.4",
+    "inuit-widths": "^0.4.2",
     "jquery": "^2.1.4"
   }
 }

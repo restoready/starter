@@ -1,5 +1,5 @@
 .c-newsletter-form {
-  @include media-query($min, $siteWidth) {
+  @include media-query(desk) {
     margin: 0 auto;
     width: 85%;
   }

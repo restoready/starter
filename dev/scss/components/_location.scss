@@ -1,7 +1,7 @@
 .c-location {
   background-color: #fff;
   margin-bottom: 1em;
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     width: 48%;
     float: right;
   }
@@ -35,7 +35,7 @@
   font-weight: 700;
   text-decoration: underline;
   cursor: pointer;
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     font-size: 18px;
   }
 }

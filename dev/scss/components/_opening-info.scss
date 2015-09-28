@@ -1,7 +1,7 @@
 .c-opening-info {
   background-color: #FFFFFF;
   margin-bottom: 1em;
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     &.c-opening-info--half-width {
       float: left;
       width: 48%;

@@ -1,5 +1,5 @@
 .c-contact-form {
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     margin-left: ceil($siteWidth / 3) + $gutter;
   }
 }

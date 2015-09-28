@@ -1,5 +1,5 @@
 .c-aside-info {
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     float: left;
     font-size: 75%;
     width: floor($siteWidth / 3);
@@ -9,7 +9,7 @@
   border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
   color: #444444;
   margin-bottom: .5em;
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     margin-top: 2.15em;
   }
 }

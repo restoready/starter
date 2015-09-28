@@ -6,13 +6,13 @@
 .c-gallery__item {
   position: relative;
   margin-bottom: 1em;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     display: inline-block;
     vertical-align: top;
     width: 45%;
     margin: 2%;
   }
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     width: 30%;
     margin: 1%;
   }

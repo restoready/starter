@@ -18,10 +18,10 @@
   text-align: center;
   vertical-align: top;
   width: 49%;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     width: 32%;
   }
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     width: 19%;
   }
 }

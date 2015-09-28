@@ -1,17 +1,17 @@
 .c-header {
 }
 .c-header__identity {
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     @include media;
   }
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     float: left;
     width: 65%;
   }
 }
 .c-header__logo {
   text-align: center;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     @include media-aside;
   }
 }
@@ -23,14 +23,14 @@
   padding: 1em 0;
   vertical-align: middle;
   width: 180px;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     width: 120px;
     margin-right: 1.5em;
   }
 }
 .c-header__restaurant-name {
   text-align: center;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     @include media-body;
     padding: 1em 0;
     text-align: left;
@@ -51,12 +51,12 @@
 .c-header__phone-number {
   margin: .5em 0;
   text-align: center;
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     position: absolute;
     right: 104px;
     bottom: 2px;
   }
-  @include media-query($min, $siteWidth) {
+  @include media-query(desk) {
     bottom: auto;
     top: 32px;
   }
@@ -71,7 +71,7 @@
       color: #000;
     }
   }
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     font-size: 1em;
   }
 }
@@ -84,12 +84,10 @@
   z-index: 10;
   display: inline-block;
   margin: .5em auto 0 auto;
-  @include media-query($min, $medium) {
+  @include media-query(desk) {
     position: absolute;
     bottom: .75em;
     right: 1.25em;
-  }
-  @include media-query($min, $siteWidth) {
     bottom: auto;
     top: 32px;
   }
@@ -120,7 +118,7 @@
   right: .5em;
   z-index: 0;
   color: $body-color;
-  @include media-query($min, $small) {
+  @include media-query(hands) {
     top:0;
   }
 }

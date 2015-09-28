@@ -18,7 +18,7 @@
   }
 }
 .c-news__the-news {
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -31,14 +31,14 @@
 .c-news__the-news-content-wrapper {
   width: 100%;
   padding: 0;
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     width: 70%;
     float: right;
     padding: 1em 2em;
   }
 }
 .c-news__the-news-content-wrapper--no-image {
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     width: 100%;
   }
 }
@@ -58,7 +58,7 @@
   display: block;
   height: 300px;
   background-position: center center;
-  @include media-query($min, $medium) {
+  @include media-query(lap) {
     position: absolute;
     width: 30%;
     display: block;

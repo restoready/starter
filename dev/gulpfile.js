@@ -10,13 +10,19 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('dev:sass', function () {
   return gulp.src([
     // Settings
+    './node_modules/inuit-defaults/_settings.defaults.scss',
     './scss/settings/_author.scss',
     './scss/settings/_general.scss',
     './scss/settings/_colors.scss',
     './scss/settings/_breakpoints.scss',
+    './node_modules/inuit-responsive-settings/_settings.responsive.scss',
 
     // Tools
+    "./node_modules/inuit-functions/_tools.functions.scss",
+    "./node_modules/inuit-mixins/_tools.mixins.scss",
     './scss/tools/_mixins.scss',
+    "./node_modules/inuit-tools-widths/_tools.widths.scss",
+    "./node_modules/inuit-responsive-tools/_tools.responsive.scss",
 
     // Generic
     './scss/generic/_reset.scss',
@@ -55,9 +61,11 @@ gulp.task('dev:sass', function () {
     './scss/components/_opening-info.scss',
     './scss/components/_location.scss',
     './scss/components/_business-view.scss',
-    './scss/components/_simple-bloc.scss'
+    './scss/components/_simple-bloc.scss',
 
-    // Hacks
+    // Hacks (trumps)
+    "./node_modules/inuit-widths/_trumps.widths.scss",
+    "./node_modules/inuit-responsive-widths/_trumps.widths-responsive.scss"
 
   ])
   .pipe(concat('application.scss.liquid'))

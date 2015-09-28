@@ -1,6 +1,12 @@
-// ===========================================================================
-// #Breakpoints
-// ===========================================================================
-$small: 480px;
-$medium: 768px;
-$large: 769px;
+/**
+* @see http://www.sitepoint.com/sass-mixins-kickstart-project/#breakpoint-handler
+*/
+$breakpoints: (
+  'wrist'  '( max-width:  319px )',
+  'palm'   '( min-width:  320px )',
+  'hands'  '( min-width:  481px )',
+  'lap'    '( min-width:  641px )',
+  'desk'   '( min-width:  961px )',
+  'wall'   '( min-width: 1281px )',
+  'retina' '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)'
+);

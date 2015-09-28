@@ -62,6 +62,8 @@ $color__default-tag-text: {{ theme_settings.color-default-tag-text }};
 .c-food__tags {
 }
 .c-food__tag {
+  display: inline-block;
+  margin-bottom: .5em;
   font-size: .95em;
   border-radius: .25em;
   padding: .2em .4em;
