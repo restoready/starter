@@ -1,0 +1,21 @@
+// Colors
+$color__banner-text: {{ theme_settings.color-banner-text }};
+
+.c-banner {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $accent-color;
+}
+.c-banner__overlay {
+  background-color: rgba(0,0,0, .5);
+}
+.c-banner__text {
+  color: $color__banner-text;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  text-align: center;
+  p {
+    font-size: 1.2em;
+  }
+}

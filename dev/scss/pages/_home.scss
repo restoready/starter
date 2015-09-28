@@ -1,27 +1,3 @@
-// ===========================================================================
-// #Home
-// ===========================================================================
-.restaurant-main-image {
-  {% if restaurant.main_image? %}
-    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
-  {% endif %}
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: $accent-color;
-}
-  .restaurant-main-image__overlay {
-    background-color: rgba(0,0,0, .5);
-  }
-.restaurant-summary {
-  color: #fff;
-  padding-top: 4em;
-  padding-bottom: 3em;
-  text-align: center;
-  p {
-    font-size: 1.2em;
-  }
-}
 .menus--featured {
   background-color: #fff;
   margin-bottom: 1em;
