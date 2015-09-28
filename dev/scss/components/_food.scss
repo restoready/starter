@@ -9,6 +9,7 @@
     @include media-aside;
     margin-right: $gutter / 2;
     vertical-align: middle;
+    border-radius: 50%;
   }
   .food__body {
     @include media-body;

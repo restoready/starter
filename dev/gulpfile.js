@@ -26,6 +26,7 @@ gulp.task('dev:sass', function () {
     './scss/base/_document.scss',
     './scss/base/_typography.scss',
     './scss/base/_lists.scss',
+    './scss/base/_images.scss',
     './scss/base/_forms.scss',
     './scss/base/_fontcustom.scss',
 
@@ -34,7 +35,6 @@ gulp.task('dev:sass', function () {
 
     // Object
     './scss/objects/_wrapper.scss',
-    './scss/objects/_images-iframes.scss',
     './scss/objects/_buttons.scss',
     './scss/objects/_forms.scss',
 
