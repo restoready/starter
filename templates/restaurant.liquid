@@ -1,10 +1,8 @@
 {% if restaurant.summary? %}
-  <section class="page-header page-header--restaurant">
+  <section class="c-restaurant-summary">
     <div class="o-wrapper">
-      <header class="section__header page-header__header">
-        <h1 class="section__title page-header__title">{{ "Le restaurant" | t }}</h1>
-      </header>
-      <div class="section__main page-header__description">
+      <h1 class="c-restaurant-summary__title">{{ "Le restaurant" | t }}</h1>
+      <div class="c-restaurant-summary__description">
         {{ restaurant.summary }}
       </div>
     </div>
