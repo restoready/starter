@@ -1,36 +1,30 @@
-<section class="page-header page-header--news">
-  <div class="o-wrapper">
-    <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ "Actualités" | t }}</h1>
-    </header>
-  </div>
-</section>
-
 {% if all_news.size > 0 %}
   <section class="o-wrapper">
-    <section class="news">
-      <main class="section__main news__body">
+    <section class="c-news">
+      <main class="c-news__body">
+        <h2 class="c-news__title">{{ "Actualités" | t }}</h2>
         {% for news in all_news %}
-          <section class="news__one-news">
-            <a href="{{ news.url }}" class="news__one-news-link">
-              <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
-                <h6 class="news__one-news-date">{{ news.updated_at | to_date | translate_date:"date_with_day_name" }}</h6>
-                <div class="news__one-news-content">
+          <section class="c-news__the-news">
+            <a href="{{ news.url }}" class="c-news__the-news-link">
+              <div class="c-news__the-news-content-wrapper {% unless news.image? %}c-news__the-news-content-wrapper--no-image{% endunless %}">
+                <h6 class="c-news__the-news-date">{{ news.updated_at | to_date | translate_date:"date_with_day_name" }}</h6>
+                <div class="c-news__the-news-content">
                   {% if news.title %}
-                    <h5 class="news__one-news-title">{{ news.title }}</h5>
+                    <h5 class="c-news__the-news-title">{{ news.title }}</h5>
                   {% endif %}
                   {% if news.image? %}
-                    <div class="news__one-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
+                    <div class="c-news__the-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
                   {% endif %}
                   {% if news.summary %}
-                    <p class="news__one-news-summary">{{ news.summary | newline_to_br }}</p>
+                    <p class="c-news__the-news-summary">{{ news.summary | newline_to_br }}</p>
                   {% endif %}
                 </div>
               </div>
             </a>
           </section>
-          <hr class="news__separator {% if forloop.last %}news__separator--last{% endif %}">
-          <div class="clearer"></div>
+          {% unless forloop.last %}
+            <hr class="c-news__separator">
+          {% endunless %}
         {% endfor %}
       </main>
     </section>

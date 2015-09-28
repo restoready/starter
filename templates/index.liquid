@@ -65,40 +65,39 @@
 
 {% if theme_settings.home_display_news %}
   {% if ten_latest_news.size > 0 %}
-    <section class="news o-wrapper">
-      <main class="section__main news__body">
-        <header class="section__header news__header">
-          <a href="{{ localized_root_path }}/news" class="home-news-title__link">
-            <div class="section__title">
-              <h2>{{ "Actualités" | t }}</h2>
-            </div>
+    <div class="o-wrapper">
+      <section class="c-news">
+        <main class="c-news__body">
+          <a href="{{ localized_root_path }}/news" class="c-news__title-link">
+            <h2 class="c-news__title">{{ "Actualités" | t }}</h2>
           </a>
-        </header>
-        {% for news in ten_latest_news %}
-          {% if forloop.index <= 5 %}
-            <section class="news__one-news">
-              <a href="{{ news.url }}" class="news__one-news-link">
-                <div class="{% if news.image? %}news__one-news-content-wrapper{% else if %}news__one-news-content-wrapper news__one-news-content-wrapper--no-image{% endif %}">
-                  <div class="news__one-news-content">
-                    {% if news.title %}
-                      <h5 class="news__one-news-title">{{ news.title }}</h5>
-                    {% endif %}
-                    {% if news.image? %}
-                      <div class="news__one-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
-                    {% endif %}
-                    {% if news.summary %}
-                      <p class="news__one-news-summary">{{ news.summary }}</p>
-                    {% endif %}
+          {% for news in ten_latest_news %}
+            {% if forloop.index <= 5 %}
+              <section class="c-news__the-news">
+                <a href="{{ news.url }}" class="c-news__the-news-link">
+                  <div class="c-news__the-news-content-wrapper {% unless news.image? %}c-news__the-news-content-wrapper--no-image{% endunless %}">
+                    <div class="c-news__the-news-content">
+                      {% if news.title %}
+                        <h5 class="c-news__the-news-title">{{ news.title }}</h5>
+                      {% endif %}
+                      {% if news.image? %}
+                        <div class="c-news__the-news-image" style="background:url('{{ news.image | custom_image_url: '450x400#' }}');background-size:cover;"></div>
+                      {% endif %}
+                      {% if news.summary %}
+                        <p class="c-news__the-news-summary">{{ news.summary }}</p>
+                      {% endif %}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </section>
-            <hr class="news__separator {% if forloop.last %}news__separator--last{% endif %}">
-            <div class="clearer"></div>
-          {% endif %}
-        {% endfor %}
-      </main>
-    </section>
+                </a>
+              </section>
+              {% unless forloop.last %}
+                <hr class="c-news__separator">
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        </main>
+      </section>
+    </div>
   {% endif %}
 {% endif %}
 

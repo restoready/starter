@@ -1,16 +1,9 @@
-<section class="page-header page-header--news">
+<section class="c-custom-page">
   <div class="o-wrapper">
-    <header class="section__header">
-      <h1 class="section__title">{{ news.title }}</h1>
-    </header>
-    <div class="news__date-wrapper"><h5 class="news__date">{{ news.date }}</h5></div>
-  </div>
-</section>
-
-<section class="page-body page-body--news">
-  <div class="o-wrapper">
-    <main class="section__main">
+    <h1 class="c-custom-page__title">{{ news.title }}</h1>
+    <h5 class="c-custom-page__date">{{ news.date }}</h5>
+    <div class="c-custom-page__body">
       {{ news.content }}
-    </main>
+    </div>
   </div>
 </section>

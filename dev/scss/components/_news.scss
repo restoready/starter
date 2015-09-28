@@ -1,13 +1,12 @@
-// ===========================================================================
-// #News
-// ===========================================================================
-.news {
-    margin: 1em auto 2em auto;
-  }
-.news__header {
-  margin-bottom: 1em;
+.c-news {
+  margin: 1em auto 2em auto;
 }
-.home-news-title__link {
+.c-news__body {
+}
+.c-news__title {
+  margin-bottom: 16px;
+}
+.c-news__title-link {
   text-decoration: none;
   color: $body-color;
   font-weight: bold;
@@ -18,18 +17,43 @@
     color: $accent-color;
   }
 }
-.news__one-news {
+.c-news__the-news {
   @include media-query($min, $medium) {
     position: relative;
     width: 100%;
     overflow: hidden;
   }
 }
-.news__one-news-link {
+.c-news__the-news-link {
   color: $body-color;
   text-decoration: none;
 }
-.news__one-news-image {
+.c-news__the-news-content-wrapper {
+  width: 100%;
+  padding: 0;
+  @include media-query($min, $medium) {
+    width: 70%;
+    float: right;
+    padding: 1em 2em;
+  }
+}
+.c-news__the-news-content-wrapper--no-image {
+  @include media-query($min, $medium) {
+    width: 100%;
+  }
+}
+.c-news__the-news-content {
+}
+.c-news__the-news-date {
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: .75em;
+}
+.c-news__the-news-title {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+.c-news__the-news-image {
   width: 100%;
   display: block;
   height: 300px;
@@ -44,40 +68,11 @@
     bottom: 0;
   }
 }
-.news__one-news-content-wrapper {
-  width: 100%;
-  padding: 0;
-  @include media-query($min, $medium) {
-    width: 70%;
-    float: right;
-    padding: 1em 2em;
-  }
-}
-.news__one-news-date {
-  font-weight: bold;
-  margin-bottom: .5em;
-  font-size: .75em;
-}
-.news__one-news-content {
-}
-.news__one-news-title {
-  font-size: 1.75em;
-  font-weight: bold;
-}
-.news__one-news-summary {
+.c-news__the-news-summary {
   margin-bottom: 0;
   padding-top: .75em;
 }
-.news__separator {
+.c-news__separator {
   border: 1px solid $separator-color;
   margin: 1.5em 0;
-}
-.news__separator--last {
-  display: none;
-}
-
-.news__one-news-content-wrapper--no-image {
-  @include media-query($min, $medium) {
-    width: 100%;
-  }
 }
