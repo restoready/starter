@@ -105,6 +105,19 @@
           {% endfor %}
         </div>
       </fieldset>
+      <fieldset>
+        <legend>Retour haut de page</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="color-back-to-top-text">Texte</label>
+            <input name="admin_theme_settings[color-back-to-top-text]" id="color-back-to-top-text" value="{{ theme_settings.color-back-to-top-text }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="color-back-to-top-text--hover">Text au survol</label>
+            <input name="admin_theme_settings[color-back-to-top-text--hover]" id="color-back-to-top-text--hover" value="{{ theme_settings.color-back-to-top-text--hover }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
     </div>
 
     <div class="tab-body" id="tab-body-2">

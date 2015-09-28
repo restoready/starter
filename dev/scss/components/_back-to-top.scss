@@ -1,0 +1,20 @@
+// Colors
+$color__back-to-top-text: {{ theme_settings.color-back-to-top-text }};
+$color__back-to-top-text--hover: {{ theme_settings.color-back-to-top-text--hover }};
+
+.c-back-to-top {
+  padding: $gutter;
+  text-align: center;
+  &:before {
+    color: $color__back-to-top-text;
+    content: "\2191";
+    display: inline-block;
+  }
+}
+.c-back-to-top__link {
+  color: $color__back-to-top-text;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $color__back-to-top-text--hover;
+  }
+}

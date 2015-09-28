@@ -29,8 +29,12 @@
     {% endfor %}
   {% endif %}
   {% if menu.depth == 1 %}
-    <div class="back-to-menu">
-      <a class="back-to-menu__link" href="#top">{{ "Retour au menu" | t }}</a>
+    <div class="c-back-to-top">
+      <a class="c-back-to-top__link" href="#top">
+        <span class="c-back-to-top__label">
+          {{ "Retour au menu" | t }}
+        </span>
+      </a>
     </div>
   {% endif %}
   {% if menu.depth == 1 %}

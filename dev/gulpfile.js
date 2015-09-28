@@ -46,7 +46,7 @@ gulp.task('dev:sass', function () {
     './scss/components/_custom-page.scss',
     './scss/components/_menu.scss',
     './scss/components/_food.scss',
-    './scss/components/_back-to-menu.scss',
+    './scss/components/_back-to-top.scss',
     './scss/components/_tags.scss',
     './scss/components/_news.scss',
     './scss/components/_gallery.scss',

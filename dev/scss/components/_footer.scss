@@ -6,18 +6,6 @@
   background-color: scale-color($body-color, $lightness: +95%);
   border-top: 1px solid scale-color($body-color, $lightness: +85%);
 }
-.c-footer__back-to-top {
-  padding: $gutter;
-  text-align: center;
-}
-.c-footer__back-to-top-link {
-  color: scale-color($body-color, $lightness: +25%);
-  text-decoration: none;
-  &:hover, &:focus {
-    color: $body-color;
-  }
-}
-
 .c-footer__social-items {
   margin: .75em 0;
   text-align: center;
