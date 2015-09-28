@@ -67,7 +67,8 @@ gulp.task('dev:sass', function () {
 
     // Hacks (trumps)
     "./node_modules/inuit-widths/_trumps.widths.scss",
-    "./node_modules/inuit-responsive-widths/_trumps.widths-responsive.scss"
+    "./node_modules/inuit-responsive-widths/_trumps.widths-responsive.scss",
+    "./scss/hacks/_grid.scss"
 
   ])
   .pipe(concat('application.scss.liquid'))
