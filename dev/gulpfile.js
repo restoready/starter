@@ -24,8 +24,6 @@ gulp.task('dev:sass', function () {
 
     // Base
     './scss/base/_document.scss',
-    './scss/base/_lists.scss',
-    './scss/base/_images.scss',
     './scss/base/_fontcustom.scss',
 
     // Vendor
