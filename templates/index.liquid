@@ -11,34 +11,36 @@
 </div>
 
 {% if home_menus.size > 0 %}
-  <section class="menus menus--featured">
-    <div class="o-wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
-      </header>
-      <div class="section__main">
+  <div class="o-wrapper">
+    <section class="c-simple-bloc">
+      <h1 class="c-simple-bloc__title">
+        {% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}
+      </h1>
+
+      <div class="c-simple-bloc__content">
         {% for menu in home_menus %}
-          <h3 class="menu__title">{{ menu.name }}</h3>
-          {% if menu.summary? %}
-            <div class="menu__description">
-              {{ menu.summary }}
-            </div>
-          {% endif %}
-          {% for food in menu.foods %}
-            {% assign_prices_to prices for food in menu %}
-            {% include 'food' with food:food %}
-          {% endfor %}
+          <div class="c-menu">
+            <h2 class="c-menu__title">{{ menu.name }}</h2>
+            {% if menu.summary? %}
+              <div class="c-menu__description">
+                {{ menu.summary }}
+              </div>
+            {% endif %}
+            {% for food in menu.foods %}
+              {% assign_prices_to prices for food in menu %}
+              {% include 'food' with food:food %}
+            {% endfor %}
+          </div>
         {% endfor %}
       </div>
-      <footer class="section__footer menus__footer">
-        <p>
-          <a class="o-button o-button--red" href="{{ restaurant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </p>
-      </footer>
-    </div>
-  </section>
+
+      <div class="c-simple-bloc__button">
+        <a class="o-button o-button--red" href="{{ restaurant.menus_path }}">
+          {{ "Voir toute la carte" | t }}
+        </a>
+      </div>
+    </section>
+  </div>
 {% endif %}
 
 {% if home_foods.size > 0 %}
