@@ -22,21 +22,18 @@
 {% endif %}
 
 {% if theme_settings.display_google_business_view_embed %}
-  <section class="business-view">
+  <section class="c-business-view">
     <div class="o-wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{{ "Visite virtuelle" | t }}</h2>
-      </header>
+      <h2 class="c-business-view__title">{{ "Visite virtuelle" | t }}</h2>
       {% google_business_view_embed: "size:100%x300" %}
       {% if theme_settings.display_google_business_view_url %}
-      <footer class="section__footer">
-        <p>
-          <a class="o-button o-button--red business__link" href="{% google_business_view_url %}">
+        <div class="c-business-view__button">
+          <a class="o-button o-button--red" href="{% google_business_view_url %}">
             {{ "Visiter" | t }}
           </a>
-        </p>
-      </footer>
+        </div>
       {% endif %}
+    </div>
   </section>
 {% endif %}
 
