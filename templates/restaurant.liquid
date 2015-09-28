@@ -10,9 +10,9 @@
 {% endif %}
 
 {% if photos.size > 0 %}
-  <section class="restaurant-gallery">
+  <section class="c-gallery">
     <div class="o-wrapper">
-      <div class="section__main gallery">
+      <div class="section__main c-gallery__items">
         {% for photo in photos %}
           {% include 'photo' with photo:photo %}
         {% endfor %}

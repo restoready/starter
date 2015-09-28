@@ -1,46 +1,44 @@
-// ===========================================================================
-// #Gallery
-// ===========================================================================
-.restaurant-gallery {
+.c-gallery {
   margin-bottom: 1em;
 }
-  .gallery__item {
-    position: relative;
-    margin-bottom: 1em;
-    @include media-query($min, $small) {
-      display: inline-block;
-      vertical-align: top;
-      width: 45%;
-      margin: 2%;
-    }
-    @include media-query($min, $medium) {
-      width: 30%;
-      margin: 1%;
+.c-gallery__items {
+}
+.c-gallery__item {
+  position: relative;
+  margin-bottom: 1em;
+  @include media-query($min, $small) {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 2%;
+  }
+  @include media-query($min, $medium) {
+    width: 30%;
+    margin: 1%;
+  }
+}
+.c-gallery__link {
+  display: block;
+  &:hover {
+    .photo__caption {
+      background-color: $accent-color;
     }
   }
-    .gallery__img {
-      img {
-        max-width: 100%;
-        height: auto;
-        vertical-align: middle;
-      }
-    }
-      .photo__link {
-        display: block;
-        &:hover {
-          .photo__caption {
-            background-color: $accent-color;
-          }
-        }
-      }
-        .photo__caption {
-          color: white;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: .5em;
-          font-size: 1em;
-          font-weight: 700;
-          background-color: rgba($body-color, .75);
-        }
+}
+.c-gallery__img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.c-gallery__caption {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: rgba($body-color, .75);
+}

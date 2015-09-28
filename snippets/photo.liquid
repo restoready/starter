@@ -1,10 +1,8 @@
-<div class="gallery__item">
-  <div class="gallery__img">
-    <a href="{{ photo.image | custom_image_url: '1600x1600' }}" class="photo__link venobox" data-gall="myGallery">
-      <img src="{{ photo.image | medium_image_url }}" alt="{{ photo.caption }}">
+<div class="c-gallery__item">
+    <a href="{{ photo.image | custom_image_url: '1600x1600' }}" class="c-gallery__link venobox" data-gall="myGallery">
+      <img src="{{ photo.image | medium_image_url }}" alt="{{ photo.caption }}" class="c-gallery__img">
       {% if photo.caption %}
-        <span class="photo__caption">{{ photo.caption }}</span>
+        <span class="c-gallery__caption">{{ photo.caption }}</span>
       {% endif %}
     </a>
-  </div>
 </div>
