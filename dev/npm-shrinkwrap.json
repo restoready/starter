@@ -2707,6 +2707,66 @@
         }
       }
     },
+    "inuit-box-sizing": {
+      "version": "0.2.0",
+      "from": "inuit-box-sizing@*",
+      "resolved": "https://registry.npmjs.org/inuit-box-sizing/-/inuit-box-sizing-0.2.0.tgz"
+    },
+    "inuit-defaults": {
+      "version": "0.2.3",
+      "from": "inuit-defaults@*",
+      "resolved": "https://registry.npmjs.org/inuit-defaults/-/inuit-defaults-0.2.3.tgz"
+    },
+    "inuit-functions": {
+      "version": "0.2.0",
+      "from": "inuit-functions@*",
+      "resolved": "https://registry.npmjs.org/inuit-functions/-/inuit-functions-0.2.0.tgz"
+    },
+    "inuit-layout": {
+      "version": "0.2.2",
+      "from": "inuit-layout@*",
+      "resolved": "https://registry.npmjs.org/inuit-layout/-/inuit-layout-0.2.2.tgz"
+    },
+    "inuit-mixins": {
+      "version": "0.2.3",
+      "from": "inuit-mixins@*",
+      "resolved": "https://registry.npmjs.org/inuit-mixins/-/inuit-mixins-0.2.3.tgz"
+    },
+    "inuit-normalize": {
+      "version": "3.0.3",
+      "from": "inuit-normalize@*",
+      "resolved": "https://registry.npmjs.org/inuit-normalize/-/inuit-normalize-3.0.3.tgz"
+    },
+    "inuit-reset": {
+      "version": "0.1.1",
+      "from": "inuit-reset@*",
+      "resolved": "https://registry.npmjs.org/inuit-reset/-/inuit-reset-0.1.1.tgz"
+    },
+    "inuit-responsive-settings": {
+      "version": "0.1.5",
+      "from": "inuit-responsive-settings@*",
+      "resolved": "https://registry.npmjs.org/inuit-responsive-settings/-/inuit-responsive-settings-0.1.5.tgz"
+    },
+    "inuit-responsive-tools": {
+      "version": "0.1.3",
+      "from": "inuit-responsive-tools@*",
+      "resolved": "https://registry.npmjs.org/inuit-responsive-tools/-/inuit-responsive-tools-0.1.3.tgz"
+    },
+    "inuit-responsive-widths": {
+      "version": "0.2.2",
+      "from": "inuit-responsive-widths@*",
+      "resolved": "https://registry.npmjs.org/inuit-responsive-widths/-/inuit-responsive-widths-0.2.2.tgz"
+    },
+    "inuit-tools-widths": {
+      "version": "0.1.4",
+      "from": "inuit-tools-widths@*",
+      "resolved": "https://registry.npmjs.org/inuit-tools-widths/-/inuit-tools-widths-0.1.4.tgz"
+    },
+    "inuit-widths": {
+      "version": "0.4.2",
+      "from": "inuit-widths@*",
+      "resolved": "https://registry.npmjs.org/inuit-widths/-/inuit-widths-0.4.2.tgz"
+    },
     "jquery": {
       "version": "2.1.4",
       "from": "jquery@*",
