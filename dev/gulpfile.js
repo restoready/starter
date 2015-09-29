@@ -44,6 +44,7 @@ gulp.task('dev:sass', function () {
 
     // Components
     './scss/components/_button.scss',
+    './scss/components/_form.scss',
     './scss/components/_header.scss',
     './scss/components/_nav.scss',
     './scss/components/_footer.scss',

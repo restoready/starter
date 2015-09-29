@@ -1,51 +1,6 @@
-// Colors
-$color__input-hint-error-background: {{ theme_settings.color-input-hint-error-background }};
-$color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
-
 .o-form {
-  padding: 1em 0;
-}
-.o-form__title {
-  font-size: 2em;
-  margin-bottom: .25em;
-}
-.o-form__description {
-  margin-bottom: 1em;
-}
-.o-form__field-group {
   margin-bottom: .5em;
 }
-.o-form__input,
-.o-form__select,
-.o-form__textarea {
+.o-form__field {
   margin-bottom: .5em;
-  input,
-  select,
-  textarea {
-    display: block;
-    width: 100%;
-    border: 1px solid #DDDDDD;
-    margin: 0;
-    padding: .2rem;
-  }
-  input {
-    min-height: 35px;
-  }
-  textarea {
-    min-height: 100px;
-  }
-}
-.o-form__label {
-  display: block;
-}
-.o-form__submit {
-  text-align: center;
-}
-
-.o-form__input-hint {
-  padding: .15em .4em;
-}
-.o-form__input-hint--error {
-  background: $color__input-hint-error-background;
-  color: $color__input-hint-error-text;
 }
