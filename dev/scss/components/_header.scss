@@ -67,7 +67,7 @@
   text-decoration: none;
   &:hover, &:focus {
     color: #000;
-    .phone-number__label {
+    .c-header__phone-number-label {
       color: #000;
     }
   }
@@ -75,7 +75,7 @@
     font-size: 1em;
   }
 }
-.phone-number__label {
+.c-header__phone-number-label {
   color: $body-color;
 }
 
