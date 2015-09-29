@@ -43,6 +43,7 @@ gulp.task('dev:sass', function () {
     './scss/objects/_forms.scss',
 
     // Components
+    './scss/components/_button.scss',
     './scss/components/_header.scss',
     './scss/components/_nav.scss',
     './scss/components/_footer.scss',

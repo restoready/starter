@@ -1,42 +1,14 @@
-// ===========================================================================
-// #Buttons
-// ===========================================================================
 .o-button {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
   padding: .5em 2em;
   border: 0;
-  text-decoration: none;
-  text-align: center;
   cursor: pointer;
   white-space: nowrap;
   -webkit-appearance: none;
-  font-size: 16px;
 
-  &.o-button--small {
-    font-size: 0.75em;
-    padding: .25em .5em;
-  }
-
-  &.o-button--large {
-    font-size: 21px;
-  }
-
-  &.o-button--full {
-    width: 100%;
-  }
-
-  &.o-button--red {
-    background-color: $accent-color;
-    color: #FFFFFF;
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: scale-color($accent-color, $lightness: -15%);
-    }
-  }
-  &.has-icon {
+  &.o-button--has-icon {
     .icon {
       margin-right: .5em;
     }

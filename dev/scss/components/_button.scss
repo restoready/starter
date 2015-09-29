@@ -1,0 +1,25 @@
+// Sizes
+.c-button-size-default {
+  font-size: 16px;
+}
+.c-button-size-small {
+  font-size: 14px;
+  padding: .25em .5em;
+}
+.c-button-size-large {
+  font-size: 21px;
+}
+
+// Widths
+.c-button-width-full {
+  width: 100%;
+}
+
+// Colors
+.c-button-color-red {
+  background-color: $accent-color;
+  color: #FFFFFF;
+  &:hover {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+}
