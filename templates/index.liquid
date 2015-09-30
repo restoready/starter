@@ -12,11 +12,11 @@
 
 {% if home_menus.size > 0 %}
   <div class="o-wrapper">
-    <section class="c-simple-bloc">
-      <h1 class="c-simple-bloc__title">
+    <section class="o-simple-block">
+      <h1 class="o-simple-block__title">
         {% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}
       </h1>
-      <div class="c-simple-bloc__content">
+      <div class="o-simple-block__content">
         {% for menu in home_menus %}
           <div class="c-menu">
             <h2 class="c-menu__title">{{ menu.name }}</h2>
@@ -32,7 +32,7 @@
           </div>
         {% endfor %}
       </div>
-      <div class="c-simple-bloc__button">
+      <div class="o-simple-block__button">
         <a class="o-button c-button-color-red" href="{{ restaurant.menus_path }}">
           {{ "Voir toute la carte" | t }}
         </a>
@@ -43,16 +43,16 @@
 
 {% if home_foods.size > 0 %}
   <div class="o-wrapper">
-    <section class="c-simple-bloc">
-      <h1 class="c-simple-bloc__title">
+    <section class="o-simple-block">
+      <h1 class="o-simple-block__title">
         {% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}
       </h1>
-      <div class="c-simple-bloc__content">
+      <div class="o-simple-block__content">
         {% for food in home_foods %}
           {% include 'food' with food:food %}
         {% endfor %}
       </div>
-      <div class="c-simple-bloc__button">
+      <div class="o-simple-block__button">
         <a class="o-button c-button-color-red" href="{{ restaurant.menus_path }}">
           {{ "Voir toute la carte" | t }}
         </a>

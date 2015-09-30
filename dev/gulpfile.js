@@ -41,6 +41,7 @@ gulp.task('dev:sass', function () {
     './scss/objects/_wrapper.scss',
     './scss/objects/_buttons.scss',
     './scss/objects/_forms.scss',
+    './scss/objects/_simple-block.scss',
 
     // Components
     './scss/components/_button.scss',
@@ -65,7 +66,6 @@ gulp.task('dev:sass', function () {
     './scss/components/_opening-info.scss',
     './scss/components/_location.scss',
     './scss/components/_business-view.scss',
-    './scss/components/_simple-bloc.scss',
 
     // Hacks (trumps)
     "./node_modules/inuit-widths/_trumps.widths.scss",
