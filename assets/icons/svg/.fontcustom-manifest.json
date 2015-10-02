@@ -1,0 +1,86 @@
+{
+  "checksum": {
+    "previous": "1bdd1fe34d4892ef8fa376c54942299aa12c9416ee09d4f55019c9a999a7d5b5",
+    "current": "1bdd1fe34d4892ef8fa376c54942299aa12c9416ee09d4f55019c9a999a7d5b5"
+  },
+  "fonts": [
+    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf",
+    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg",
+    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff",
+    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot"
+  ],
+  "glyphs": {
+    "arrow-down": {
+      "codepoint": 61696,
+      "source": "./arrow-down.svg"
+    },
+    "check": {
+      "codepoint": 61699,
+      "source": "./check.svg"
+    },
+    "envelop": {
+      "codepoint": 61701,
+      "source": "./envelop.svg"
+    },
+    "facebook": {
+      "codepoint": 61702,
+      "source": "./facebook.svg"
+    },
+    "google": {
+      "codepoint": 61708,
+      "source": "./google.svg"
+    },
+    "phone": {
+      "codepoint": 61703,
+      "source": "./phone.svg"
+    },
+    "star": {
+      "codepoint": 61704,
+      "source": "./star.svg"
+    },
+    "tripadvisor": {
+      "codepoint": 61705,
+      "source": "./tripadvisor.svg"
+    },
+    "twitter": {
+      "codepoint": 61706,
+      "source": "./twitter.svg"
+    },
+    "warning": {
+      "codepoint": 61707,
+      "source": "./warning.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": false,
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "fontcustom",
+    "force": false,
+    "input": {
+      "templates": ".",
+      "vectors": "."
+    },
+    "no_hash": false,
+    "output": {
+      "css": "fontcustom",
+      "fonts": "fontcustom",
+      "preview": "fontcustom"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "css",
+      "preview"
+    ]
+  },
+  "templates": [
+    "fontcustom/fontcustom.css",
+    "fontcustom/fontcustom-preview.html"
+  ]
+}
