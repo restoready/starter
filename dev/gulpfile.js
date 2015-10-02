@@ -86,7 +86,8 @@ gulp.task('dev:js', function () {
 
     // Theme
     './js/init.js',
-    './js/map.js'
+    './js/map.js',
+    './js/venobox-override.js'
   ])
   .pipe(sourcemaps.init())
   .pipe(concat('app.js'))

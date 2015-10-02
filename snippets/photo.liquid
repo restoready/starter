@@ -1,5 +1,5 @@
 <div class="c-gallery__item">
-    <a href="{{ photo.image | custom_image_url: '1600x1600' }}" class="c-gallery__link venobox" data-gall="myGallery">
+    <a href="{{ photo.image | custom_image_url: '1600x1600' }}" class="c-gallery__link venobox js-gallery-item" data-gall="myGallery">
       <img src="{{ photo.image | medium_image_url }}" alt="{{ photo.caption }}" class="c-gallery__img">
       {% if photo.caption %}
         <span class="c-gallery__caption">{{ photo.caption }}</span>
