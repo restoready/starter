@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pushd ./assets/icons/svg
+  fontcustom compile
+popd
+
+rm ./assets/fontcustom*.{eot,woff,svg,ttf} && cp ./assets/icons/svg/fontcustom/*.{eot,woff,svg,ttf} assets/
+cp ./assets/icons/svg/fontcustom/fontcustom.css ./dev/scss/base/_fontcustom.scss
