@@ -76,6 +76,7 @@ gulp.task('dev:sass', function () {
     // Utilities (trumps)
     "./node_modules/inuit-widths/_trumps.widths.scss",
     "./node_modules/inuit-responsive-widths/_trumps.widths-responsive.scss",
+    "./scss/utilities/_text-center.scss",
 
     // Hacks
     "./scss/hacks/_grid.scss"
