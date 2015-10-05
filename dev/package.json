@@ -31,6 +31,7 @@
     "inuit-layout": "^0.2.2",
     "inuit-mixins": "^0.2.3",
     "inuit-normalize": "^3.0.3",
+    "inuit-page": "^0.2.1",
     "inuit-reset": "^0.1.1",
     "inuit-responsive-settings": "^0.1.5",
     "inuit-responsive-tools": "^0.1.3",

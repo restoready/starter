@@ -31,6 +31,7 @@ gulp.task('dev:sass', function () {
 
     // Base
     './scss/base/_document.scss',
+    './node_modules/inuit-page/_base.page.scss',
     './scss/base/_fontcustom.scss',
 
     // Vendor

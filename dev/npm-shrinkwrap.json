@@ -2737,6 +2737,11 @@
       "from": "inuit-normalize@*",
       "resolved": "https://registry.npmjs.org/inuit-normalize/-/inuit-normalize-3.0.3.tgz"
     },
+    "inuit-page": {
+      "version": "0.2.1",
+      "from": "inuit-page@*",
+      "resolved": "https://registry.npmjs.org/inuit-page/-/inuit-page-0.2.1.tgz"
+    },
     "inuit-reset": {
       "version": "0.1.1",
       "from": "inuit-reset@*",
