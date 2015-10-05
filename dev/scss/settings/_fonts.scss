@@ -1,10 +1,6 @@
 /*----------------------------------------------------------------------------*\
-    #Business-view component
+    #Fonts settings
 \*----------------------------------------------------------------------------*/
 
-.c-business-view {
-  background-color: #fff;
-  margin-bottom: 1em;
-}
-.c-business-view__title {
-}
+$headerFontStack: {{ theme_settings.header-font }};
+$bodyFontStack: {{ theme_settings.body-font }};
