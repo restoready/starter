@@ -1,0 +1,23 @@
+/*----------------------------------------------------------------------------*\
+    #Tag component
+\*----------------------------------------------------------------------------*/
+
+.c-tag {
+  display: inline-block;
+  margin-bottom: .5em;
+  font-size: .95em;
+  border-radius: .25em;
+  padding: .2em .4em;
+  background-color: $color__default-tag-background;
+  color: $color__default-tag-text;
+}
+{% for tag in tags %}
+  .c-tag--{{tag.css_class}} {
+    {% if tag.background_value != "" %}
+    background-color: {{ tag.background_value }};
+    {% endif %}
+    {% if tag.color_value != "" %}
+    color: {{ tag.color_value }};
+    {% endif %}
+  }
+{% endfor %}

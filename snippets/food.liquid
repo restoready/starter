@@ -15,7 +15,7 @@
     {% if food.tags? %}
       <div class="c-food__tags">
         {% for tag in food.tags %}
-          <i class="c-food__tag tag--{{ tag.css_class }}">{{ tag.name }}</i>
+          <i class="c-tag c-tag--{{ tag.css_class }}">{{ tag.name }}</i>
         {% endfor %}
       </div>
     {% endif %}
