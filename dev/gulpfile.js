@@ -40,6 +40,7 @@ gulp.task('dev:sass', function () {
 
     // Vendor
     './scss/vendors/_venobox.scss',
+    './scss/vendors/_responsive-nav.scss',
 
     // Object
     "./node_modules/inuit-layout/_objects.layout.scss",
@@ -90,8 +91,8 @@ gulp.task('dev:js', function () {
   return gulp.src([
     // Vendor
     './node_modules/jquery/dist/jquery.js',
-    './js/vendor/doubletaptogo.min.js',
     './js/vendor/venobox.js',
+    './js/vendor/responsive-nav.js',
 
     // Theme
     './js/init.js',

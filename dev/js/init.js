@@ -2,5 +2,6 @@
 // Init app
 $( function() {
   $('.venobox').venobox();
-  $( '.has-sub-nav' ).doubleTapToGo();
+
+  var nav = responsiveNav(".nav-collapse");
 });

@@ -1,7 +1,5 @@
-<a href="#nav" class="c-nav__toggle toggle--open" title="{{ "Ouvrir le menu" | t }}">{{ "Menu" | t }}</a>
-<a href="#nav" class="c-nav__toggle-link">Menu</a>
-<a href="#" class="c-nav__toggle toggle--close" title="{{ "Fermer le menu" | t }}">{{ "Fermer le menu" | t }}</a>
-<ul class="c-nav__items">
+<button id="nav-toggle" class="nav-toggle">Open menu</button>
+<ul class="c-nav__items menu-items">
   {% for link in linklists.navigation-primaire.links %}
     {% if link.linklist_handle == "" or link.linklist_handle == null %}
       <li class="c-nav__item {{ link.url | current_path: 'class: c-nav__item--current' }}">
@@ -12,7 +10,7 @@
         <a class="c-nav__link" href="{{ link.url }}" aria-haspopup="true">
           <span>{{ link.title }}</span>
         </a>
-        <ul class="c-nav__sub-items">
+        <ul class="c-nav__sub-items sub-menu">
           {% for l in linklists[link.linklist_handle].links %}
             <li class="c-nav__sub-item {{ l.url | current_path: 'class: c-nav__sub-item--current' }}">
               <a class="c-nav__sub-link" href="{{ l.url }}">{{ l.title }}</a>
