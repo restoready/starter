@@ -26,9 +26,8 @@
 .c-header__logo-image {
   padding: 1em 0;
   vertical-align: middle;
-  width: 180px;
+  width: 120px;
   @include media-query(hands) {
-    width: 120px;
     margin-right: 1.5em;
   }
 }
