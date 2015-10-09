@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "1bdd1fe34d4892ef8fa376c54942299aa12c9416ee09d4f55019c9a999a7d5b5",
-    "current": "1bdd1fe34d4892ef8fa376c54942299aa12c9416ee09d4f55019c9a999a7d5b5"
+    "previous": "ca1a2a73dbcb3b92c33348e835ee191f2363d185876eec2500eb5f4dadaaf311",
+    "current": "ca1a2a73dbcb3b92c33348e835ee191f2363d185876eec2500eb5f4dadaaf311"
   },
   "fonts": [
-    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf",
-    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg",
-    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff",
-    "fontcustom/fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot"
+    "fontcustom/fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.ttf",
+    "fontcustom/fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.svg",
+    "fontcustom/fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.woff",
+    "fontcustom/fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.eot"
   ],
   "glyphs": {
     "arrow-down": {
@@ -29,6 +29,10 @@
     "google": {
       "codepoint": 61708,
       "source": "./google.svg"
+    },
+    "menu": {
+      "codepoint": 61709,
+      "source": "./menu.svg"
     },
     "phone": {
       "codepoint": 61703,

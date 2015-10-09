@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <!--
-2015-2-20: Created with FontForge (http://fontforge.org)
+2015-10-9: Created with FontForge (http://fontforge.org)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20150109 at Fri Feb 20 14:33:36 2015
+Created by FontForge 20150109 at Fri Oct  9 14:31:32 2015
  By Kévin Bizien
 Copyright (c) 2015, K&#195;&#169;vin Bizien
 </metadata>
@@ -22,7 +22,7 @@ Copyright (c) 2015, K&#195;&#169;vin Bizien
     bbox="-0.360983 -64.4092 512.514 448.43"
     underline-thickness="25.6"
     underline-position="-51.2"
-    unicode-range="U+F100-F10C"
+    unicode-range="U+F100-F10D"
   />
     <missing-glyph />
     <glyph glyph-name="uniF100" unicode="&#xf100;" 
@@ -39,6 +39,8 @@ v-28.0986c0 -1.43359 -1.24902 -2.6416 -2.68262 -2.6416h-64.4297v-64.6348c0 -1.45
 c0 1.49512 1.20898 2.66309 2.68359 2.66309h64.082v64.2246c0 1.4541 1.20801 2.64258 2.68262 2.64258h27.7295c1.43359 0 2.64258 -1.18848 2.64258 -2.64258v-64.2041h64.4297z" />
     <glyph glyph-name="uniF108" unicode="&#xf108;" 
 d="M509.85 248.996l-126.895 -123.72l29.9424 -174.674l-156.897 82.4727l-156.897 -82.4727l29.9824 174.674l-126.935 123.72l175.432 25.4766l78.418 158.945l78.459 -158.945z" />
+    <glyph glyph-name="uniF10D" unicode="&#xf10d;" 
+d="M0 218.092v86.2412h512v-86.2412h-512zM0 77.9678v86.2305h512v-86.2305h-512z" />
     <glyph glyph-name="uniF10A" unicode="&#xf10a;" 
 d="M511.16 350.229c-14.0283 -20.9717 -31.8057 -39.4033 -52.3262 -54.1084l0.347656 -13.5781c0 -138.343 -105.308 -297.82 -297.86 -297.82c-59.1465 0 -114.136 17.3057 -160.481 47.0635c8.19141 -0.921875 16.5273 -1.41309 24.9854 -1.41309
 c49.0293 0 94.1875 16.6914 130.007 44.749c-45.793 0.838867 -84.4385 31.1289 -97.7715 72.7441c6.41016 -1.26953 12.9434 -1.94531 19.7021 -1.94531c9.58496 0 18.8213 1.31055 27.5859 3.66602c-47.8818 9.66699 -83.9678 51.958 -83.9678 102.687v1.29004

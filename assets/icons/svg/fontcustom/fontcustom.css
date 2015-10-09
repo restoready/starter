@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot");
-  src: url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.woff") format("woff"),
-       url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.ttf") format("truetype"),
-       url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom") format("svg");
+  src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.eot");
+  src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.woff") format("woff"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.ttf") format("truetype"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("./fontcustom_1bdd1fe34d4892ef8fa376c54942299a.svg#fontcustom") format("svg");
+    src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.svg#fontcustom") format("svg");
   }
 }
 
@@ -28,6 +28,7 @@
 .icon-envelop:before,
 .icon-facebook:before,
 .icon-google:before,
+.icon-menu:before,
 .icon-phone:before,
 .icon-star:before,
 .icon-tripadvisor:before,
@@ -52,6 +53,7 @@
 .icon-envelop:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
 .icon-google:before { content: "\f10c"; }
+.icon-menu:before { content: "\f10d"; }
 .icon-phone:before { content: "\f107"; }
 .icon-star:before { content: "\f108"; }
 .icon-tripadvisor:before { content: "\f109"; }
