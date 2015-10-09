@@ -1,3 +1,143 @@
 /*----------------------------------------------------------------------------*\
     #Nav component
 \*----------------------------------------------------------------------------*/
+
+// Colors
+$color__darker-nav-background: scale-color($accent-color, $lightness: -15%);
+$color__dark-nav-background: scale-color($accent-color, $lightness: -10%);
+
+.c-nav {
+}
+.c-nav__hamburger {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  cursor: pointer;
+  @include media-query(desk) {
+    display: none;
+  }
+}
+.c-nav__hamburger-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 0;
+}
+.c-nav__hamburger-icon {
+  font-size: 46px;
+  line-height: 0;
+}
+
+.c-nav__items {
+  display: none;
+  background-color: $accent-color;
+  margin-bottom: 0;
+  @include media-query(desk) {
+    display: block;
+    text-align: center;
+  }
+}
+.c-nav__item {
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: 1px solid $color__darker-nav-background;
+  @include media-query(desk) {
+    overflow: visible;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: none;
+    text-align: left;
+  }
+}
+.c-nav__item--current {
+}
+.c-nav__link {
+  color: #FFFFFF;
+  padding: 12px 16px;
+  display: block;
+  font-weight: 700;
+  transition: background-color .25s;
+  &:hover {
+    background-color: $color__darker-nav-background;
+  }
+}
+.c-nav__link.has-sub-nav {
+  float: left;
+  width: 85%;
+  @include media-query(lap) {
+    width: 90%;
+  }
+  @include media-query(desk) {
+    width: auto;
+  }
+}
+.c-nav__link--current {
+  background-color: $color__darker-nav-background;
+}
+.c-nav__link-dropdown {
+  float: left;
+  width: 15%;
+  padding: 12px 16px;
+  cursor: pointer;
+  text-align: center;
+  border-left: 1px solid $color__dark-nav-background;
+  &:hover {
+    background-color: $color__dark-nav-background;
+  }
+  @include media-query(lap) {
+    width: 10%;
+  }
+  @include media-query(desk) {
+    width: auto;
+    border-right: 1px solid $color__dark-nav-background;
+  }
+}
+.c-nav__link-dropdown-icon {
+  color: #FFFFFF;
+}
+
+.c-nav__sub-items {
+  margin-bottom: 0;
+  clear: both;
+  display: none;
+  @include media-query(desk) {
+    position: absolute;
+    top: 48px;
+    z-index: 2;
+    background-color: $accent-color;
+  }
+}
+.c-nav__sub-item {
+  margin-bottom: 0;
+  border-bottom: 1px solid $color__darker-nav-background;
+  font-weight: 700;
+  &:first-child {
+    border-top: 1px solid $color__darker-nav-background;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  @include media-query(desk) {
+    border-bottom: none;
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+.c-nav__sub-item--current {
+}
+.c-nav__sub-link {
+  color: #FFFFFF;
+  padding: 12px 8px 12px 40px;
+  display: block;
+  transition: background-color .25s;
+  &:hover {
+    background-color: $color__dark-nav-background;
+  }
+  @include media-query(desk) {
+    padding: 12px 16px;
+  }
+}
+.c-nav__sub-link--current {
+  background-color: $color__dark-nav-background;
+}

@@ -1,19 +1,25 @@
-<button id="nav-toggle" class="nav-toggle">Open menu</button>
-<ul class="c-nav__items menu-items">
+<div class="c-nav__hamburger js-nav-hamburger">
+  <p class="c-nav__hamburger-title">{{ "Menu" | t }}</p>
+  <i class="icon icon-menu c-nav__hamburger-icon"></i>
+</div>
+<ul class="c-nav__items js-nav-items">
   {% for link in linklists.navigation-primaire.links %}
     {% if link.linklist_handle == "" or link.linklist_handle == null %}
       <li class="c-nav__item {{ link.url | current_path: 'class: c-nav__item--current' }}">
-        <a class="c-nav__link" href="{{ link.url }}">{{ link.title }}</a>
+        <a class="c-nav__link {{ link.url | current_path: 'class: c-nav__link--current' }}" href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% else %}
-      <li class="c-nav__item has-sub-nav {{ link.url | current_path: 'class: c-nav__item--current' }}">
-        <a class="c-nav__link" href="{{ link.url }}" aria-haspopup="true">
+      <li class="c-nav__item {{ link.url | current_path: 'class: c-nav__item--current' }}">
+        <a class="c-nav__link has-sub-nav {{ link.url | current_path: 'class: c-nav__link--current' }}" href="{{ link.url }}">
           <span>{{ link.title }}</span>
         </a>
-        <ul class="c-nav__sub-items sub-menu">
+        <div class="c-nav__link-dropdown js-nav-dropdown">
+          <i class="icon icon-arrow-down c-nav__link-dropdown-icon"></i>
+        </div>
+        <ul class="c-nav__sub-items js-nav-sub-items">
           {% for l in linklists[link.linklist_handle].links %}
             <li class="c-nav__sub-item {{ l.url | current_path: 'class: c-nav__sub-item--current' }}">
-              <a class="c-nav__sub-link" href="{{ l.url }}">{{ l.title }}</a>
+              <a class="c-nav__sub-link {{ l.url | current_path: 'class: c-nav__sub-link--current' }}" href="{{ l.url }}">{{ l.title }}</a>
             </li>
           {% endfor %}
         </ul>
