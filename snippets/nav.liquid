@@ -5,20 +5,21 @@
 <ul class="c-nav__items js-nav-items">
   {% for link in linklists.navigation-primaire.links %}
     {% if link.linklist_handle == "" or link.linklist_handle == null %}
-      <li class="c-nav__item {{ link.url | current_path: 'class: c-nav__item--current' }}">
+      <li class="c-nav__item">
         <a class="c-nav__link {{ link.url | current_path: 'class: c-nav__link--current' }}" href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% else %}
-      <li class="c-nav__item {{ link.url | current_path: 'class: c-nav__item--current' }}">
-        <a class="c-nav__link has-sub-nav {{ link.url | current_path: 'class: c-nav__link--current' }}" href="{{ link.url }}">
-          <span>{{ link.title }}</span>
-        </a>
-        <div class="c-nav__link-dropdown js-nav-dropdown">
-          <i class="icon icon-arrow-down c-nav__link-dropdown-icon"></i>
+      <li class="c-nav__item">
+        <div class="c-nav__link has-sub-nav {{ link.url | current_path: 'class: c-nav__link--current' }} js-nav-dropdown">
+          <span class="c-nav__link-title has-sub-nav">{{ link.title }}</span>
+          <span class="c-nav__link-dropdown">
+            <i class="icon icon-arrow-down c-nav__link-dropdown-icon"></i>
+          </span>
         </div>
+
         <ul class="c-nav__sub-items js-nav-sub-items">
           {% for l in linklists[link.linklist_handle].links %}
-            <li class="c-nav__sub-item {{ l.url | current_path: 'class: c-nav__sub-item--current' }}">
+            <li class="c-nav__sub-item">
               <a class="c-nav__sub-link {{ l.url | current_path: 'class: c-nav__sub-link--current' }}" href="{{ l.url }}">{{ l.title }}</a>
             </li>
           {% endfor %}
