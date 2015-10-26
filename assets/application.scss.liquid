@@ -1,0 +1,2944 @@
+/*
+ * RestoReady v1.0
+ * Copyright 2014 MH Communication.
+ * Author MH Communication @MHCommunication
+ * Built with Sass - http://sass-lang.com/
+
+ * Some things to know about this file:
+    - Sass is compiled on RestoReady's server so you don't need to convert it to CSS yourself
+    - The output CSS is compressed and comments are removed
+    - You cannot use @imports in this file
+    - Helpers variables, mixins, and starter classes are provided. Change as needed.
+    - The file is prepped with a CSS reset
+*/
+
+/**
+ * SUMMARY
+ *
+ * SETTINGS
+ * Inuit default settings.........Default settings INUIT-CSS.
+ * General........................Generale variables and config.
+ * Colors.........................Colors variables.
+ * Fonts..........................Fonts variables.
+ * Breakpoints....................Breakpoints config.
+ * Inuit responsive settings......Responsive settings INUIT-CSS.
+ *
+ * TOOLS
+ * Inuit functions................Functions INUIT-CSS.
+ * Inuit mixins...................Mixins INUIT-CSS.
+ * Mixins.........................Useful mixins.
+ * Inuit widths...................Mixin to spit out width classes, INUIT-CSS.
+ * Inuit reponsive................Mixin generate media-query, INUIT-CSS.
+ *
+ * GENERIC
+ * Inuit normalize................A level playing field, INUIT-CSS.
+ * Inuit reset....................Reset default browsers specifications, INUIT-CSS.
+ * Inuit box-sizing...............Better default box-sizing, INUIT-CSS.
+ *
+ * BASE
+ * Inuit page.....................Base html properties, INUIT-CSS.
+ * Fontcustom.....................Fontcustom icons definition.
+ * Document.......................Document base styles.
+ *
+ * VENDORS
+ * Venobox........................Venobox external plugin styles - lightbox.
+ *
+ * OBJECTS
+ * Inuit layout...................Layout object for grid system, INUIT-CSS.
+ * Wrapper........................Wrapping and constraining elements.
+ * Buttons........................Buttons object structure.
+ * Forms..........................Forms object structure.
+ * Simple block...................Simple block object structure.
+ *
+ * COMPONENTS
+ * Button.........................Button component styles.
+ * Form...........................Form component styles.
+ * Header.........................Header component styles.
+ * Nav............................Nav component styles.
+ * Footer.........................Footer component styles.
+ * Banner.........................Banner component styles.
+ * Custom page....................Custom page component styles.
+ * Menu preview...................Menu preview component styles.
+ * Menu...........................Menu component styles.
+ * Food...........................Food component styles.
+ * Tag............................Tag component styles.
+ * Back to top....................Back to top component styles.
+ * News...........................News component styles.
+ * Gallery........................Gallery component styles.
+ * Booking........................Booking component styles.
+ * Newsletter form................Newsletter form component styles.
+ * Contact form...................Contact form component styles.
+ * Messages.......................Messages component styles.
+ * Thanks form....................Thanks form component styles.
+ * Aside info.....................Aside info component styles.
+ * Opening info...................Opening info component styles.
+ * Location.......................Location component styles.
+ * Business view..................Business view component styles.
+ *
+ * UTILITIES (trumps)
+ * Inuit widths................Default widths config INUIT-CSS.
+ * Inuit responsive............Default responsive widths config INUIT-CSS.
+ * Text center.................Text center class utility.
+ *
+ * HACKS
+ * Grid........................Grid hack for avoid white spaces HTML comments (INUIT-CSS Grid).
+ *
+ */
+/*!
+ * inuitcss, by @csswizardry
+ *
+ * github.com/inuitcss | inuitcss.com
+ */
+///*------------------------------------*\
+//    #DEFAULTS
+//\*------------------------------------*/
+
+// These variables are inuitcss’ defaults; they should not be modified or
+// adjusted directly; you should predefine the variables in your own project.
+
+
+
+
+
+// High-level base settings.
+$inuit-base-font-size:          16px !default;
+$inuit-base-line-height:        24px !default;
+$inuit-base-text-color:         #333 !default;
+$inuit-base-background-color:   #fff !default;
+
+
+
+
+
+// Namespace.
+//
+// Would you like inuitcss’ classes to be prepended with a namespace? If so,
+// define it here.
+$inuit-namespace:               null !default;
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$inuit-base-spacing-unit:           $inuit-base-line-height;
+$inuit-base-spacing-unit--tiny:     round($inuit-base-spacing-unit / 4);
+$inuit-base-spacing-unit--small:    round($inuit-base-spacing-unit / 2);
+$inuit-base-spacing-unit--large:    round($inuit-base-spacing-unit * 2);
+$inuit-base-spacing-unit--huge:     round($inuit-base-spacing-unit * 4);
+
+/*----------------------------------------------------------------------------*\
+    #General settings
+\*----------------------------------------------------------------------------*/
+
+/* Width variables */
+$siteWidth: 960px;
+$gutter: 24px;
+
+/*----------------------------------------------------------------------------*\
+    #Colors settings
+\*----------------------------------------------------------------------------*/
+
+$body-background: {{ theme_settings.body-background }};
+$body-color: {{ theme_settings.body-color }};
+$accent-color: {{ theme_settings.accent-color }};
+
+// Foods
+$food-separator-color: #f0f0f0;
+$separator-color: #f0f0f0;
+
+/*----------------------------------------------------------------------------*\
+    #Fonts settings
+\*----------------------------------------------------------------------------*/
+
+$headerFontStack: {{ theme_settings.header-font }};
+$bodyFontStack: {{ theme_settings.body-font }};
+/*----------------------------------------------------------------------------*\
+    #Breakpoints settings
+\*----------------------------------------------------------------------------*/
+
+/**
+* @see http://www.sitepoint.com/sass-mixins-kickstart-project/#breakpoint-handler
+*/
+$breakpoints: (
+  'wrist'  '( max-width:  319px )',
+  'palm'   '( min-width:  320px )',
+  'hands'  '( min-width:  481px )',
+  'lap'    '( min-width:  641px )',
+  'desk'   '( min-width:  961px )',
+  'wall'   '( min-width: 1281px )',
+  'retina' '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)'
+);
+///*------------------------------------*\
+//    #SETTINGS-RESPONSIVE
+//\*------------------------------------*/
+
+// Hold our breakpoint aliases and conditions in a list.
+//
+// These can be invoked later on via the `media-query()` mixin found in
+// `_tools.responsive`.
+
+$breakpoints: (
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "portable"      "screen and (max-width: 63.9375em)",
+    "desk"          "screen and (min-width: 64em)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+
+
+
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some responsive settings.
+$inuit-responsive-settings: true;
+
+///*------------------------------------*\
+//    #FUNCTIONS
+//\*------------------------------------*/
+
+// inuitcss makes use of a few functions that are also available for you to use
+// later on in your extension of the framework.
+
+
+
+
+
+// Maths helpers.
+//
+// Halve and double numbers, returning rounded integers. E.g.:
+//
+// .foo {
+//     padding: halve(3.2px);
+// }
+//
+@function quarter($inuit-number) {
+    @return round($inuit-number / 4);
+}
+
+@function halve($inuit-number) {
+    @return round($inuit-number / 2);
+}
+
+@function double($inuit-number) {
+    @return round($inuit-number * 2);
+}
+
+@function quadruple($inuit-number) {
+    @return round($inuit-number * 4);
+}
+
+///*------------------------------------*\
+//    #MIXINS
+//\*------------------------------------*/
+
+// inuitcss has a number of default mixins that the framework, and developers
+// working with it, can make use of.
+
+
+
+
+
+// Create a fully formed type style (sizing and vertical rhythm) by passing in a
+// single value, e.g.:
+//
+// .foo {
+//     @include inuit-font-size(12px);
+// }
+//
+// This will generate a rem-based font-size with its pixel fallback, as well as
+// a unitless line-height which will place the element on your baseline, e.g.:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+//     line-height: 2;
+// }
+//
+// If you do not want inuitcss to generate you a line-height automatically, you
+// simply pass in your own as a second paramater:
+//
+// .foo {
+//     @include inuit-font-size(12px, 1.5);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+//     line-height: 1.5;
+// }
+//
+// This parameter can be any integer, ‘inherit’, or ‘normal’. If you don’t want
+// a line-height at all, pass in a second paramater of ‘none’ or ‘false’:
+//
+// .foo {
+//     @include inuit-font-size(12px, none);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+// }
+
+@mixin inuit-font-size($inuit-font-size, $inuit-line-height: auto) {
+    font-size: $inuit-font-size;
+    font-size: ($inuit-font-size / $inuit-base-font-size) * 1rem;
+
+    @if $inuit-line-height == auto {
+        line-height: ceil($inuit-font-size / $inuit-base-line-height) * ($inuit-base-line-height / $inuit-font-size);
+    }
+
+    @else {
+
+        @if (type-of($inuit-line-height) == number or $inuit-line-height == inherit or $inuit-line-height == normal) {
+            line-height: $inuit-line-height;
+        }
+
+        @elseif ($inuit-line-height != none and $inuit-line-height != false) {
+            @warn "D’oh! ‘#{$inuit-line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}
+
+/*----------------------------------------------------------------------------*\
+    #Mixins tools
+\*----------------------------------------------------------------------------*/
+
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+// @see http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+@mixin media() {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+@mixin media-aside($side: left) {
+  float: $side;
+}
+
+@mixin media-body() {
+  @include media;
+}
+
+///*------------------------------------*\
+//    #WIDTHS
+//\*------------------------------------*/
+
+// A mixin to spit out our width classes. Pass in the columns we want the widths
+// to have, and an optional suffix for responsive widths. E.g. to create thirds
+// and quarters for a small breakpoint:
+//
+// @include inuit-widths(3 4, -sm);
+
+// Predefine the variables below in order to alter and enable specific features.
+$inuit-widths-namespace: $inuit-namespace !default;
+
+// Do we want to use classes like `<div class="u-1/4">` instead of
+// `<div class="u-1-of-4">`?
+$inuit-use-fractions: true !default;
+
+// Depending on what we chose for `$inuit-use-fractions`, create the relevant
+// delimiter.
+@if ($inuit-use-fractions == true) {
+    $inuit-widths-delimiter: \/ !global;
+} @else {
+    $inuit-widths-delimiter: -of- !global;
+}
+
+@mixin inuit-widths($inuit-widths-columns, $inuit-widths-breakpoint: null) {
+
+    // Loop through the number of columns for each denominator of our fractions.
+    @each $inuit-widths-denominator in $inuit-widths-columns {
+
+        // If we’re trying to make wholes, just spit a 100% width utility out
+        // one time only.
+        @if ($inuit-widths-denominator == 1) {
+            .#{$inuit-widths-namespace}u-1#{$inuit-widths-delimiter}1#{$inuit-widths-breakpoint} {
+                width: 100% !important;
+            }
+        } @else {
+
+            // Begin creating a numberator for our fraction up until we hit the
+            // denominator.
+            @for $inuit-widths-numerator from 1 to $inuit-widths-denominator {
+
+                // Build a class in the format `.u-3/4` or `.u-3-of-4`.
+                .#{$inuit-widths-namespace}u-#{$inuit-widths-numerator}#{$inuit-widths-delimiter}#{$inuit-widths-denominator}#{$inuit-widths-breakpoint} {
+                    width: ($inuit-widths-numerator / $inuit-widths-denominator) * 100% !important;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+///*------------------------------------*\
+//    #TOOLS-RESPONSIVE
+//\*------------------------------------*/
+
+// Here we set a variable assuming that responsive settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$inuit-responsive-settings: false !default;
+
+@if ($inuit-responsive-settings == false) {
+    @warn "Oops! Have you included a responsive settings file?"
+}
+
+
+
+
+
+// A simple mixin to quickly generate whole media queries from the aliases and
+// conditions defined in `_settings.responsive.scss`.
+//
+// Usage:
+//
+// .foo {
+//     color: green;
+//
+//     @include media-query(palm) {
+//         color: red;
+//     }
+//
+// }
+
+@mixin media-query($mq) {
+
+    $breakpoint-found: false;
+
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint in $breakpoints {
+
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq == $alias and $condition {
+
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media #{$condition} {
+                @content;
+            }
+
+        }
+
+    }
+
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+
+}
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  box-sizing: content-box; /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
+
+/**
+ * As well as using normalize.css, it is often advantageous to remove all
+ * margins from certain elements.
+ */
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+figure,
+table, th, td, caption,
+hr {
+    margin:  0;
+    padding: 0;
+}
+
+
+
+
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title],
+dfn[title] {
+    cursor: help;
+}
+
+
+
+
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u,
+ins {
+    text-decoration: none;
+}
+
+
+
+
+
+/**
+ * Apply faux underlines to inserted text via `border-bottom`.
+ */
+ins {
+    border-bottom: 1px solid;
+}
+
+/*------------------------------------*\
+    #BOX-SIZING
+\*------------------------------------*/
+
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+html {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+        -webkit-box-sizing: inherit;
+           -moz-box-sizing: inherit;
+                box-sizing: inherit;
+        }
+
+}
+
+
+
+
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that global `box-sizing: border-box` has been set.
+$inuit-global-border-box: true;
+
+/*------------------------------------*\
+    #PAGE
+\*------------------------------------*/
+
+/**
+ * High-, page-level styling.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Prevent certain mobile browsers from automatically zooming fonts.
+ * 5. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+    font-size: ($inuit-base-font-size / 16px) * 1em; /* [1] */
+    line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
+    background-color: $inuit-base-background-color;
+    color: $inuit-base-text-color;
+    overflow-y: scroll; /* [2] */
+    min-height: 100%; /* [3] */
+    -webkit-text-size-adjust: 100%; /* [4] */
+        -ms-text-size-adjust: 100%; /* [4] */
+    -moz-osx-font-smoothing: grayscale; /* [5] */
+     -webkit-font-smoothing: antialiased; /* [5] */
+}
+
+/*
+  Icon Font: fontcustom
+*/
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.eot");
+  src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.woff") format("woff"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.ttf") format("truetype"),
+       url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "fontcustom";
+    src: url("./fontcustom_ca1a2a73dbcb3b92c33348e835ee191f.svg#fontcustom") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-down:before,
+.icon-check:before,
+.icon-envelop:before,
+.icon-facebook:before,
+.icon-google:before,
+.icon-menu:before,
+.icon-phone:before,
+.icon-star:before,
+.icon-tripadvisor:before,
+.icon-twitter:before,
+.icon-warning:before {
+  display: inline-block;
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow-down:before { content: "\f100"; }
+.icon-check:before { content: "\f103"; }
+.icon-envelop:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-google:before { content: "\f10c"; }
+.icon-menu:before { content: "\f10d"; }
+.icon-phone:before { content: "\f107"; }
+.icon-star:before { content: "\f108"; }
+.icon-tripadvisor:before { content: "\f109"; }
+.icon-twitter:before { content: "\f10a"; }
+.icon-warning:before { content: "\f10b"; }
+
+/*----------------------------------------------------------------------------*\
+    #Document base
+\*----------------------------------------------------------------------------*/
+
+html,
+body {
+  color: $body-color;
+  background-color: $body-background;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: $bodyFontStack;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  @include media-query(hands) {
+    font-size: 16px;
+  }
+  @include media-query(lap) {
+    font-size: 18px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerFontStack;
+}
+
+// Pixel to EM conversion tool http://pxtoem.com/
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: .9em; }
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  margin-bottom: 1em;
+}
+ul {
+  list-style: none outside;
+}
+ol {
+  list-style: decimal;
+  margin-left: 1em;
+}
+li {
+  margin-bottom: 0.25em;
+}
+
+fieldset {
+  border: none;
+}
+input {
+  font-size: 16px;
+  min-height: 35px;
+}
+textarea {
+  min-height: 100px;
+}
+// ===========================================================================
+// #Venobox
+// ===========================================================================
+.vbox-overlay *, .vbox-overlay *:before, .vbox-overlay *:after{
+    -webkit-backface-visibility: hidden;
+    -webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{
+    -webkit-overflow-scrolling:touch;
+}
+/* ------- overlay: change here background color and opacity ----- */
+.vbox-overlay{
+    background: #181818;
+    background: rgba(0,0,0,0.85);
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+.relativo{
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+/* ----- preloader - choose between CIRCLE, IOS, DOTS, QUADS ----- */
+
+/* circle preloader */
+.vbox-preloader{
+    position:fixed;
+    width:32px;
+    height:32px;
+    left:50%;
+    top:50%;
+    margin-left:-16px;
+    margin-top:-16px;
+    background-image: url("{{ 'preload-circle.png | asset_url '}}");
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(18) infinite;
+       -moz-animation: playload 1.4s steps(18) infinite;
+        -ms-animation: playload 1.4s steps(18) infinite;
+         -o-animation: playload 1.4s steps(18) infinite;
+            animation: playload 1.4s steps(18) infinite;
+}
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -576px; }
+}
+/* IOS preloader */
+
+.vbox-preloader{
+    position:fixed;
+    width:32px;
+    height:32px;
+    left:50%;
+    top:50%;
+    margin-left:-16px;
+    margin-top:-16px;
+    background-image: url("{{ 'preload-ios.png' | asset_url }}");
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(12) infinite;
+       -moz-animation: playload 1.4s steps(12) infinite;
+        -ms-animation: playload 1.4s steps(12) infinite;
+         -o-animation: playload 1.4s steps(12) infinite;
+            animation: playload 1.4s steps(12) infinite;
+}
+
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+
+/* dots preloader */
+
+.vbox-preloader{
+    position:fixed;
+    width:32px;
+    height:11px;
+    left:50%;
+    top:50%;
+    margin-left:-16px;
+    margin-top:-16px;
+    background-image: url("{{ 'preload-dots.png' | asset_url }}");
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(24) infinite;
+       -moz-animation: playload 1.4s steps(24) infinite;
+        -ms-animation: playload 1.4s steps(24) infinite;
+         -o-animation: playload 1.4s steps(24) infinite;
+            animation: playload 1.4s steps(24) infinite;
+}
+
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -768px; }
+}
+
+/* quads preloader */
+
+.vbox-preloader{
+    position:fixed;
+    width:32px;
+    height:10px;
+    left:50%;
+    top:50%;
+    margin-left:-16px;
+    margin-top:-16px;
+    background-image: url("{{ 'preload-quads.png' | asset_url }}");
+    text-indent: -100px;
+    overflow: hidden;
+    -webkit-animation: playload 1.4s steps(12) infinite;
+       -moz-animation: playload 1.4s steps(12) infinite;
+        -ms-animation: playload 1.4s steps(12) infinite;
+         -o-animation: playload 1.4s steps(12) infinite;
+            animation: playload 1.4s steps(12) infinite;
+}
+@-webkit-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-moz-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-ms-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@-o-keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+@keyframes playload {
+   from { background-position:    0px; }
+     to { background-position: -384px; }
+}
+
+/* ----- navigation ----- */
+.vbox-close{
+    cursor: pointer;
+    position: fixed;
+    top: -1px;
+    right: 0;
+    width: 46px;
+    height: 40px;
+    padding: 10px 20px 10px 0;
+    display: block;
+    background: url("{{ 'close.gif' | asset_url }}") no-repeat #161617;
+    background-position:10px center;
+    color: #fff;
+    text-indent: -100px;
+    overflow: hidden;
+}
+.vbox-next, .vbox-prev{
+    box-sizing: content-box;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    color: #fff;
+    width: 30px;
+    height: 170px;
+    margin-top: -85px;
+    text-indent: -100px;
+    border: solid transparent; /* Using border instead of padding to keep bg image in place */
+    overflow: hidden;
+}
+.vbox-prev{
+    left: 0;
+    border-width: 0 30px 0 10px;
+    background: url("{{ 'prev.gif' | asset_url }}") center center no-repeat;
+}
+.vbox-next{
+    right: 0;
+    border-width: 0 10px 0 30px;
+    background: url("{{ 'next.gif' | asset_url }}") center center no-repeat;
+}
+
+.vbox-title{
+    width: 100%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #fff;
+    padding: 6px 40px;
+    overflow: hidden;
+    background: #161617;
+    position: fixed;
+    display: none;
+    top: -1px;
+    left: 0;
+
+}
+.vbox-num{
+    cursor: pointer;
+    position: fixed;
+    top: -1px;
+    left: 0;
+    height: 40px;
+    display: block;
+    color: #fff;
+    overflow: hidden;
+    line-height: 28px;
+    font-size: 12px;
+    padding: 6px 10px;
+    background: #161617;
+    display: none;
+}
+/* ------- inline window ------ */
+.vbox-inline{
+    width: 420px;
+    height: 315px;
+    padding: 10px;
+    background: #fff;
+    text-align: left;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+/* ------- Video & iFrames window ------ */
+.venoframe{
+    border: none;
+    width: 960px;
+    height: 720px;
+}
+@media (max-width: 992px) {
+    .venoframe{
+        width: 640px;
+        height: 480px;
+    }
+}
+@media (max-width: 767px) {
+    .venoframe{
+        width: 420px;
+        height: 315px;
+    }
+}
+@media (max-width: 460px) {
+    .vbox-inline{
+        width: 100%;
+    }
+
+    .venoframe{
+        width: 100%;
+        height: 260px;
+    }
+}
+
+/* ------- PLease do NOT edit this! (or do it at your own risk) ------ */
+.vbox-container{
+    position: relative;
+    background: #000;
+    width: 98%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.vbox-content{
+    text-align: center;
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.vbox-container img{
+    max-width: 100%;
+    height: auto;
+}
+.vwrap{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * The inuitcss layout system uses `box-sizing: border-box;` and
+ * `display: inline-block;` to create an extremely powerful, flexible
+ * alternative to the traditional grid system. Combine the layout items with
+ * the widths found in `trumps.widths`.
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$inuit-layout-namespace:        $inuit-namespace !default;
+
+$inuit-layout-gutter:           $inuit-base-spacing-unit !default;
+$inuit-layout-gutter--tiny:       quarter($inuit-layout-gutter) !default;
+$inuit-layout-gutter--small:        halve($inuit-layout-gutter) !default;
+$inuit-layout-gutter--large:       double($inuit-layout-gutter) !default;
+$inuit-layout-gutter--huge:     quadruple($inuit-layout-gutter) !default;
+
+$inuit-enable-layout--tiny:     false !default;
+$inuit-enable-layout--small:    false !default;
+$inuit-enable-layout--large:    false !default;
+$inuit-enable-layout--huge:     false !default;
+$inuit-enable-layout--flush:    false !default;
+$inuit-enable-layout--rev:      false !default;
+$inuit-enable-layout--middle:   false !default;
+$inuit-enable-layout--bottom:   false !default;
+$inuit-enable-layout--right:    false !default;
+$inuit-enable-layout--center:   false !default;
+$inuit-enable-layout--auto:     false !default;
+
+
+
+
+
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable will
+// be overriden and will be set to `true`.
+$inuit-global-border-box: false !default;
+
+
+
+
+
+/**
+ * Begin a layout group.
+ */
+.#{$inuit-layout-namespace}layout,
+%#{$inuit-layout-namespace}layout {
+    list-style: none;
+    margin:  0;
+    padding: 0;
+    margin-left: -$inuit-layout-gutter;
+}
+
+    /**
+     * 1. Cause columns to stack side-by-side.
+     * 2. Space columns apart.
+     * 3. Align columns to the tops of each other.
+     * 4. Full-width unless told to behave otherwise.
+     * 5. Required to combine fluid widths and fixed gutters.
+     */
+    .#{$inuit-layout-namespace}layout__item,
+    %#{$inuit-layout-namespace}layout__item {
+        display: inline-block; /* [1] */
+        padding-left: $inuit-layout-gutter; /* [2] */
+        vertical-align: top; /* [3] */
+        width: 100%; /* [4] */
+
+        @if $inuit-global-border-box == false {
+            -webkit-box-sizing: border-box; /* [5] */
+               -moz-box-sizing: border-box; /* [5] */
+                    box-sizing: border-box; /* [5] */
+        }
+
+    }
+
+
+
+
+
+@if ($inuit-enable-layout--tiny == true) {
+
+    /**
+     * Layouts with tiny gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--tiny,
+    %#{$inuit-layout-namespace}layout--tiny {
+        margin-left: -($inuit-layout-gutter--tiny);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--tiny;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--small == true) {
+
+    /**
+     * Layouts with small gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--small,
+    %#{$inuit-layout-namespace}layout--small {
+        margin-left: -($inuit-layout-gutter--small);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--small;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--large == true) {
+
+    /**
+     * Layouts with large gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--large,
+    %#{$inuit-layout-namespace}layout--large {
+        margin-left: -($inuit-layout-gutter--large);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--large;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--huge == true) {
+
+    /**
+     * Layouts with huge gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--huge,
+    %#{$inuit-layout-namespace}layout--huge {
+        margin-left: -($inuit-layout-gutter--huge);
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: $inuit-layout-gutter--huge;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--flush == true) {
+
+    /**
+     * Layouts with no gutters.
+     */
+
+    .#{$inuit-layout-namespace}layout--flush,
+    %#{$inuit-layout-namespace}layout--flush {
+        margin-left: 0;
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            padding-left: 0;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--rev == true) {
+
+    /**
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page.
+     */
+
+    .#{$inuit-layout-namespace}layout--rev,
+    %#{$inuit-layout-namespace}layout--rev {
+        direction: rtl;
+        text-align: left;
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            direction: ltr;
+            text-align: left;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--middle == true) {
+
+    /**
+     * Align layout items to the vertical centers of each other.
+     */
+
+    .#{$inuit-layout-namespace}layout--middle,
+    %#{$inuit-layout-namespace}layout--middle {
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--bottom == true) {
+
+    /**
+     * Align layout items to the vertical bottoms of each other.
+     */
+
+    .#{$inuit-layout-namespace}layout--bottom,
+    %#{$inuit-layout-namespace}layout--bottom {
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            vertical-align: bottom;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--right == true) {
+
+    /**
+     * Make the layout items fill up from the right hand side.
+     */
+
+    .#{$inuit-layout-namespace}layout--right,
+    %#{$inuit-layout-namespace}layout--right {
+        text-align: right;
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            text-align: left;
+        }
+
+    }
+
+}
+
+@if ($inuit-enable-layout--center == true) {
+
+    /**
+     * Make the layout items fill up from the center outward.
+     */
+
+    .#{$inuit-layout-namespace}layout--center,
+    %#{$inuit-layout-namespace}layout--center {
+        text-align: center;
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            text-align: left;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($inuit-enable-layout--auto == true) {
+
+    /**
+     * Cause layout items to take up a non-explicit amount of width.
+     */
+    .#{$inuit-layout-namespace}layout--auto,
+    %#{$inuit-layout-namespace}layout--auto {
+
+        > .#{$inuit-layout-namespace}layout__item,
+        > %#{$inuit-layout-namespace}layout__item {
+            width: auto;
+        }
+
+    }
+
+}
+
+/*----------------------------------------------------------------------------*\
+    #Wrapper object
+\*----------------------------------------------------------------------------*/
+
+.o-wrapper {
+  @include clearfix();
+  position: relative;
+  max-width: $siteWidth;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+/*----------------------------------------------------------------------------*\
+    #Buttons object
+\*----------------------------------------------------------------------------*/
+
+.o-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: .5em 2em;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-appearance: none;
+
+  &.o-button--has-icon {
+    .icon {
+      margin-right: .5em;
+    }
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+    #Forms object
+\*----------------------------------------------------------------------------*/
+
+.o-form,
+.o-form__field {
+  margin-bottom: .5em;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Simple-blocks object
+\*----------------------------------------------------------------------------*/
+
+.o-simple-block {
+  padding: 1em 0;
+}
+.o-simple-block__title {
+  margin-bottom: .5em;
+}
+.o-simple-block__content {
+}
+
+/*----------------------------------------------------------------------------*\
+    #Button component
+\*----------------------------------------------------------------------------*/
+
+.c-button--center {
+  text-align: center;
+}
+// Sizes
+.c-button-size-default {
+  font-size: 16px;
+}
+.c-button-size-small {
+  font-size: 14px;
+  padding: .25em .5em;
+}
+.c-button-size-large {
+  font-size: 21px;
+}
+
+// Widths
+.c-button-width-full {
+  width: 100%;
+}
+
+// Colors
+.c-button-color-red {
+  background-color: $accent-color;
+  color: #FFFFFF;
+  &:hover {
+    background-color: scale-color($accent-color, $lightness: -15%);
+  }
+}
+/*----------------------------------------------------------------------------*\
+    #Form component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__input-hint-error-background: {{ theme_settings.color-input-hint-error-background }};
+$color__input-hint-error-text: {{ theme_settings.color-input-hint-error-text }};
+
+.c-form {
+  padding: 1em 0;
+}
+.c-form__title {
+  font-size: 2em;
+  margin-bottom: .25em;
+}
+.c-form__description {
+  margin-bottom: 1em;
+}
+.c-form__label {
+}
+.c-form__input,
+.c-form__textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  margin: 0;
+  padding: .2rem;
+}
+.c-form__input-hint {
+  padding: .15em .4em;
+}
+
+.c-form__input-hint--error {
+  background: $color__input-hint-error-background;
+  color: $color__input-hint-error-text;
+}
+/*----------------------------------------------------------------------------*\
+    #Header component
+\*----------------------------------------------------------------------------*/
+
+.c-header {
+}
+.c-header__identity {
+  @include media-query(hands) {
+    @include media;
+  }
+  @include media-query(desk) {
+    float: left;
+    width: 65%;
+  }
+}
+.c-header__logo {
+  text-align: center;
+  @include media-query(hands) {
+    @include media-aside;
+  }
+}
+.c-header__logo-link {
+  display: block;
+  text-decoration: none;
+}
+.c-header__logo-image {
+  padding: 1em 0;
+  vertical-align: middle;
+  width: 120px;
+  @include media-query(hands) {
+    margin-right: 1.5em;
+  }
+}
+.c-header__restaurant-name {
+  text-align: center;
+  @include media-query(hands) {
+    @include media-body;
+    padding: 1em 0;
+    text-align: left;
+  }
+}
+.c-header__slogan {
+  color: scale-color($body-color, $lightness: +25%);
+  font-size: .9em;
+  font-style: italic;
+}
+.c-header__restaurant-name-link {
+  color: scale-color($body-color, $lightness: -25%);
+  font-family: {{ theme_settings.header-font }};
+  font-size: 2em;
+  line-height: 1;
+  text-decoration: none;
+}
+.c-header__phone-number {
+  margin: .5em 0;
+  text-align: center;
+  @include media-query(desk) {
+    position: absolute;
+    right: 104px;
+    bottom: 2px;
+  }
+  @include media-query(desk) {
+    bottom: auto;
+    top: 32px;
+  }
+}
+.c-header__phone-number-link {
+  color: $accent-color;
+  font-size: 1.5em;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #000;
+    .c-header__phone-number-label {
+      color: #000;
+    }
+  }
+  @include media-query(desk) {
+    font-size: 1em;
+  }
+}
+.c-header__phone-number-label {
+  color: $body-color;
+}
+
+.c-header__local-choice-wrapper {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  margin: .5em auto 0 auto;
+  @include media-query(desk) {
+    position: absolute;
+    bottom: .75em;
+    right: 1.25em;
+    bottom: auto;
+    top: 28px;
+  }
+}
+.c-header__local-choice {
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  margin: 0 auto;
+  padding: 0 .2em;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: window;
+  appearance: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: $body-color;
+  border: 2px solid $body-color;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.c-header__local-choice-icon {
+  position: absolute;
+  top: .25em;
+  right: .5em;
+  z-index: 0;
+  color: $body-color;
+  @include media-query(hands) {
+    top:0;
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+    #Nav component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__darker-nav-background: scale-color($accent-color, $lightness: -15%);
+$color__dark-nav-background: scale-color($accent-color, $lightness: -10%);
+
+// Nav
+.c-nav {
+}
+
+// Hamburger button
+.c-nav__hamburger {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  cursor: pointer;
+  @include media-query(desk) {
+    display: none;
+  }
+}
+.c-nav__hamburger-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 0;
+}
+.c-nav__hamburger-icon {
+  font-size: 46px;
+  line-height: 0;
+}
+
+// Items
+.c-nav__items {
+  display: none;
+  background-color: $accent-color;
+  margin-bottom: 0;
+  @include media-query(desk) {
+    font-size: 0;
+    display: block;
+    text-align: center;
+  }
+}
+.c-nav__item {
+  margin-bottom: 0;
+  border-bottom: 1px solid $color__darker-nav-background;
+  @include media-query(desk) {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: none;
+    text-align: left;
+    border-left: 1px solid $color__dark-nav-background;
+    border-right: 1px solid $color__dark-nav-background;
+    &:first-child {
+      border-left-width: 2px;
+    }
+    &:last-child {
+      border-right-width: 2px;
+    }
+  }
+}
+.c-nav__link {
+  color: #FFFFFF;
+  padding: 12px 16px;
+  display: block;
+  font-weight: 700;
+  transition: background-color .25s;
+  cursor: pointer;
+  &:hover {
+    background-color: $color__darker-nav-background;
+  }
+}
+.c-nav__link--current {
+  background-color: $color__darker-nav-background;
+}
+
+// Has sub nav
+.c-nav__link.has-sub-nav {
+  overflow: hidden;
+  @include media-query(desk) {
+    overflow: visible;
+  }
+}
+.c-nav__link-title.has-sub-nav {
+  float: left;
+  width: 85%;
+  @include media-query(hands) {
+    width: 90%;
+  }
+  @include media-query(desk) {
+    float: none;
+    width: auto;
+    margin-right: 4px;
+  }
+}
+.c-nav__link-dropdown {
+  float: left;
+  width: 15%;
+  text-align: center;
+  @include media-query(hands) {
+    width: 10%;
+  }
+  @include media-query(desk) {
+    float: none;
+    width: auto;
+  }
+}
+.c-nav__link-dropdown-icon {
+  color: #FFFFFF;
+}
+
+// Sub items
+.c-nav__sub-items {
+  margin-bottom: 0;
+  clear: both;
+  display: none;
+  @include media-query(desk) {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 2;
+    background-color: $accent-color;
+  }
+}
+.c-nav__sub-item {
+  margin-bottom: 0;
+  border-bottom: 1px solid $color__darker-nav-background;
+  font-weight: 700;
+  &:first-child {
+    border-top: 1px solid $color__darker-nav-background;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  @include media-query(desk) {
+    border-bottom: none;
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+.c-nav__sub-link {
+  color: #FFFFFF;
+  padding: 12px 8px 12px 40px;
+  display: block;
+  transition: background-color .25s;
+  &:hover {
+    background-color: $color__dark-nav-background;
+  }
+  @include media-query(desk) {
+    padding: 12px 16px;
+  }
+}
+.c-nav__sub-link--current {
+  background-color: $color__dark-nav-background;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Footer component
+\*----------------------------------------------------------------------------*/
+
+.c-footer {
+  margin-top: 1em;
+  background-color: scale-color($body-color, $lightness: +95%);
+  border-top: 1px solid scale-color($body-color, $lightness: +85%);
+}
+.c-footer__social-items {
+  margin: .75em 0;
+  text-align: center;
+}
+.c-footer__social-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-footer__social-item-link {
+  color: $body-color;
+  display: inline-block;
+  font-size: 2em;
+  padding: .25em;
+  text-decoration: none;
+  vertical-align: middle;
+  &:hover, &:focus {
+    color: $accent-color;
+  }
+}
+.c-footer__social-item-link {
+  .icon-phone,
+  .icon-envelope {
+  font-size: .9em;
+  }
+}
+.c-footer__social-item-label {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+.c-footer__nav {
+  margin-bottom: 1em;
+  text-align: center;
+}
+.c-footer__item {
+  display: inline-block;
+}
+.c-footer__item--current {
+  color: $body-color;
+}
+.c-footer__item-link {
+  text-decoration: none;
+  color: scale-color($body-color, $lightness: +25%);
+  &:hover, &:focus {
+    color: $body-color;
+  }
+}
+.c-footer__item-separator {
+  color: scale-color($body-color, $lightness: +25%);
+  font-weight: normal;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Banner component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__banner-text: {{ theme_settings.color-banner-text }};
+
+.c-banner {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $accent-color;
+}
+.c-banner__overlay {
+  background-color: rgba(0,0,0, .5);
+}
+.c-banner__text {
+  color: $color__banner-text;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  text-align: center;
+  p {
+    font-size: 1.2em;
+  }
+}
+/*----------------------------------------------------------------------------*\
+    #Custom-page component
+\*----------------------------------------------------------------------------*/
+
+.c-custom-page {
+  padding: 1em 0;
+  ol, ul, dl {
+    margin-left: 2em;
+  }
+  ul {
+    list-style: disc;
+  }
+  img {
+    height: auto !important;
+  }
+  a {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}
+.c-custom-page__title {
+}
+.c-custom-page__date {
+}
+.c-custom-page__body {
+}
+
+/*----------------------------------------------------------------------------*\
+    #Menu-preview component
+\*----------------------------------------------------------------------------*/
+
+.c-menu-preview {
+}
+.c-menu-preview__link {
+  color: scale-color($accent-color, $saturation: -75%);
+  text-decoration: none;
+  display: block;
+  &:hover, &:focus {
+    color: $accent-color;
+  }
+}
+.c-menu-preview__title {
+}
+.c-menu-preview__children {
+}
+.c-menu-preview__child {
+  display: inline-block;
+  margin-bottom: .5em;
+  text-align: center;
+  vertical-align: top;
+  width: 49%;
+  @include media-query(hands) {
+    width: 32%;
+  }
+  @include media-query(lap) {
+    width: 19%;
+  }
+}
+.c-menu-preview__child-link {
+  display: block;
+  padding: .5em;
+  text-decoration: none;
+  &:hover, &:focus {
+    .menu-child__title {
+      color: $accent-color;
+    }
+  }
+}
+.c-menu-preview__child-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: .5em;
+  vertical-align: middle;
+}
+.c-menu-preview__anchor-image {
+  width: 100px;
+  border-radius: 50%;
+}
+.c-menu-preview__child-title {
+  color: scale-color($accent-color, $saturation: -75%);
+  display: block;
+}
+.c-menu-preview__summary {
+  margin-bottom: 1em;
+}
+.c-menu-preview__separator {
+  border: none;
+  border-top: medium solid $food-separator-color;
+  color: $food-separator-color;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Menu component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__menu-featured-background: {{ theme_settings.color-menu-featured-background }};
+
+.c-menu {
+  padding-bottom: 1em;
+}
+.c-menu--featured {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  background-color: $color__menu-featured-background;
+}
+.c-menu__image {
+}
+.c-menu__title {
+  color: $body-color;
+  margin-bottom: .5em;
+}
+.c-menu__description {
+  font-size: 1em;
+  margin-bottom: 2em;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Food component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__food-featured-background: {{ theme_settings.color-food-featured-background }};
+$color__default-tag-background: {{ theme_settings.color-default-tag-background }};
+$color__default-tag-text: {{ theme_settings.color-default-tag-text }};
+
+.c-food {
+  @include media;
+  padding: 0;
+}
+.c-food--featured {
+  background-color: $color__food-featured-background;
+  padding: 1em;
+  .icon-star {
+    color: $accent-color;
+  }
+}
+.c-food__img {
+  @include media-aside;
+  margin-right: $gutter / 2;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.c-food__body {
+  @include media-body;
+}
+.c-food__title {
+  color: scale-color($body-color, $lightness: -50%);
+  font-family: $bodyFontStack;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: .25em;
+}
+.c-food__summary {
+  font-size: 1em;
+}
+.c-food__separator {
+  border: none;
+  border-top: 1px solid $food-separator-color;
+  color: $food-separator-color;
+  margin: 1em 0;
+  padding: 0;
+}
+
+// Food prices
+.c-food__prices {
+}
+.c-food__prices-items {
+}
+.c-food__prices-item {
+  @include clearfix;
+}
+.c-food__prices-label {
+  color: scale-color($body-color, $lightness: +25%);
+  float: left;
+}
+.c-food__prices-value {
+  font-weight: 700;
+  float: right;
+}
+
+// Tags
+.c-food__tags {
+}
+
+/*----------------------------------------------------------------------------*\
+    #Tag component
+\*----------------------------------------------------------------------------*/
+
+.c-tag {
+  display: inline-block;
+  margin-bottom: .5em;
+  font-size: .95em;
+  border-radius: .25em;
+  padding: .2em .4em;
+  background-color: $color__default-tag-background;
+  color: $color__default-tag-text;
+}
+{% for tag in tags %}
+  .c-tag--{{tag.css_class}} {
+    {% if tag.background_value != "" %}
+    background-color: {{ tag.background_value }};
+    {% endif %}
+    {% if tag.color_value != "" %}
+    color: {{ tag.color_value }};
+    {% endif %}
+  }
+{% endfor %}
+/*----------------------------------------------------------------------------*\
+    #Back-to-top component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__back-to-top-text: {{ theme_settings.color-back-to-top-text }};
+$color__back-to-top-text--hover: {{ theme_settings.color-back-to-top-text--hover }};
+
+.c-back-to-top {
+  padding: $gutter;
+  text-align: center;
+  &:before {
+    color: $color__back-to-top-text;
+    content: "\2191";
+    display: inline-block;
+  }
+}
+.c-back-to-top__link {
+  color: $color__back-to-top-text;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $color__back-to-top-text--hover;
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+    #News component
+\*----------------------------------------------------------------------------*/
+
+.c-news {
+  margin: 1em auto 2em auto;
+}
+.c-news__body {
+}
+.c-news__title {
+  margin-bottom: 16px;
+}
+.c-news__title-link {
+  text-decoration: none;
+  color: $body-color;
+  font-weight: bold;
+  font-size: 1.5em;
+  display: inline-block;
+  transition: color .25s;
+  &:hover {
+    color: $accent-color;
+  }
+}
+.c-news__the-news {
+  @include media-query(lap) {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+.c-news__the-news-link {
+  color: $body-color;
+  text-decoration: none;
+}
+.c-news__the-news-content-wrapper {
+  width: 100%;
+  padding: 0;
+  @include media-query(lap) {
+    width: 70%;
+    float: right;
+    padding: 1em 2em;
+  }
+}
+.c-news__the-news-content-wrapper--no-image {
+  @include media-query(lap) {
+    width: 100%;
+  }
+}
+.c-news__the-news-content {
+}
+.c-news__the-news-date {
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: .75em;
+}
+.c-news__the-news-title {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+.c-news__the-news-image {
+  width: 100%;
+  display: block;
+  height: 300px;
+  background-position: center center;
+  @include media-query(lap) {
+    position: absolute;
+    width: 30%;
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+.c-news__the-news-summary {
+  margin-bottom: 0;
+  padding-top: .75em;
+}
+.c-news__separator {
+  border: 1px solid $separator-color;
+  margin: 1.5em 0;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Gallery component
+\*----------------------------------------------------------------------------*/
+
+.c-gallery {
+  margin-bottom: 1em;
+}
+.c-gallery__items {
+}
+.c-gallery__item {
+  position: relative;
+  margin-bottom: 1em;
+  @include media-query(hands) {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 2%;
+  }
+  @include media-query(lap) {
+    width: 30%;
+    margin: 1%;
+  }
+}
+.c-gallery__link {
+  display: block;
+  &:hover {
+    .photo__caption {
+      background-color: $accent-color;
+    }
+  }
+}
+.c-gallery__img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.c-gallery__caption {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: rgba($body-color, .75);
+}
+
+/*----------------------------------------------------------------------------*\
+    #Booking component
+\*----------------------------------------------------------------------------*/
+
+.c-booking {
+  text-align: center;
+  padding-top: .5em;
+  iframe {
+    width: 275px;
+  }
+}
+/*----------------------------------------------------------------------------*\
+    #Newsletter-form component
+\*----------------------------------------------------------------------------*/
+
+.c-newsletter-form {
+  @include media-query(desk) {
+    margin: 0 auto;
+    width: 85%;
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+    #Contact-form component
+\*----------------------------------------------------------------------------*/
+
+.c-contact-form {
+  @include media-query(desk) {
+    margin-left: ceil($siteWidth / 3) + $gutter;
+  }
+}
+/*----------------------------------------------------------------------------*\
+    #Messages component
+\*----------------------------------------------------------------------------*/
+
+// Colors
+$color__message-success-background: {{ theme_settings.color-message-success-background }};
+$color__message-success-text: {{ theme_settings.color-message-success-text }};
+$color__message-notice-background: {{ theme_settings.color-message-notice-background }};
+$color__message-notice-text: {{ theme_settings.color-message-notice-text }};
+$color__message-error-background: {{ theme_settings.color-message-error-background }};
+$color__message-error-text: {{ theme_settings.color-message-error-text }};
+
+.c-message {
+  margin-bottom: 1em;
+  padding: .5em 1em;
+}
+.c-message--success {
+  background-color: $color__message-success-background;
+  color: $color__message-success-text;
+}
+.c-message--notice {
+  background-color: $color__message-notice-background;
+  color: $color__message-notice-text;
+}
+.c-message--error {
+  background-color: $color__message-error-background;
+  color: $color__message-error-text;
+}
+.c-message__description {
+  margin-bottom: 0;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Thanks-form component
+\*----------------------------------------------------------------------------*/
+
+.c-thanks-form {
+  padding: 1em 0;
+}
+.c-thanks-form__title {
+  font-size: 2em;
+  margin-bottom: .25em;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Aside-info component
+\*----------------------------------------------------------------------------*/
+
+.c-aside-info {
+  @include media-query(desk) {
+    float: left;
+    font-size: 75%;
+    width: floor($siteWidth / 3);
+  }
+}
+.c-aside-info__name {
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  color: #444444;
+  margin-bottom: .5em;
+  @include media-query(desk) {
+    margin-top: 2.15em;
+  }
+}
+.c-aside-info__item {
+  margin-bottom: .5em;
+}
+.c-aside-info__label {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.c-aside-info__link {
+  color: $accent-color;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #999;
+  }
+}
+
+/*----------------------------------------------------------------------------*\
+    #Opening-info component
+\*----------------------------------------------------------------------------*/
+
+.c-opening-info {
+  background-color: #FFFFFF;
+  margin-bottom: 1em;
+  @include media-query(desk) {
+    &.c-opening-info--half-width {
+      float: left;
+      width: 48%;
+    }
+  }
+}
+.c-opening-info__title {
+  color: #444444;
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  margin-bottom: .5em;
+}
+.c-opening-info__days {
+  @include clearfix();
+  margin-bottom: 1em;
+}
+
+.c-opening-info__day {
+  color: $body-color;
+  clear: left;
+  float: left;
+  font-size: 1em;
+  width: 25%;
+}
+.c-opening-info__shifts {
+  color: scale-color($accent-color, $saturation: -75%);
+  font-size: 1em;
+  margin-left: 30%;
+}
+.c-opening-info__precision {
+  margin-bottom: 1em;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Location component
+\*----------------------------------------------------------------------------*/
+
+.c-location {
+  background-color: #fff;
+  margin-bottom: 1em;
+  @include media-query(desk) {
+    width: 48%;
+    float: right;
+  }
+}
+.c-location__title {
+  color: #444;
+  border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
+  margin-bottom: 1em;
+}
+
+.c-location__map {
+  position: relative;
+  margin-bottom: 1em;
+}
+.c-location__map-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(50, 50, 50, .75);
+}
+.c-location__map-activation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  @include media-query(lap) {
+    font-size: 18px;
+  }
+}
+.c-location__map-image {
+  max-width: 100%;
+  height: auto;
+}
+.c-location__address {
+  color: $body-color;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+/*----------------------------------------------------------------------------*\
+    #Business-view component
+\*----------------------------------------------------------------------------*/
+
+.c-business-view {
+  background-color: #fff;
+  margin-bottom: 1em;
+}
+.c-business-view__title {
+}
+/*------------------------------------*\
+    #WIDTHS
+\*------------------------------------*/
+
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
+ * word format (e.g. `.u-2-of-3`). Use these in your markup:
+ *
+ * <div class="u-7/12">
+ */
+
+// By default we will create wholes, halves, thirds, quarters, and fifths.
+// Predefine this Map to override.
+$inuit-widths-columns: (
+    1,
+    2,
+    3,
+    4,
+    5,
+) !default;
+
+@include inuit-widths($inuit-widths-columns);
+
+/*------------------------------------*\
+    #WIDTHS-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Responsive width classes based on your responsive settings.
+ */
+
+// By default we will create wholes, halves, thirds, quarters, and fifths.
+// Predefine this Map to override.
+$inuit-widths-columns-responsive: (
+    1,
+    2,
+    3,
+    4,
+    5,
+) !default;
+
+// Loop over our breakpoints defined in _settings.responsive.scss
+@each $breakpoint in $breakpoints {
+
+  // Get the name of the breakpoint.
+  $alias: nth($breakpoint, 1);
+
+  @include media-query($alias) {
+
+    // Loop through each of our column sizes and generate its responsive width
+    // classes.
+    @each $inuit-widths-column in $inuit-widths-columns-responsive {
+      @include inuit-widths($inuit-widths-column, -#{$alias});
+    }
+
+  }
+
+}
+
+/*----------------------------------------------------------------------------*\
+    #Text-center utility
+\*----------------------------------------------------------------------------*/
+
+.u-text-center {
+  text-align: center;
+}
+/*----------------------------------------------------------------------------*\
+    #Grid hack
+\*----------------------------------------------------------------------------*/
+.layout {
+  overflow: hidden;
+}
+.layout__item {
+  float: left;
+  display: block;
+}
